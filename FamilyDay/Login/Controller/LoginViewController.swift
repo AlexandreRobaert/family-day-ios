@@ -19,15 +19,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
-    }
-    
-
-    func setUI(){
-        self.navigationController?.isNavigationBarHidden = true
-        entrarButton.layer.cornerRadius = cornerRadiusButtons
-        loginFacebookButton.layer.cornerRadius = cornerRadiusButtons
-        criarContaButton.layer.cornerRadius = cornerRadiusButtons
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     /*
