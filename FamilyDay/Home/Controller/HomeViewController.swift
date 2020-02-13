@@ -33,8 +33,11 @@ class HomeViewController: UIViewController {
         collectionMetas.delegate = self
         collectionTarefas.dataSource = self
         collectionMetas.delegate = self
-        
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     /*
@@ -52,9 +55,9 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == collectionTarefas {
-            return 1
-        } else {
             return 12
+        } else {
+            return 2
         }
     }
     
@@ -64,13 +67,13 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifierMeta, for: indexPath) as! MetasCollectionViewCell
             cell.tituloMeta.text = "Meta Título"
             cell.layer.borderWidth = 1
-            cell.layer.cornerRadius = 12
+            cell.layer.cornerRadius = 15
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifierTarefa, for: indexPath) as! TarefasCollectionViewCell
             cell.tituloTarefa.text = "Título tarefa"
             cell.layer.borderWidth = 1
-            cell.layer.cornerRadius = 12
+            cell.layer.cornerRadius = 15
             return cell
         }
     }

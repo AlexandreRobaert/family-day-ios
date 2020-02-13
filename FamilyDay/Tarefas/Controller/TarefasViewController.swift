@@ -16,9 +16,7 @@ class TarefasViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        // Do any additional setup after loading the view.
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     /*
@@ -34,9 +32,10 @@ class TarefasViewController: UIViewController {
 
 extension TarefasViewController: UITableViewDataSource, UITableViewDelegate {
     
+    // MARK: - TableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 2
+        return 30
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,8 +46,13 @@ extension TarefasViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    // MARK: - TableViewDelete
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return CGFloat(integerLiteral: 100)
+        return 50
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        present(DetalhesTarefaViewController(), animated: true, completion: nil)
     }
 }

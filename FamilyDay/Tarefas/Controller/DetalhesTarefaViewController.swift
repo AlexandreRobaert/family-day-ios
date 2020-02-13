@@ -1,24 +1,19 @@
 //
-//  CadastrarViewController.swift
+//  DetalhesTarefaViewController.swift
 //  FamilyDay
 //
-//  Created by Alexandre Robaert on 06/02/20.
+//  Created by Alexandre Robaert on 12/02/20.
 //  Copyright © 2020 Alexandre Robaert. All rights reserved.
 //
 
 import UIKit
 
-class CadastrarUsuarioViewController: UIViewController {
+class DetalhesTarefaViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.setNavigationBarHidden(false, animated: false)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-    }
+
 
     /*
     // MARK: - Navigation

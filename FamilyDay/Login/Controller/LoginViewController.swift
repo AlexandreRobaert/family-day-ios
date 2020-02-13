@@ -19,6 +19,10 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
@@ -34,6 +38,9 @@ class LoginViewController: UIViewController {
 
     @IBAction func login(_ sender: UIButton) {
         dismiss(animated: false, completion: nil)
-        performSegue(withIdentifier: "telaHomeSegue", sender: nil)
+        
+        let navigation = storyboard?.instantiateViewController(withIdentifier: "SegundoNavigationController") as! UINavigationController
+        navigationController?.dismiss(animated: false, completion: nil)
+        present(navigation, animated: true, completion: nil)
     }
 }
