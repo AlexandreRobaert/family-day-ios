@@ -20,6 +20,7 @@ class HomeViewController: UIViewController {
     
     let identifierMeta = "celulaMeta"
     let identifierTarefa = "celulaTarefa"
+    var textoRecuperado: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,8 @@ class HomeViewController: UIViewController {
         collectionMetas.delegate = self
         collectionTarefas.dataSource = self
         collectionMetas.delegate = self
+        
+        nomePerfilLabel.text = textoRecuperado
     }
     
     override func viewWillAppear(_ animated: Bool) {

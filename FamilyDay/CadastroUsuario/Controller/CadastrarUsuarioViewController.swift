@@ -10,6 +10,11 @@ import UIKit
 
 class CadastrarUsuarioViewController: UIViewController {
 
+    @IBOutlet weak var nomeTextField: UITextField!
+    @IBOutlet weak var dataNascimentoTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var telefoneTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(false, animated: false)
@@ -20,6 +25,18 @@ class CadastrarUsuarioViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
+    @IBAction func cadastrarUsuario(_ sender: UIButton) {
+        
+        if true {
+            navigationController?.pushViewController(ConviteViewController(), animated: true)
+        } else {
+            let navigation = storyboard?.instantiateViewController(withIdentifier: "SegundoNavigationController") as! UINavigationController
+            navigationController?.popToRootViewController(animated: false)
+            navigationController?.dismiss(animated: false, completion: nil)
+            present(navigation, animated: true, completion: nil)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
