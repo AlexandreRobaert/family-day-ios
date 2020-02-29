@@ -10,10 +10,15 @@ import UIKit
 
 class Tela2ViewController: UIViewController {
 
+    @IBOutlet weak var labelDescricao: UILabel!
+    var nomeGrupo: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        if let grupo = nomeGrupo {
+            labelDescricao.text = "Nome do grupo \(grupo) passado por parâmetro"
+        }
     }
 
 

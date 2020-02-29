@@ -20,7 +20,7 @@ class HomeViewController: UIViewController {
     
     let identifierMeta = "celulaMeta"
     let identifierTarefa = "celulaTarefa"
-    var textoRecuperado: String = ""
+    var user: Usuario!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,11 @@ class HomeViewController: UIViewController {
         collectionTarefas.dataSource = self
         collectionMetas.delegate = self
         
-        nomePerfilLabel.text = textoRecuperado
+        nomePerfilLabel.text = user.nome
+        tipoPerfilLabel.text = user.tipo
+        if Configuration.shared.jaIniciouTutorial == false {
+            Configuration.shared.jaIniciouTutorial = true
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

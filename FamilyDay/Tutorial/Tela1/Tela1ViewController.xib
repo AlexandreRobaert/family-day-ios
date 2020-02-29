@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Tela1ViewController" customModule="Family_Day" customModuleProvider="target">
             <connections>
+                <outlet property="nomeGrupoTextField" destination="3sI-m9-hAL" id="AAt-wI-N9Y"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -39,7 +40,7 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
                     <size key="titleShadowOffset" width="5" height="5"/>
-                    <state key="normal" title="Entrar">
+                    <state key="normal" title="Seguinte">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <userDefinedRuntimeAttributes>
@@ -47,6 +48,9 @@
                             <integer key="value" value="22"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="irParaSegundaTela:" destination="-1" eventType="touchUpInside" id="BrS-fU-Zgv"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -13,13 +13,13 @@
 		AC1BB46923EDD9B400AA88F5 /* TarefasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BB46823EDD9B400AA88F5 /* TarefasViewController.swift */; };
 		AC1D7F6E23F239900078D6FF /* TarefasCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D7F6D23F239900078D6FF /* TarefasCollectionViewCell.swift */; };
 		AC1F0BE723ECA713005DA588 /* CadastrarUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1F0BE623ECA713005DA588 /* CadastrarUsuarioViewController.swift */; };
-		AC485567240827F8009D81AA /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC485566240827F8009D81AA /* Token.swift */; };
 		AC48556B24083CDA009D81AA /* Tela1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC48556924083CDA009D81AA /* Tela1ViewController.swift */; };
 		AC48556C24083CDA009D81AA /* Tela1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC48556A24083CDA009D81AA /* Tela1ViewController.xib */; };
 		AC48557124083DF6009D81AA /* Tela2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC48556F24083DF6009D81AA /* Tela2ViewController.swift */; };
 		AC48557224083DF6009D81AA /* Tela2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC48557024083DF6009D81AA /* Tela2ViewController.xib */; };
 		AC6123A623F2487A00C4DEA1 /* MetasCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6123A523F2487A00C4DEA1 /* MetasCollectionViewCell.swift */; };
 		AC6123A923F25D2F00C4DEA1 /* TarefaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6123A823F25D2F00C4DEA1 /* TarefaTableViewCell.swift */; };
+		AC6F18D6240AA9E8003DC31D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AC6F18D5240AA9E8003DC31D /* Alamofire */; };
 		AC702FC923FC4DD500F86049 /* ConviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC702FC723FC4DD500F86049 /* ConviteViewController.swift */; };
 		AC702FCA23FC4DD500F86049 /* ConviteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC702FC823FC4DD500F86049 /* ConviteViewController.xib */; };
 		AC702FCC23FCC6C700F86049 /* Mensagem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC702FCB23FCC6C700F86049 /* Mensagem.swift */; };
@@ -31,7 +31,7 @@
 		ACB7C5AC23EB35D70010D603 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB7C5AB23EB35D70010D603 /* Assets.xcassets */; };
 		ACB7C5AF23EB35D70010D603 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB7C5AD23EB35D70010D603 /* LaunchScreen.storyboard */; };
 		ACB7C5B723EB404E0010D603 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB7C5B623EB404E0010D603 /* LoginViewController.swift */; };
-		ACC3BE912407356D00BC3CB4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = ACC3BE902407356D00BC3CB4 /* Alamofire */; };
+		ACFED43624098FA30094727F /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFED43524098FA30094727F /* Configuration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +41,6 @@
 		AC1BB46823EDD9B400AA88F5 /* TarefasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarefasViewController.swift; sourceTree = "<group>"; };
 		AC1D7F6D23F239900078D6FF /* TarefasCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarefasCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC1F0BE623ECA713005DA588 /* CadastrarUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastrarUsuarioViewController.swift; sourceTree = "<group>"; };
-		AC485566240827F8009D81AA /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		AC48556924083CDA009D81AA /* Tela1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tela1ViewController.swift; sourceTree = "<group>"; };
 		AC48556A24083CDA009D81AA /* Tela1ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Tela1ViewController.xib; sourceTree = "<group>"; };
 		AC48556F24083DF6009D81AA /* Tela2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tela2ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +60,7 @@
 		ACB7C5AE23EB35D70010D603 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACB7C5B023EB35D70010D603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACB7C5B623EB404E0010D603 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		ACFED43524098FA30094727F /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,13 +68,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACC3BE912407356D00BC3CB4 /* Alamofire in Frameworks */,
+				AC6F18D6240AA9E8003DC31D /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A6521813310D0E3AD4D425E2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AC1BB46223EDD8DC00AA88F5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,14 +115,6 @@
 				AC1A0DA923F470970037AAB7 /* DetalhesTarefaViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		AC485565240826B1009D81AA /* ModelApi */ = {
-			isa = PBXGroup;
-			children = (
-				AC485566240827F8009D81AA /* Token.swift */,
-			);
-			path = ModelApi;
 			sourceTree = "<group>";
 		};
 		AC48556824083CAB009D81AA /* Tutorial */ = {
@@ -166,6 +165,7 @@
 			children = (
 				AC702FCB23FCC6C700F86049 /* Mensagem.swift */,
 				AC8B01A223FCCB8100F4B79E /* MenuOpcoesEnvio.swift */,
+				ACFED43524098FA30094727F /* Configuration.swift */,
 			);
 			path = Componentes;
 			sourceTree = "<group>";
@@ -207,7 +207,6 @@
 		AC702FCD23FCC6F700F86049 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AC485565240826B1009D81AA /* ModelApi */,
 				AC702FCE23FCC74500F86049 /* Usuario.swift */,
 			);
 			path = Model;
@@ -227,6 +226,7 @@
 			children = (
 				ACB7C5A123EB35D60010D603 /* FamilyDay */,
 				ACB7C5A023EB35D60010D603 /* Products */,
+				A6521813310D0E3AD4D425E2 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -300,7 +300,7 @@
 			);
 			name = FamilyDay;
 			packageProductDependencies = (
-				ACC3BE902407356D00BC3CB4 /* Alamofire */,
+				AC6F18D5240AA9E8003DC31D /* Alamofire */,
 			);
 			productName = FamilyDay;
 			productReference = ACB7C59F23EB35D60010D603 /* Family Day.app */;
@@ -331,7 +331,7 @@
 			);
 			mainGroup = ACB7C59623EB35D60010D603;
 			packageReferences = (
-				ACC3BE8F2407356D00BC3CB4 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				AC6F18D4240AA9E8003DC31D /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = ACB7C5A023EB35D60010D603 /* Products */;
 			projectDirPath = "";
@@ -370,12 +370,12 @@
 				AC702FCC23FCC6C700F86049 /* Mensagem.swift in Sources */,
 				AC1BB46423EDD90300AA88F5 /* HomeViewController.swift in Sources */,
 				AC1BB46923EDD9B400AA88F5 /* TarefasViewController.swift in Sources */,
-				AC485567240827F8009D81AA /* Token.swift in Sources */,
 				AC48557124083DF6009D81AA /* Tela2ViewController.swift in Sources */,
 				AC1F0BE723ECA713005DA588 /* CadastrarUsuarioViewController.swift in Sources */,
 				AC702FC923FC4DD500F86049 /* ConviteViewController.swift in Sources */,
 				ACB7C5B723EB404E0010D603 /* LoginViewController.swift in Sources */,
 				AC48556B24083CDA009D81AA /* Tela1ViewController.swift in Sources */,
+				ACFED43624098FA30094727F /* Configuration.swift in Sources */,
 				ACB7C5A323EB35D60010D603 /* AppDelegate.swift in Sources */,
 				AC1A0DAB23F470970037AAB7 /* DetalhesTarefaViewController.swift in Sources */,
 				ACB7C5A523EB35D60010D603 /* SceneDelegate.swift in Sources */,
@@ -580,7 +580,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		ACC3BE8F2407356D00BC3CB4 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		AC6F18D4240AA9E8003DC31D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -591,9 +591,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		ACC3BE902407356D00BC3CB4 /* Alamofire */ = {
+		AC6F18D5240AA9E8003DC31D /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = ACC3BE8F2407356D00BC3CB4 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = AC6F18D4240AA9E8003DC31D /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */

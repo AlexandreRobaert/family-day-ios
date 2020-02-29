@@ -30,7 +30,7 @@ class ConviteViewController: UIViewController {
         guard let email = emailTextfield.text else {return}
         guard let telefone = telefoneTextField.text else {return}
         
-        let usuario = Usuario(idUsuario: nil, nome: nome, telefone: telefone, email: email, dataNascimento: Date(), login: "", senha: "", ativo: false, responsavel: true)
+        let usuario = Usuario(id: "", nome: nome, dataNascimento: Date(), telefone: telefone, tipo: "", email: email, genero: "", senha: "")
         
         abrirMenu(usuario: usuario)
     }
@@ -47,7 +47,7 @@ class ConviteViewController: UIViewController {
             
             case .whatsapp:
                 
-                guard let urlString = "https://wa.me/+55\(usuario.telefone!)?text=\(usuario.nome), Meu texto de convite do app Whatsapp de Family Day".addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {return}
+                guard let urlString = "https://wa.me/+55\(usuario.telefone)?text=\(usuario.nome), Meu texto de convite do app Whatsapp de Family Day".addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {return}
                 print(urlString)
                 if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url){
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)

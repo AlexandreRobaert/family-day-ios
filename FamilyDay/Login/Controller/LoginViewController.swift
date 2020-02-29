@@ -40,48 +40,72 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
-    @IBAction func login(_ sender: UIButton) {
+    
+    func irParaHome(usuario: Usuario){
         dismiss(animated: false, completion: nil)
-        
-        indicator.isHidden = false
-//        if let login = loginTextField.text, let senha = senhaTextField.text {
-//            fazerLogin(login: login, senha: senha) { (resultado) in
-//                switch resultado {
-//                case .success(let value):
-//                    if let token = value["token"] {
-//                        print(token)
-//                        self.indicator.isHidden = true
-//                    }
-//                case .failure(_):
-//                    print("Falha")
-//                }
-//            }
-//        }
-        
-        
-        let navigation = storyboard?.instantiateViewController(withIdentifier: "SegundoNavigationController") as! UINavigationController
+        let navigation = self.storyboard?.instantiateViewController(withIdentifier: "SegundoNavigationController") as! UINavigationController
         let tab = navigation.viewControllers.first as! UITabBarController
         let vcHome = tab.viewControllers?.first as! HomeViewController
-        vcHome.textoRecuperado = "Texto Passado"
+        vcHome.user = usuario
 
-        navigationController?.dismiss(animated: false, completion: nil)
-        present(navigation, animated: true, completion: nil)
-        
+        self.navigationController?.dismiss(animated: false, completion: nil)
+        self.present(navigation, animated: true, completion: nil)
+    }
+
+    @IBAction func login(_ sender: UIButton) {
+        mensagemLoginLabel.text = ""
+        indicator.isHidden = false
+        if let login = loginTextField.text, let senha = senhaTextField.text {
+            getToken(login: login, senha: senha) { (resultado) in
+                switch resultado {
+                case .success(let value):
+                    if let token = value["token"] {
+                        Configuration.shared.token = token as! String
+                        self.getUserfor(token: token as! String) { (usuario) in
+                            if let user = usuario {
+                                self.irParaHome(usuario: user)
+                            }
+                        }
+                    }else{
+                        self.mensagemLoginLabel.text = "Login inválido!"
+                        self.indicator.isHidden = true
+                    }
+                case .failure(_):
+                    print("Falha")
+                }
+            }
+        }else{
+            mensagemLoginLabel.text = "Todos os campos devem ser preenchidos."
+        }
     }
     
-    func fazerLogin(login: String, senha: String, completion: @escaping (AFResult<[String: Any]>) -> Void){
+    func getToken(login: String, senha: String, completion: @escaping (AFResult<[String: Any]>) -> Void){
         
         let headers: HTTPHeaders = [.authorization(username: login, password: senha)]
 
-        AF.request("https://api-family-day.herokuapp.com/api/login", method: .post, headers: headers).responseJSON { (response) in
+        AF.request("\(Configuration.URL_API)login", method: .post, headers: headers).responseJSON { (response) in
             switch response.result {
             case .success(let value as [String: Any]):
                 completion(.success(value))
+                break
             case .success(_):
-                print("Sucesso")
+                print("Sucesso sem usuário")
             case .failure(_):
-                print("Falha")
+                print("Falha!")
+            }
+        }
+    }
+    
+    func getUserfor(token: String, completion: @escaping (Usuario?) -> Void) -> Void {
+        let headers: HTTPHeaders = ["x-access-token": token]
+        
+        AF.request("\(Configuration.URL_API)usuarios/me", headers: headers).validate().responseDecodable(of: Usuario.self) {(response) in
+            print(response.result)
+            switch response.result {
+            case .success(let usuario):
+                completion(usuario)
+            case .failure(_):
+                print("Error ao buscar usuário")
             }
         }
     }
