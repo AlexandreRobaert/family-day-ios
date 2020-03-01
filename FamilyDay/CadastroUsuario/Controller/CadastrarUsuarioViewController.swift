@@ -18,6 +18,9 @@ class CadastrarUsuarioViewController: UIViewController {
     @IBOutlet weak var senhaTextField: UITextField!
     @IBOutlet weak var repetirSenhaTextField: UITextField!
     @IBOutlet weak var mensagemLabel: UILabel!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var generoTextField: UITextField!
+    @IBOutlet weak var tipoPerfilTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +33,27 @@ class CadastrarUsuarioViewController: UIViewController {
     }
 
     @IBAction func cadastrarUsuario(_ sender: UIButton) {
-        cadastrar { (retorno, statusCode) in
-            if statusCode >= 400 {
-                let mensagem = retorno!["mensagem"]
-                let arrayMensagens = retorno!["motivo"] as! Array<String>
-                print("\(mensagem!) \(arrayMensagens[0])")
+        indicator.isHidden = false
+        if let nome = nomeTextField.text, let data = dataNascimentoTextField.text, let email = emailTextField.text,
+            let telefone = telefoneTextField.text, let senha = senhaTextField.text, let genero = generoTextField.text,
+            let senhaRepetida = repetirSenhaTextField.text, let tipoPerfil = tipoPerfilTextField.text {
+            
+            if senha == senhaRepetida {
+                let user = Usuario(id: "", nome: nome, dataNascimento: Date(), telefone: telefone, tipo: tipoPerfil, email: email, genero: genero, senha: senha)
+                UsuarioDao.cadastrarUsuario(user, deviceID: "DeviceID teste") { (retorno) in
+                    switch retorno {
+                    case .Cadastrou:
+                        //Fazer algo depois que cadastrou
+                        print("Novo Usuario: \(Configuration.shared.token)")
+                        break
+                    case .Falha:
+                        //Dizer algo se náo cadastrar
+                        break
+                    }
+                    self.indicator.isHidden = true
+                }
             }else{
-                let token = retorno!["token"]
+                mensagemLabel.text = "Todos os campos devem serem preenchidos corretamente!"
             }
         }
         
@@ -54,38 +71,6 @@ class CadastrarUsuarioViewController: UIViewController {
             navigationController?.popToRootViewController(animated: false)
             navigationController?.dismiss(animated: false, completion: nil)
             present(navigation, animated: true, completion: nil)
-        }
-    }
-    
-    func cadastrar(completion: @escaping([String: Any]?, Int) -> Void){
-        if let nome = nomeTextField.text, let data = dataNascimentoTextField.text, let email = emailTextField.text,
-            let telefone = telefoneTextField.text, let senha = senhaTextField.text, let senhaRepetida = repetirSenhaTextField.text {
-            
-            if senha == senhaRepetida {
-                let user = Usuario(id: "", nome: nome, dataNascimento: Date(), telefone: telefone, tipo: "frverg", email: email, genero: "M", senha: senha)
-                
-                let headers: HTTPHeaders = ["x-access-token": Configuration.shared.token]
-                
-                let fullISO8610Formatter = DateFormatter()
-                fullISO8610Formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-                let stringData = fullISO8610Formatter.string(from: user.dataNascimento!)
-                
-                let parametros = ["nome": user.nome, "dataNascimento": stringData, "telefone": user.telefone, "tipo": user.tipo, "genero": user.genero, "email": user.email, "senha": user.senha, "os": "IOS", "deviceId": "chakdjalsd"]
-                
-                AF.request("\(Configuration.URL_API)usuarios", method: .post, parameters: parametros, headers: headers).responseJSON { (response) in
-                    switch response.result {
-                    case .success(let result as [String: Any]):
-                        completion(result, response.response!.statusCode)
-                    case .success(_):
-                        print("s")
-                    case .failure(let error):
-                        print(error.responseContentType)
-                    }
-                }
-                
-            }else{
-                mensagemLabel.text = "Todos os campos devem serem preenchidos corretamente!"
-            }
         }
     }
     

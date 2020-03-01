@@ -24,6 +24,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         criarContaButton.layer.borderWidth = 2
         criarContaButton.layer.borderColor = UIColor(named: "Roxo")?.cgColor
+        print(Configuration.shared.token)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,58 +56,24 @@ class LoginViewController: UIViewController {
     @IBAction func login(_ sender: UIButton) {
         mensagemLoginLabel.text = ""
         indicator.isHidden = false
+        
         if let login = loginTextField.text, let senha = senhaTextField.text {
-            getToken(login: login, senha: senha) { (resultado) in
-                switch resultado {
-                case .success(let value):
-                    if let token = value["token"] {
-                        Configuration.shared.token = token as! String
-                        self.getUserfor(token: token as! String) { (usuario) in
-                            if let user = usuario {
-                                self.irParaHome(usuario: user)
-                            }
+            
+            UsuarioDao.getToken(login: login, senha: senha) { (token) in
+                if let token = token {
+                    UsuarioDao.getUserfor(token: token) { (usuario) in
+                        if let usuario = usuario {
+                            self.irParaHome(usuario: usuario)
+                        }else{
+                            self.mensagemLoginLabel.text = "Usuário Não Encontrado"
                         }
-                    }else{
-                        self.mensagemLoginLabel.text = "Login inválido!"
-                        self.indicator.isHidden = true
                     }
-                case .failure(_):
-                    print("Falha")
+                }else{
+                    self.mensagemLoginLabel.text = "Login Inválido"
                 }
             }
         }else{
-            mensagemLoginLabel.text = "Todos os campos devem ser preenchidos."
-        }
-    }
-    
-    func getToken(login: String, senha: String, completion: @escaping (AFResult<[String: Any]>) -> Void){
-        
-        let headers: HTTPHeaders = [.authorization(username: login, password: senha)]
-
-        AF.request("\(Configuration.URL_API)login", method: .post, headers: headers).responseJSON { (response) in
-            switch response.result {
-            case .success(let value as [String: Any]):
-                completion(.success(value))
-                break
-            case .success(_):
-                print("Sucesso sem usuário")
-            case .failure(_):
-                print("Falha!")
-            }
-        }
-    }
-    
-    func getUserfor(token: String, completion: @escaping (Usuario?) -> Void) -> Void {
-        let headers: HTTPHeaders = ["x-access-token": token]
-        
-        AF.request("\(Configuration.URL_API)usuarios/me", headers: headers).validate().responseDecodable(of: Usuario.self) {(response) in
-            print(response.result)
-            switch response.result {
-            case .success(let usuario):
-                completion(usuario)
-            case .failure(_):
-                print("Error ao buscar usuário")
-            }
+            self.mensagemLoginLabel.text = "Todos os campos devem ser preenchidos"
         }
     }
 }
