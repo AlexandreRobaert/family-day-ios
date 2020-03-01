@@ -11,13 +11,13 @@
 		AC1A0DAC23F470970037AAB7 /* DetalhesTarefaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC1A0DAA23F470970037AAB7 /* DetalhesTarefaViewController.xib */; };
 		AC1BB46423EDD90300AA88F5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BB46323EDD90300AA88F5 /* HomeViewController.swift */; };
 		AC1BB46923EDD9B400AA88F5 /* TarefasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BB46823EDD9B400AA88F5 /* TarefasViewController.swift */; };
-		AC1D7F6E23F239900078D6FF /* TarefasCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D7F6D23F239900078D6FF /* TarefasCollectionViewCell.swift */; };
 		AC1F0BE723ECA713005DA588 /* CadastrarUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1F0BE623ECA713005DA588 /* CadastrarUsuarioViewController.swift */; };
 		AC48556B24083CDA009D81AA /* Tela1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC48556924083CDA009D81AA /* Tela1ViewController.swift */; };
 		AC48556C24083CDA009D81AA /* Tela1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC48556A24083CDA009D81AA /* Tela1ViewController.xib */; };
 		AC48557124083DF6009D81AA /* Tela2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC48556F24083DF6009D81AA /* Tela2ViewController.swift */; };
 		AC48557224083DF6009D81AA /* Tela2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC48557024083DF6009D81AA /* Tela2ViewController.xib */; };
-		AC6123A623F2487A00C4DEA1 /* MetasCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6123A523F2487A00C4DEA1 /* MetasCollectionViewCell.swift */; };
+		AC4D949C240C1748002CF0DB /* MetasCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4D949A240C1748002CF0DB /* MetasCollectionViewCell.swift */; };
+		AC4D949D240C1748002CF0DB /* TarefasCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4D949B240C1748002CF0DB /* TarefasCollectionViewCell.swift */; };
 		AC6123A923F25D2F00C4DEA1 /* TarefaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6123A823F25D2F00C4DEA1 /* TarefaTableViewCell.swift */; };
 		AC6F18D6240AA9E8003DC31D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AC6F18D5240AA9E8003DC31D /* Alamofire */; };
 		AC702FC923FC4DD500F86049 /* ConviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC702FC723FC4DD500F86049 /* ConviteViewController.swift */; };
@@ -39,13 +39,13 @@
 		AC1A0DAA23F470970037AAB7 /* DetalhesTarefaViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetalhesTarefaViewController.xib; sourceTree = "<group>"; };
 		AC1BB46323EDD90300AA88F5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AC1BB46823EDD9B400AA88F5 /* TarefasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarefasViewController.swift; sourceTree = "<group>"; };
-		AC1D7F6D23F239900078D6FF /* TarefasCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarefasCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC1F0BE623ECA713005DA588 /* CadastrarUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastrarUsuarioViewController.swift; sourceTree = "<group>"; };
 		AC48556924083CDA009D81AA /* Tela1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tela1ViewController.swift; sourceTree = "<group>"; };
 		AC48556A24083CDA009D81AA /* Tela1ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Tela1ViewController.xib; sourceTree = "<group>"; };
 		AC48556F24083DF6009D81AA /* Tela2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tela2ViewController.swift; sourceTree = "<group>"; };
 		AC48557024083DF6009D81AA /* Tela2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Tela2ViewController.xib; sourceTree = "<group>"; };
-		AC6123A523F2487A00C4DEA1 /* MetasCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetasCollectionViewCell.swift; sourceTree = "<group>"; };
+		AC4D949A240C1748002CF0DB /* MetasCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetasCollectionViewCell.swift; sourceTree = "<group>"; };
+		AC4D949B240C1748002CF0DB /* TarefasCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TarefasCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC6123A823F25D2F00C4DEA1 /* TarefaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarefaTableViewCell.swift; sourceTree = "<group>"; };
 		AC702FC723FC4DD500F86049 /* ConviteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConviteViewController.swift; sourceTree = "<group>"; };
 		AC702FC823FC4DD500F86049 /* ConviteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConviteViewController.xib; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 		AC1BB46223EDD8DC00AA88F5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				ACA390DF23F118BE00C46800 /* View */,
+				AC4D9499240C1715002CF0DB /* View */,
 				AC1BB46523EDD90700AA88F5 /* Controller */,
 			);
 			path = Home;
@@ -142,6 +142,15 @@
 				AC48557024083DF6009D81AA /* Tela2ViewController.xib */,
 			);
 			path = Tela2;
+			sourceTree = "<group>";
+		};
+		AC4D9499240C1715002CF0DB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AC4D949A240C1748002CF0DB /* MetasCollectionViewCell.swift */,
+				AC4D949B240C1748002CF0DB /* TarefasCollectionViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		AC4F675723EDD1A700D07641 /* CadastroUsuario */ = {
@@ -210,15 +219,6 @@
 				AC702FCE23FCC74500F86049 /* Usuario.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		ACA390DF23F118BE00C46800 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				AC6123A523F2487A00C4DEA1 /* MetasCollectionViewCell.swift */,
-				AC1D7F6D23F239900078D6FF /* TarefasCollectionViewCell.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		ACB7C59623EB35D60010D603 = {
@@ -365,16 +365,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC702FCF23FCC74500F86049 /* Usuario.swift in Sources */,
-				AC1D7F6E23F239900078D6FF /* TarefasCollectionViewCell.swift in Sources */,
-				AC6123A623F2487A00C4DEA1 /* MetasCollectionViewCell.swift in Sources */,
 				AC702FCC23FCC6C700F86049 /* Mensagem.swift in Sources */,
 				AC1BB46423EDD90300AA88F5 /* HomeViewController.swift in Sources */,
 				AC1BB46923EDD9B400AA88F5 /* TarefasViewController.swift in Sources */,
 				AC48557124083DF6009D81AA /* Tela2ViewController.swift in Sources */,
 				AC1F0BE723ECA713005DA588 /* CadastrarUsuarioViewController.swift in Sources */,
+				AC4D949D240C1748002CF0DB /* TarefasCollectionViewCell.swift in Sources */,
 				AC702FC923FC4DD500F86049 /* ConviteViewController.swift in Sources */,
 				ACB7C5B723EB404E0010D603 /* LoginViewController.swift in Sources */,
 				AC48556B24083CDA009D81AA /* Tela1ViewController.swift in Sources */,
+				AC4D949C240C1748002CF0DB /* MetasCollectionViewCell.swift in Sources */,
 				ACFED43624098FA30094727F /* Configuration.swift in Sources */,
 				ACB7C5A323EB35D60010D603 /* AppDelegate.swift in Sources */,
 				AC1A0DAB23F470970037AAB7 /* DetalhesTarefaViewController.swift in Sources */,
