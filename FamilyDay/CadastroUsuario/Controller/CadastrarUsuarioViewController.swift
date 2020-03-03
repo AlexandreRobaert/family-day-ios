@@ -20,34 +20,64 @@ class CadastrarUsuarioViewController: UIViewController {
     @IBOutlet weak var mensagemLabel: UILabel!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var generoTextField: UITextField!
-    @IBOutlet weak var tipoPerfilTextField: UITextField!
+    
+    
+    lazy var tipoGeneroPicker: UIPickerView = {
+        let picker = UIPickerView()
+        picker.dataSource = self
+        picker.delegate = self
+        return picker
+    }()
+    
+    let generos: [String] = ["Masculino", "Feminino", "Outros"]
+    var perfil: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(false, animated: false)
+        
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 44))
+        toolbar.tintColor = UIColor(named: "Roxo")
+        let buttonCancelar = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
+        let buttonDone = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
+        let buttonSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        toolbar.items = [buttonCancelar, buttonSpace, buttonDone]
+        
+        generoTextField.inputView = tipoGeneroPicker
+        generoTextField.inputAccessoryView = toolbar
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
+    }
+    
+    @objc func cancel(){
+        generoTextField.resignFirstResponder()
+    }
+    @objc func done(){
+        generoTextField.text = generos[tipoGeneroPicker.selectedRow(inComponent: 0)]
+        cancel()
     }
 
     @IBAction func cadastrarUsuario(_ sender: UIButton) {
         indicator.isHidden = false
         if let nome = nomeTextField.text, let data = dataNascimentoTextField.text, let email = emailTextField.text,
             let telefone = telefoneTextField.text, let senha = senhaTextField.text, let genero = generoTextField.text,
-            let senhaRepetida = repetirSenhaTextField.text, let tipoPerfil = tipoPerfilTextField.text {
+            let senhaRepetida = repetirSenhaTextField.text {
             
             if senha == senhaRepetida {
-                let user = Usuario(id: "", nome: nome, dataNascimento: Date(), telefone: telefone, tipo: tipoPerfil, email: email, genero: genero, senha: senha)
+                let user = Usuario(id: "", nome: nome, dataNascimento: Date(), telefone: telefone, tipo: perfil, email: email, genero: genero, senha: senha)
                 UsuarioDao.cadastrarUsuario(user, deviceID: "DeviceID teste") { (retorno) in
                     switch retorno {
-                    case .Cadastrou:
+                    case .Sucesso:
                         //Fazer algo depois que cadastrou
                         print("Novo Usuario: \(Configuration.shared.token)")
                         break
                     case .Falha:
-                        //Dizer algo se náo cadastrar
+                        //Dizer algo se não cadastrar
                         break
                     }
                     self.indicator.isHidden = true
@@ -83,5 +113,18 @@ class CadastrarUsuarioViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
 
+extension CadastrarUsuarioViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 3
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return generos[row]
+    }
 }

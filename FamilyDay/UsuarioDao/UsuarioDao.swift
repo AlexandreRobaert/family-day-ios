@@ -11,7 +11,7 @@ import Alamofire
 
 enum RetornoUsuario: String {
     
-    case Cadastrou
+    case Sucesso
     case Falha
 }
 
@@ -21,7 +21,6 @@ class UsuarioDao {
         let headers: HTTPHeaders = ["x-access-token": token]
         
         AF.request("\(Configuration.URL_API)usuarios/me", headers: headers).validate().responseDecodable(of: Usuario.self) {(response) in
-            print(response.result)
             switch response.result {
             case .success(let usuario):
                 completion(usuario)
@@ -38,10 +37,7 @@ class UsuarioDao {
         AF.request("\(Configuration.URL_API)login", method: .post, headers: headers).responseJSON { (response) in
             switch response.result {
             case .success(let value as [String: Any]):
-                if let token = value["token"] as? String {
-                    Configuration.shared.token = token
-                    completion(token)
-                }
+                completion(value["token"] as? String)
                 break
             case .success(_):
                 print("Sucesso sem usuário")
@@ -67,8 +63,10 @@ class UsuarioDao {
                 case 201:
                     if let token = result["token"] as? String{
                         Configuration.shared.token = token
+                        completion(.Sucesso)
+                    }else{
+                        completion(.Falha)
                     }
-                    completion(.Cadastrou)
                 default:
                     if let mensagens = result["motivo"] as? Array<String> {
                         for msg in mensagens {
@@ -83,6 +81,5 @@ class UsuarioDao {
                 print(error)
             }
         }
-        
     }
 }

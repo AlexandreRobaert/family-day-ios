@@ -25,6 +25,7 @@
 		AC702FCA23FC4DD500F86049 /* ConviteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC702FC823FC4DD500F86049 /* ConviteViewController.xib */; };
 		AC702FCC23FCC6C700F86049 /* Mensagem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC702FCB23FCC6C700F86049 /* Mensagem.swift */; };
 		AC702FCF23FCC74500F86049 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC702FCE23FCC74500F86049 /* Usuario.swift */; };
+		AC7461F5240EC7C1000795C6 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7461F4240EC7C1000795C6 /* PerfilViewController.swift */; };
 		AC8B01A323FCCB8100F4B79E /* MenuOpcoesEnvio.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8B01A223FCCB8100F4B79E /* MenuOpcoesEnvio.swift */; };
 		ACB7C5A323EB35D60010D603 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB7C5A223EB35D60010D603 /* AppDelegate.swift */; };
 		ACB7C5A523EB35D60010D603 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB7C5A423EB35D60010D603 /* SceneDelegate.swift */; };
@@ -53,6 +54,7 @@
 		AC702FC823FC4DD500F86049 /* ConviteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConviteViewController.xib; sourceTree = "<group>"; };
 		AC702FCB23FCC6C700F86049 /* Mensagem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mensagem.swift; sourceTree = "<group>"; };
 		AC702FCE23FCC74500F86049 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		AC7461F4240EC7C1000795C6 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		AC8B01A223FCCB8100F4B79E /* MenuOpcoesEnvio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOpcoesEnvio.swift; sourceTree = "<group>"; };
 		ACB7C59F23EB35D60010D603 /* Family Day.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Family Day.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB7C5A223EB35D60010D603 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -231,6 +233,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		AC7461F6240EC7CC000795C6 /* Perfil */ = {
+			isa = PBXGroup;
+			children = (
+				AC7461F7240EC7E6000795C6 /* Controller */,
+			);
+			path = Perfil;
+			sourceTree = "<group>";
+		};
+		AC7461F7240EC7E6000795C6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AC7461F4240EC7C1000795C6 /* PerfilViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		ACB7C59623EB35D60010D603 = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +280,7 @@
 				AC48556824083CAB009D81AA /* Tutorial */,
 				AC1BB46223EDD8DC00AA88F5 /* Home */,
 				AC1BB46623EDD99C00AA88F5 /* Tarefas */,
+				AC7461F6240EC7CC000795C6 /* Perfil */,
 				AC702FC423FC4B2D00F86049 /* Convite */,
 				AC559BE823F4EB8C000B7EA5 /* Componentes */,
 				ACB7C5AB23EB35D70010D603 /* Assets.xcassets */,
@@ -382,6 +401,7 @@
 				AC48557124083DF6009D81AA /* Tela2ViewController.swift in Sources */,
 				AC1F0BE723ECA713005DA588 /* CadastrarUsuarioViewController.swift in Sources */,
 				AC4D949D240C1748002CF0DB /* TarefasCollectionViewCell.swift in Sources */,
+				AC7461F5240EC7C1000795C6 /* PerfilViewController.swift in Sources */,
 				AC702FC923FC4DD500F86049 /* ConviteViewController.swift in Sources */,
 				ACB7C5B723EB404E0010D603 /* LoginViewController.swift in Sources */,
 				AC48556B24083CDA009D81AA /* Tela1ViewController.swift in Sources */,

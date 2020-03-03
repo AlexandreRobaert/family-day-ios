@@ -24,7 +24,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         criarContaButton.layer.borderWidth = 2
         criarContaButton.layer.borderColor = UIColor(named: "Roxo")?.cgColor
-        print(Configuration.shared.token)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,5 +74,6 @@ class LoginViewController: UIViewController {
         }else{
             self.mensagemLoginLabel.text = "Todos os campos devem ser preenchidos"
         }
+        self.indicator.isHidden = true
     }
 }

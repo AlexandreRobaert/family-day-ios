@@ -112,7 +112,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="k4V-e3-MV7" kind="show" id="WY2-z5-qjd"/>
+                                            <segue destination="7A2-lM-Diu" kind="show" id="dcY-Gc-KFg"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgy-QH-0kA">
@@ -147,7 +147,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1609" y="161"/>
+            <point key="canvasLocation" x="-2087" y="160"/>
         </scene>
         <!--Cadastro-->
         <scene sceneID="swU-FN-Nap">
@@ -184,37 +184,14 @@
                                             </mask>
                                         </variation>
                                     </textField>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="c5S-af-Dgw">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gênero" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="H5b-ML-Tc9">
                                         <rect key="frame" x="0.0" y="209.5" width="374" height="45"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7Qw-sF-rLG">
-                                                <rect key="frame" x="0.0" y="0.0" width="172" height="45"/>
-                                                <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gênero" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="H5b-ML-Tc9">
-                                                        <rect key="frame" x="0.0" y="0.0" width="172" height="45"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="45" id="mNa-F3-JHL"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="I6x-pP-HKx">
-                                                <rect key="frame" x="202" y="0.0" width="172" height="45"/>
-                                                <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pai ou filho?" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="nif-Su-PIP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="172" height="45"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="45" id="Hre-A9-yKp"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="mNa-F3-JHL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu email" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="wGz-sr-hOB">
                                         <rect key="frame" x="0.0" y="264.5" width="374" height="45"/>
                                         <constraints>
@@ -285,7 +262,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="cadastrarUsuario:" destination="k4V-e3-MV7" eventType="touchUpInside" id="YiS-Fa-yct"/>
-                                            <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xc7-A6-Zf7"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QsV-SO-I6V">
@@ -317,12 +293,84 @@
                         <outlet property="repetirSenhaTextField" destination="FGp-NB-bYf" id="EcS-mN-6L5"/>
                         <outlet property="senhaTextField" destination="7iv-lj-GGJ" id="Fnq-i8-dLM"/>
                         <outlet property="telefoneTextField" destination="rYQ-YK-EZB" id="qUX-24-gyh"/>
-                        <outlet property="tipoPerfilTextField" destination="nif-Su-PIP" id="IQZ-t5-4FF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rW1-fK-BxG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-846" y="161"/>
+            <point key="canvasLocation" x="-601" y="159"/>
+        </scene>
+        <!--Tipo Perfil-->
+        <scene sceneID="jkU-G1-UiU">
+            <objects>
+                <viewController title="Tipo Perfil" id="7A2-lM-Diu" customClass="PerfilViewController" customModule="Family_Day" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G1f-LN-dEi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="rkL-IT-KMb">
+                                <rect key="frame" x="20" y="94" width="374" height="748"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Olá, agora preciso que me diga se você é um responsável pela família ou um dependente." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBL-sO-z3R">
+                                        <rect key="frame" x="3.5" y="0.0" width="367" height="508"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" name="Roxo"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4f3-fe-DTI">
+                                        <rect key="frame" x="94" y="538" width="186" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Hlu-Mm-z72"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
+                                        <state key="normal" title="Responsável">
+                                            <color key="titleColor" red="1" green="0.2784313725" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="abrirTelaCadastro:" destination="7A2-lM-Diu" eventType="touchUpInside" id="HOy-ez-cWh"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ou" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ysb-Ic-AEn">
+                                        <rect key="frame" x="170.5" y="618" width="33.5" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="CR3-n2-AQM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIX-EY-qi6">
+                                        <rect key="frame" x="98" y="698" width="178" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="zfJ-aJ-t9D"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
+                                        <state key="normal" title="Dependente">
+                                            <color key="titleColor" red="1" green="0.2784313725" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="abrirTelaCadastro:" destination="7A2-lM-Diu" eventType="touchUpInside" id="Acm-fd-8nM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rkL-IT-KMb" firstAttribute="leading" secondItem="FVq-Xw-6Gs" secondAttribute="leading" constant="20" id="FCP-bz-UGU"/>
+                            <constraint firstItem="FVq-Xw-6Gs" firstAttribute="bottom" secondItem="rkL-IT-KMb" secondAttribute="bottom" constant="20" id="iKj-xk-SVe"/>
+                            <constraint firstItem="rkL-IT-KMb" firstAttribute="top" secondItem="FVq-Xw-6Gs" secondAttribute="top" constant="50" id="yrC-gZ-OVZ"/>
+                            <constraint firstItem="FVq-Xw-6Gs" firstAttribute="trailing" secondItem="rkL-IT-KMb" secondAttribute="trailing" constant="20" id="z4Q-9f-qoa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FVq-Xw-6Gs"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0OD-iO-jSj"/>
+                    <connections>
+                        <segue destination="k4V-e3-MV7" kind="show" identifier="segueTelaCadastro" id="9e2-sW-l9H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PXL-aa-86r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1339.1304347826087" y="158.70535714285714"/>
         </scene>
         <!--HomeNavigationController-->
         <scene sceneID="OnZ-cp-0uv">
@@ -338,7 +386,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4E8-Hw-Bc9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-63" y="-607"/>
+            <point key="canvasLocation" x="-196" y="-607"/>
         </scene>
         <!--Home-->
         <scene sceneID="mYG-ov-XYO">
@@ -655,7 +703,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zA1-zZ-NFC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1609" y="-591"/>
+            <point key="canvasLocation" x="-2087" y="-592"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="YQ9-2M-Pgo">
