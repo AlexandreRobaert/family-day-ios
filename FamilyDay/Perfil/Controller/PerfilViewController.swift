@@ -12,8 +12,7 @@ class PerfilViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
 
@@ -33,16 +32,10 @@ class PerfilViewController: UIViewController {
                     telaCadastro.perfil = "DEPENDENTE"
                 }
             }
-        }else{
-            //Iniciar a tela de convide para o Dependente
         }
     }
     
     @IBAction func abrirTelaCadastro(_ sender: UIButton) {
-        if sender.tag == 0 {
-            performSegue(withIdentifier: "segueTelaCadastro", sender: sender)
-        }else{
-            //Iniciar Outra Segue
-        }
+        performSegue(withIdentifier: "segueTelaCadastro", sender: sender)
     }
 }

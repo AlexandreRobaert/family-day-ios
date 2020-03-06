@@ -27,6 +27,7 @@
 		AC702FCF23FCC74500F86049 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC702FCE23FCC74500F86049 /* Usuario.swift */; };
 		AC7461F5240EC7C1000795C6 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7461F4240EC7C1000795C6 /* PerfilViewController.swift */; };
 		AC8B01A323FCCB8100F4B79E /* MenuOpcoesEnvio.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8B01A223FCCB8100F4B79E /* MenuOpcoesEnvio.swift */; };
+		ACB4504C2411E56800B4FF5F /* FamiliaDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB4504B2411E56800B4FF5F /* FamiliaDao.swift */; };
 		ACB7C5A323EB35D60010D603 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB7C5A223EB35D60010D603 /* AppDelegate.swift */; };
 		ACB7C5A523EB35D60010D603 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB7C5A423EB35D60010D603 /* SceneDelegate.swift */; };
 		ACB7C5AA23EB35D60010D603 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB7C5A823EB35D60010D603 /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 		AC702FCE23FCC74500F86049 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		AC7461F4240EC7C1000795C6 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		AC8B01A223FCCB8100F4B79E /* MenuOpcoesEnvio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOpcoesEnvio.swift; sourceTree = "<group>"; };
+		ACB4504B2411E56800B4FF5F /* FamiliaDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamiliaDao.swift; sourceTree = "<group>"; };
 		ACB7C59F23EB35D60010D603 /* Family Day.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Family Day.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB7C5A223EB35D60010D603 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACB7C5A423EB35D60010D603 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,8 +135,8 @@
 		AC48556D24083CE4009D81AA /* Tela1 */ = {
 			isa = PBXGroup;
 			children = (
-				AC48556924083CDA009D81AA /* Tela1ViewController.swift */,
 				AC48556A24083CDA009D81AA /* Tela1ViewController.xib */,
+				AC48556924083CDA009D81AA /* Tela1ViewController.swift */,
 			);
 			path = Tela1;
 			sourceTree = "<group>";
@@ -142,8 +144,8 @@
 		AC48556E24083DE2009D81AA /* Tela2 */ = {
 			isa = PBXGroup;
 			children = (
-				AC48556F24083DF6009D81AA /* Tela2ViewController.swift */,
 				AC48557024083DF6009D81AA /* Tela2ViewController.xib */,
+				AC48556F24083DF6009D81AA /* Tela2ViewController.swift */,
 			);
 			path = Tela2;
 			sourceTree = "<group>";
@@ -157,12 +159,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		AC4D949E240C2F52002CF0DB /* UsuarioDao */ = {
+		AC4D949E240C2F52002CF0DB /* Dao */ = {
 			isa = PBXGroup;
 			children = (
 				AC4D949F240C2F72002CF0DB /* UsuarioDao.swift */,
+				ACB4504B2411E56800B4FF5F /* FamiliaDao.swift */,
 			);
-			path = UsuarioDao;
+			path = Dao;
 			sourceTree = "<group>";
 		};
 		AC4F675723EDD1A700D07641 /* CadastroUsuario */ = {
@@ -274,7 +277,7 @@
 				ACB7C5A823EB35D60010D603 /* Main.storyboard */,
 				ACB7C5AD23EB35D70010D603 /* LaunchScreen.storyboard */,
 				AC702FCD23FCC6F700F86049 /* Model */,
-				AC4D949E240C2F52002CF0DB /* UsuarioDao */,
+				AC4D949E240C2F52002CF0DB /* Dao */,
 				ACB7C5B823EB40530010D603 /* Login */,
 				AC4F675723EDD1A700D07641 /* CadastroUsuario */,
 				AC48556824083CAB009D81AA /* Tutorial */,
@@ -396,6 +399,7 @@
 			files = (
 				AC702FCF23FCC74500F86049 /* Usuario.swift in Sources */,
 				AC702FCC23FCC6C700F86049 /* Mensagem.swift in Sources */,
+				ACB4504C2411E56800B4FF5F /* FamiliaDao.swift in Sources */,
 				AC1BB46423EDD90300AA88F5 /* HomeViewController.swift in Sources */,
 				AC1BB46923EDD9B400AA88F5 /* TarefasViewController.swift in Sources */,
 				AC48557124083DF6009D81AA /* Tela2ViewController.swift in Sources */,

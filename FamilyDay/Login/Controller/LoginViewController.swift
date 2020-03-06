@@ -24,22 +24,14 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         criarContaButton.layer.borderWidth = 2
         criarContaButton.layer.borderColor = UIColor(named: "Roxo")?.cgColor
+       
+        print(Configuration.shared.token)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     func irParaHome(usuario: Usuario){
         dismiss(animated: false, completion: nil)
@@ -58,7 +50,7 @@ class LoginViewController: UIViewController {
         
         if let login = loginTextField.text, let senha = senhaTextField.text {
             
-            UsuarioDao.getToken(login: login, senha: senha) { (token) in
+            UsuarioDao.getToken(login: "alexandrenet.robaert@gmail.com", senha: "psl159357") { (token) in
                 if let token = token {
                     UsuarioDao.getUserfor(token: token) { (usuario) in
                         if let usuario = usuario {

@@ -15,7 +15,7 @@ enum UserDefaultsKeys: String {
 
 class Configuration {
     
-    static let URL_API: String = "https://api-family-day.herokuapp.com/api/"
+    static let URL_API: String = "https://api-family-day.herokuapp.com/api"
     
     let defaults = UserDefaults.standard
     static var shared: Configuration = Configuration()

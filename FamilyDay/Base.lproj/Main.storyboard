@@ -386,7 +386,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4E8-Hw-Bc9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-196" y="-607"/>
+            <point key="canvasLocation" x="1057" y="-700"/>
         </scene>
         <!--Home-->
         <scene sceneID="mYG-ov-XYO">
@@ -687,6 +687,54 @@
             </objects>
             <point key="canvasLocation" x="1057" y="161"/>
         </scene>
+        <!--Metas-->
+        <scene sceneID="4GT-mJ-BZg">
+            <objects>
+                <viewController title="Metas" id="ng9-8h-6AJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cgj-sc-SFk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ROu-GZ-Pz3"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Metas" image="tortoise" catalog="system" id="xKP-mF-Aio"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uzx-fj-eeq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1793" y="161"/>
+        </scene>
+        <!--Membros-->
+        <scene sceneID="jf4-8a-Ukh">
+            <objects>
+                <viewController title="Membros" id="dpf-pB-E2u" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ipb-in-y7U">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="QDz-LG-Lbv"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Membros" image="person.2" catalog="system" id="dto-Ao-A5L"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dnq-Qk-Uo8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2543" y="161"/>
+        </scene>
+        <!--Ajustes-->
+        <scene sceneID="zrt-Mk-uVe">
+            <objects>
+                <viewController title="Ajustes" id="NNp-MU-k8E" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6q0-YC-dix">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="dd7-XQ-Qva"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="cHt-uw-9cr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eKn-H1-c02" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3291" y="161"/>
+        </scene>
         <!--LoginNavigationController-->
         <scene sceneID="SX0-n3-zsK">
             <objects>
@@ -720,11 +768,14 @@
                     <connections>
                         <segue destination="ZGR-D1-zuk" kind="relationship" relationship="viewControllers" id="8AN-Ml-JqW"/>
                         <segue destination="sgP-6O-Bzv" kind="relationship" relationship="viewControllers" id="OmI-4P-vzI"/>
+                        <segue destination="ng9-8h-6AJ" kind="relationship" relationship="viewControllers" id="MJQ-q8-GLL"/>
+                        <segue destination="dpf-pB-E2u" kind="relationship" relationship="viewControllers" id="pDn-v9-DAt"/>
+                        <segue destination="NNp-MU-k8E" kind="relationship" relationship="viewControllers" id="Oq7-WY-hEf"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DM0-1X-LBC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="679" y="-607"/>
+            <point key="canvasLocation" x="1793" y="-700"/>
         </scene>
     </scenes>
     <resources>
@@ -734,6 +785,8 @@
         <image name="icon" width="69.5" height="43"/>
         <image name="list.dash" catalog="system" width="64" height="42"/>
         <image name="person" catalog="system" width="64" height="58"/>
+        <image name="person.2" catalog="system" width="64" height="40"/>
+        <image name="tortoise" catalog="system" width="64" height="34"/>
         <namedColor name="Roxo">
             <color red="0.61960784313725492" green="0.0" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

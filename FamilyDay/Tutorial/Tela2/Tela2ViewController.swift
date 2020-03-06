@@ -20,16 +20,29 @@ class Tela2ViewController: UIViewController {
             labelDescricao.text = "Nome do grupo \(grupo) passado por parâmetro"
         }
     }
+    
+    func irParaHome(){
+        
+        let navigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SegundoNavigationController") as! UINavigationController
+        let tab = navigation.viewControllers.first as! UITabBarController
+        let vcHome = tab.viewControllers?.first as! HomeViewController
+        
+        UsuarioDao.getUserfor(token: Configuration.shared.token) { (usuario) in
+            if let user = usuario {
+                vcHome.user = user
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+                self.present(navigation, animated: true, completion: nil)
+                self.navigationController?.popViewController(animated: false)
+                self.navigationController?.dismiss(animated: false, completion: nil)
+            }
+        }
     }
-    */
-
+    
+    @IBAction func gravarFamilia(_ sender: Any) {
+        FamiliaDao.cadastrarFamilia(nomeFamilia: nomeGrupo) { (idFamilia) in
+            if let _ = idFamilia{
+                self.irParaHome()
+            }
+        }
+    }
 }

@@ -18,15 +18,6 @@ class Tela1ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-    }
-     */
     
     @IBAction func irParaSegundaTela(_ sender: UIButton) {
         let vc = Tela2ViewController()
