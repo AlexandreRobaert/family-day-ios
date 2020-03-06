@@ -2,7 +2,7 @@
 
 # TCC FamilyDay
 
-## *Trabalho dedicado a disciplina de AppDevelopment da POS graduação na Universidade PUC-PR*
+## *Trabalho dedicado a disciplina de "App Development" da POS graduação na Universidade PUC-PR*
 
 ## Alunos
 
