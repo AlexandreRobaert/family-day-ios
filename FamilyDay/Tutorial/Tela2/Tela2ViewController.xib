@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Tela2ViewController" customModule="Family_Day" customModuleProvider="target">
             <connections>
+                <outlet property="indicator" destination="VNx-h7-xGE" id="1CE-4K-PO1"/>
                 <outlet property="labelDescricao" destination="Dlx-lR-s6S" id="fwX-28-Njf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -48,10 +49,15 @@
                         <action selector="gravarFamilia:" destination="-1" eventType="touchUpInside" id="GJJ-DJ-hHj"/>
                     </connections>
                 </button>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="VNx-h7-xGE">
+                    <rect key="frame" x="197" y="607" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="JlV-ZB-0VV" firstAttribute="top" secondItem="VNx-h7-xGE" secondAttribute="bottom" constant="40" id="AlE-Ii-JV1"/>
                 <constraint firstItem="Dlx-lR-s6S" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="DRJ-DB-j2h"/>
+                <constraint firstItem="VNx-h7-xGE" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="FMn-Is-bQb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JlV-ZB-0VV" secondAttribute="bottom" constant="150" id="Fgy-sg-mto"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JlV-ZB-0VV" secondAttribute="trailing" constant="50" id="Lqo-WM-QXP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Dlx-lR-s6S" secondAttribute="trailing" constant="20" id="U08-UG-v7U"/>

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC1428D92412B80500BDBD27 /* CadastroMembroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1428D72412B80500BDBD27 /* CadastroMembroViewController.swift */; };
+		AC1428DA2412B80500BDBD27 /* CadastroMembroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC1428D82412B80500BDBD27 /* CadastroMembroViewController.xib */; };
+		AC1428E02412C12100BDBD27 /* MembroDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1428DF2412C12100BDBD27 /* MembroDao.swift */; };
 		AC1A0DAB23F470970037AAB7 /* DetalhesTarefaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1A0DA923F470970037AAB7 /* DetalhesTarefaViewController.swift */; };
 		AC1A0DAC23F470970037AAB7 /* DetalhesTarefaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC1A0DAA23F470970037AAB7 /* DetalhesTarefaViewController.xib */; };
 		AC1BB46423EDD90300AA88F5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BB46323EDD90300AA88F5 /* HomeViewController.swift */; };
@@ -27,6 +30,7 @@
 		AC702FCF23FCC74500F86049 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC702FCE23FCC74500F86049 /* Usuario.swift */; };
 		AC7461F5240EC7C1000795C6 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7461F4240EC7C1000795C6 /* PerfilViewController.swift */; };
 		AC8B01A323FCCB8100F4B79E /* MenuOpcoesEnvio.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8B01A223FCCB8100F4B79E /* MenuOpcoesEnvio.swift */; };
+		ACADB82524152B060087FC24 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACADB82424152B060087FC24 /* Utils.swift */; };
 		ACB4504C2411E56800B4FF5F /* FamiliaDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB4504B2411E56800B4FF5F /* FamiliaDao.swift */; };
 		ACB7C5A323EB35D60010D603 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB7C5A223EB35D60010D603 /* AppDelegate.swift */; };
 		ACB7C5A523EB35D60010D603 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB7C5A423EB35D60010D603 /* SceneDelegate.swift */; };
@@ -38,6 +42,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC1428D72412B80500BDBD27 /* CadastroMembroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroMembroViewController.swift; sourceTree = "<group>"; };
+		AC1428D82412B80500BDBD27 /* CadastroMembroViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CadastroMembroViewController.xib; sourceTree = "<group>"; };
+		AC1428DF2412C12100BDBD27 /* MembroDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembroDao.swift; sourceTree = "<group>"; };
 		AC1A0DA923F470970037AAB7 /* DetalhesTarefaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesTarefaViewController.swift; sourceTree = "<group>"; };
 		AC1A0DAA23F470970037AAB7 /* DetalhesTarefaViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetalhesTarefaViewController.xib; sourceTree = "<group>"; };
 		AC1BB46323EDD90300AA88F5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +64,7 @@
 		AC702FCE23FCC74500F86049 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		AC7461F4240EC7C1000795C6 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		AC8B01A223FCCB8100F4B79E /* MenuOpcoesEnvio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOpcoesEnvio.swift; sourceTree = "<group>"; };
+		ACADB82424152B060087FC24 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		ACB4504B2411E56800B4FF5F /* FamiliaDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamiliaDao.swift; sourceTree = "<group>"; };
 		ACB7C59F23EB35D60010D603 /* Family Day.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Family Day.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB7C5A223EB35D60010D603 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +94,15 @@
 			children = (
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		AC1428D62412B7DA00BDBD27 /* CadastroMembro */ = {
+			isa = PBXGroup;
+			children = (
+				AC1428D82412B80500BDBD27 /* CadastroMembroViewController.xib */,
+				AC1428D72412B80500BDBD27 /* CadastroMembroViewController.swift */,
+			);
+			path = CadastroMembro;
 			sourceTree = "<group>";
 		};
 		AC1BB46223EDD8DC00AA88F5 /* Home */ = {
@@ -164,6 +181,7 @@
 			children = (
 				AC4D949F240C2F72002CF0DB /* UsuarioDao.swift */,
 				ACB4504B2411E56800B4FF5F /* FamiliaDao.swift */,
+				AC1428DF2412C12100BDBD27 /* MembroDao.swift */,
 			);
 			path = Dao;
 			sourceTree = "<group>";
@@ -190,6 +208,7 @@
 				AC702FCB23FCC6C700F86049 /* Mensagem.swift */,
 				AC8B01A223FCCB8100F4B79E /* MenuOpcoesEnvio.swift */,
 				ACFED43524098FA30094727F /* Configuration.swift */,
+				ACADB82424152B060087FC24 /* Utils.swift */,
 			);
 			path = Componentes;
 			sourceTree = "<group>";
@@ -285,6 +304,7 @@
 				AC1BB46623EDD99C00AA88F5 /* Tarefas */,
 				AC7461F6240EC7CC000795C6 /* Perfil */,
 				AC702FC423FC4B2D00F86049 /* Convite */,
+				AC1428D62412B7DA00BDBD27 /* CadastroMembro */,
 				AC559BE823F4EB8C000B7EA5 /* Componentes */,
 				ACB7C5AB23EB35D70010D603 /* Assets.xcassets */,
 				ACB7C5B023EB35D70010D603 /* Info.plist */,
@@ -386,6 +406,7 @@
 				AC1A0DAC23F470970037AAB7 /* DetalhesTarefaViewController.xib in Resources */,
 				AC702FCA23FC4DD500F86049 /* ConviteViewController.xib in Resources */,
 				AC48557224083DF6009D81AA /* Tela2ViewController.xib in Resources */,
+				AC1428DA2412B80500BDBD27 /* CadastroMembroViewController.xib in Resources */,
 				ACB7C5AA23EB35D60010D603 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,10 +427,13 @@
 				AC1F0BE723ECA713005DA588 /* CadastrarUsuarioViewController.swift in Sources */,
 				AC4D949D240C1748002CF0DB /* TarefasCollectionViewCell.swift in Sources */,
 				AC7461F5240EC7C1000795C6 /* PerfilViewController.swift in Sources */,
+				AC1428E02412C12100BDBD27 /* MembroDao.swift in Sources */,
 				AC702FC923FC4DD500F86049 /* ConviteViewController.swift in Sources */,
 				ACB7C5B723EB404E0010D603 /* LoginViewController.swift in Sources */,
 				AC48556B24083CDA009D81AA /* Tela1ViewController.swift in Sources */,
 				AC4D949C240C1748002CF0DB /* MetasCollectionViewCell.swift in Sources */,
+				AC1428D92412B80500BDBD27 /* CadastroMembroViewController.swift in Sources */,
+				ACADB82524152B060087FC24 /* Utils.swift in Sources */,
 				ACFED43624098FA30094727F /* Configuration.swift in Sources */,
 				ACB7C5A323EB35D60010D603 /* AppDelegate.swift in Sources */,
 				AC1A0DAB23F470970037AAB7 /* DetalhesTarefaViewController.swift in Sources */,

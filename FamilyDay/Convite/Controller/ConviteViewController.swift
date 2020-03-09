@@ -28,8 +28,6 @@ class ConviteViewController: UIViewController {
         guard let email = emailTextfield.text else {return}
         guard let telefone = telefoneTextField.text else {return}
         
-        let usuario = Usuario(id: "", nome: nome, dataNascimento: Date(), telefone: telefone, tipo: "", email: email, genero: "", senha: "")
-        
         let items = ["Olá \(nome) nosso aplicativos para baixar \(URL(string: "https://apps.apple.com/br/app/township/id781424368?mt=12")!)"]
         let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
         present(ac, animated: true)

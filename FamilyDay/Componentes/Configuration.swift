@@ -11,6 +11,7 @@ import Foundation
 enum UserDefaultsKeys: String {
     case token = "token"
     case primeiraVez = "primeiraVez"
+    case idFamilia = "idFamilia"
 }
 
 class Configuration {
@@ -29,6 +30,15 @@ class Configuration {
         }
     }
     
+    var idFamilia: String {
+        get {
+            return defaults.string(forKey: UserDefaultsKeys.idFamilia.rawValue)!
+        }
+        set {
+            defaults.set(newValue, forKey: UserDefaultsKeys.idFamilia.rawValue)
+        }
+    }
+    
     var jaIniciouTutorial: Bool {
         get {
             return defaults.bool(forKey: UserDefaultsKeys.primeiraVez.rawValue)
@@ -39,6 +49,6 @@ class Configuration {
     }
     
     private init() {
-        print("Já acessou Tutorial: \(self.jaIniciouTutorial)")
+        print("idFamilia \(idFamilia)")
     }
 }

@@ -95,6 +95,9 @@
                                                 <integer key="value" value="22"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="testeTela:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vQX-Xu-qby"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hZ-Ay-Has">
                                         <rect key="frame" x="0.0" y="535.5" width="374" height="45"/>
@@ -147,7 +150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2087" y="160"/>
+            <point key="canvasLocation" x="1454" y="924"/>
         </scene>
         <!--Cadastro-->
         <scene sceneID="swU-FN-Nap">
@@ -227,8 +230,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mjz-qR-6Zz">
                                         <rect key="frame" x="0.0" y="484.5" width="374" height="45"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jU1-nn-172">
-                                                <rect key="frame" x="187" y="22.5" width="0.0" height="0.0"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jU1-nn-172">
+                                                <rect key="frame" x="5" y="22.5" width="364" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -240,6 +243,8 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="jU1-nn-172" firstAttribute="leading" secondItem="mjz-qR-6Zz" secondAttribute="leading" constant="5" id="QBp-TK-vfV"/>
+                                            <constraint firstAttribute="trailing" secondItem="jU1-nn-172" secondAttribute="trailing" constant="5" id="TLQ-1M-aip"/>
                                             <constraint firstItem="jU1-nn-172" firstAttribute="centerY" secondItem="mjz-qR-6Zz" secondAttribute="centerY" id="YWd-xW-xlt"/>
                                             <constraint firstItem="jU1-nn-172" firstAttribute="centerX" secondItem="mjz-qR-6Zz" secondAttribute="centerX" id="zWN-L9-gcH"/>
                                         </constraints>
@@ -297,7 +302,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rW1-fK-BxG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-601" y="159"/>
+            <point key="canvasLocation" x="2941" y="923"/>
         </scene>
         <!--Tipo Perfil-->
         <scene sceneID="jkU-G1-UiU">
@@ -370,7 +375,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PXL-aa-86r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1339.1304347826087" y="158.70535714285714"/>
+            <point key="canvasLocation" x="2203" y="923"/>
         </scene>
         <!--HomeNavigationController-->
         <scene sceneID="OnZ-cp-0uv">
@@ -386,7 +391,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4E8-Hw-Bc9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057" y="-700"/>
+            <point key="canvasLocation" x="1057" y="-733"/>
         </scene>
         <!--Home-->
         <scene sceneID="mYG-ov-XYO">
@@ -751,7 +756,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zA1-zZ-NFC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2087" y="-592"/>
+            <point key="canvasLocation" x="645" y="925"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="YQ9-2M-Pgo">
@@ -770,12 +775,12 @@
                         <segue destination="sgP-6O-Bzv" kind="relationship" relationship="viewControllers" id="OmI-4P-vzI"/>
                         <segue destination="ng9-8h-6AJ" kind="relationship" relationship="viewControllers" id="MJQ-q8-GLL"/>
                         <segue destination="dpf-pB-E2u" kind="relationship" relationship="viewControllers" id="pDn-v9-DAt"/>
-                        <segue destination="NNp-MU-k8E" kind="relationship" relationship="viewControllers" id="Oq7-WY-hEf"/>
+                        <segue destination="NNp-MU-k8E" kind="relationship" relationship="viewControllers" id="jSS-eH-2iz"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DM0-1X-LBC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1793" y="-700"/>
+            <point key="canvasLocation" x="1793" y="-733"/>
         </scene>
     </scenes>
     <resources>

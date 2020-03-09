@@ -24,8 +24,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         criarContaButton.layer.borderWidth = 2
         criarContaButton.layer.borderColor = UIColor(named: "Roxo")?.cgColor
-       
-        print(Configuration.shared.token)
+        let _ = Configuration.shared
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,7 +47,7 @@ class LoginViewController: UIViewController {
         mensagemLoginLabel.text = ""
         indicator.isHidden = false
         
-        if let login = loginTextField.text, let senha = senhaTextField.text {
+        if let login = loginTextField.text, !login.isEmpty, let senha = senhaTextField.text, !senha.isEmpty {
             
             UsuarioDao.getToken(login: "alexandrenet.robaert@gmail.com", senha: "psl159357") { (token) in
                 if let token = token {
@@ -58,14 +57,19 @@ class LoginViewController: UIViewController {
                         }else{
                             self.mensagemLoginLabel.text = "Usuário Não Encontrado"
                         }
+                        self.indicator.isHidden = true
                     }
                 }else{
                     self.mensagemLoginLabel.text = "Login Inválido"
+                    self.indicator.isHidden = true
                 }
             }
         }else{
-            self.mensagemLoginLabel.text = "Todos os campos devem ser preenchidos"
+            self.mensagemLoginLabel.text = "Campo Login e Senha devem ser preenchidos!"
+            self.indicator.isHidden = true
         }
-        self.indicator.isHidden = true
+    }
+    @IBAction func testeTela(_ sender: Any) {
+        navigationController?.pushViewController(CadastroMembroViewController(), animated: true)
     }
 }

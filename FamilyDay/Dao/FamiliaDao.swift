@@ -17,11 +17,11 @@ class FamiliaDao {
         let header: HTTPHeaders = ["x-access-token": Configuration.shared.token]
         let parametros = ["nome": nomeFamilia]
         AF.request("\(Configuration.URL_API)/familias", method: .post, parameters: parametros, headers: header).responseJSON { (response) in
-            
+            print(response.result)
             switch response.result {
                 case .success(let body as [String: Any]):
                     let id = (body["retorno"] as! [String: String])["idFamilia"]
-                    print(id)
+                    Configuration.shared.idFamilia = id!
                     completion(id)
                     break
                 case .failure(let error):

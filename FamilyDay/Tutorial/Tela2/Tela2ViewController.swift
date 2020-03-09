@@ -12,6 +12,7 @@ class Tela2ViewController: UIViewController {
 
     @IBOutlet weak var labelDescricao: UILabel!
     var nomeGrupo: String!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,7 @@ class Tela2ViewController: UIViewController {
         if let grupo = nomeGrupo {
             labelDescricao.text = "Nome do grupo \(grupo) passado por parâmetro"
         }
+        indicator.isHidden = true
     }
     
     func irParaHome(){
@@ -39,9 +41,11 @@ class Tela2ViewController: UIViewController {
     }
     
     @IBAction func gravarFamilia(_ sender: Any) {
+        indicator.isHidden = false
         FamiliaDao.cadastrarFamilia(nomeFamilia: nomeGrupo) { (idFamilia) in
             if let _ = idFamilia{
-                self.irParaHome()
+                self.indicator.isHidden = true
+                self.navigationController?.pushViewController(CadastroMembroViewController(), animated: true)
             }
         }
     }
