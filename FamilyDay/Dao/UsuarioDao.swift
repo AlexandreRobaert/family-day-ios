@@ -31,7 +31,9 @@ class UsuarioDao {
         AF.request("\(Configuration.URL_API)/login", method: .post, headers: headers).responseJSON { (response) in
             switch response.result {
             case .success(let value as [String: Any]):
-                completion(value["token"] as? String)
+                let token = value["token"] as! String
+                Configuration.shared.token = token
+                completion(token)
                 break
             case .success(_):
                 print("Sucesso sem usuário")

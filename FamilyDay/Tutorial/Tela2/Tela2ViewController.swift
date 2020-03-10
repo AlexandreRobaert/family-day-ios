@@ -45,7 +45,7 @@ class Tela2ViewController: UIViewController {
         FamiliaDao.cadastrarFamilia(nomeFamilia: nomeGrupo) { (idFamilia) in
             if let _ = idFamilia{
                 self.indicator.isHidden = true
-                self.navigationController?.pushViewController(CadastroMembroViewController(), animated: true)
+                self.navigationController?.pushViewController(CadastroMetaViewController(), animated: true)
             }
         }
     }

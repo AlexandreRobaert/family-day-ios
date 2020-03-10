@@ -14,7 +14,6 @@
 		AC1A0DAC23F470970037AAB7 /* DetalhesTarefaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC1A0DAA23F470970037AAB7 /* DetalhesTarefaViewController.xib */; };
 		AC1BB46423EDD90300AA88F5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BB46323EDD90300AA88F5 /* HomeViewController.swift */; };
 		AC1BB46923EDD9B400AA88F5 /* TarefasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BB46823EDD9B400AA88F5 /* TarefasViewController.swift */; };
-		AC1F0BE723ECA713005DA588 /* CadastrarUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1F0BE623ECA713005DA588 /* CadastrarUsuarioViewController.swift */; };
 		AC48556B24083CDA009D81AA /* Tela1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC48556924083CDA009D81AA /* Tela1ViewController.swift */; };
 		AC48556C24083CDA009D81AA /* Tela1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC48556A24083CDA009D81AA /* Tela1ViewController.xib */; };
 		AC48557124083DF6009D81AA /* Tela2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC48556F24083DF6009D81AA /* Tela2ViewController.swift */; };
@@ -22,6 +21,15 @@
 		AC4D949C240C1748002CF0DB /* MetasCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4D949A240C1748002CF0DB /* MetasCollectionViewCell.swift */; };
 		AC4D949D240C1748002CF0DB /* TarefasCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4D949B240C1748002CF0DB /* TarefasCollectionViewCell.swift */; };
 		AC4D94A0240C2F72002CF0DB /* UsuarioDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4D949F240C2F72002CF0DB /* UsuarioDao.swift */; };
+		AC5109DB241748FB00113FB1 /* MetaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5109DA241748FB00113FB1 /* MetaTableViewCell.swift */; };
+		AC5109E02417582800113FB1 /* ScannerQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5109DE2417582800113FB1 /* ScannerQRCodeViewController.swift */; };
+		AC5109E12417582800113FB1 /* ScannerQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC5109DF2417582800113FB1 /* ScannerQRCodeViewController.xib */; };
+		AC5109E52417686E00113FB1 /* CadastroUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5109E32417686E00113FB1 /* CadastroUsuarioViewController.swift */; };
+		AC5109E62417686E00113FB1 /* CadastroUsuarioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC5109E42417686E00113FB1 /* CadastroUsuarioViewController.xib */; };
+		AC58EE23241616DE00CEB18B /* CadastroMetaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC58EE21241616DE00CEB18B /* CadastroMetaViewController.swift */; };
+		AC58EE24241616DE00CEB18B /* CadastroMetaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC58EE22241616DE00CEB18B /* CadastroMetaViewController.xib */; };
+		AC58EE26241622DB00CEB18B /* MetaDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC58EE25241622DB00CEB18B /* MetaDao.swift */; };
+		AC58EE282416234500CEB18B /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC58EE272416234500CEB18B /* Meta.swift */; };
 		AC6123A923F25D2F00C4DEA1 /* TarefaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6123A823F25D2F00C4DEA1 /* TarefaTableViewCell.swift */; };
 		AC6F18D6240AA9E8003DC31D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AC6F18D5240AA9E8003DC31D /* Alamofire */; };
 		AC702FC923FC4DD500F86049 /* ConviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC702FC723FC4DD500F86049 /* ConviteViewController.swift */; };
@@ -38,6 +46,7 @@
 		ACB7C5AC23EB35D70010D603 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB7C5AB23EB35D70010D603 /* Assets.xcassets */; };
 		ACB7C5AF23EB35D70010D603 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB7C5AD23EB35D70010D603 /* LaunchScreen.storyboard */; };
 		ACB7C5B723EB404E0010D603 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB7C5B623EB404E0010D603 /* LoginViewController.swift */; };
+		ACF264CA2416E36A00BC621E /* TabMetasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF264C92416E36A00BC621E /* TabMetasViewController.swift */; };
 		ACFED43624098FA30094727F /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFED43524098FA30094727F /* Configuration.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +58,6 @@
 		AC1A0DAA23F470970037AAB7 /* DetalhesTarefaViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetalhesTarefaViewController.xib; sourceTree = "<group>"; };
 		AC1BB46323EDD90300AA88F5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AC1BB46823EDD9B400AA88F5 /* TarefasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarefasViewController.swift; sourceTree = "<group>"; };
-		AC1F0BE623ECA713005DA588 /* CadastrarUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastrarUsuarioViewController.swift; sourceTree = "<group>"; };
 		AC48556924083CDA009D81AA /* Tela1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tela1ViewController.swift; sourceTree = "<group>"; };
 		AC48556A24083CDA009D81AA /* Tela1ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Tela1ViewController.xib; sourceTree = "<group>"; };
 		AC48556F24083DF6009D81AA /* Tela2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tela2ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +65,15 @@
 		AC4D949A240C1748002CF0DB /* MetasCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetasCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC4D949B240C1748002CF0DB /* TarefasCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TarefasCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC4D949F240C2F72002CF0DB /* UsuarioDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioDao.swift; sourceTree = "<group>"; };
+		AC5109DA241748FB00113FB1 /* MetaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaTableViewCell.swift; sourceTree = "<group>"; };
+		AC5109DE2417582800113FB1 /* ScannerQRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerQRCodeViewController.swift; sourceTree = "<group>"; };
+		AC5109DF2417582800113FB1 /* ScannerQRCodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScannerQRCodeViewController.xib; sourceTree = "<group>"; };
+		AC5109E32417686E00113FB1 /* CadastroUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroUsuarioViewController.swift; sourceTree = "<group>"; };
+		AC5109E42417686E00113FB1 /* CadastroUsuarioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CadastroUsuarioViewController.xib; sourceTree = "<group>"; };
+		AC58EE21241616DE00CEB18B /* CadastroMetaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroMetaViewController.swift; sourceTree = "<group>"; };
+		AC58EE22241616DE00CEB18B /* CadastroMetaViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CadastroMetaViewController.xib; sourceTree = "<group>"; };
+		AC58EE25241622DB00CEB18B /* MetaDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaDao.swift; sourceTree = "<group>"; };
+		AC58EE272416234500CEB18B /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
 		AC6123A823F25D2F00C4DEA1 /* TarefaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarefaTableViewCell.swift; sourceTree = "<group>"; };
 		AC702FC723FC4DD500F86049 /* ConviteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConviteViewController.swift; sourceTree = "<group>"; };
 		AC702FC823FC4DD500F86049 /* ConviteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConviteViewController.xib; sourceTree = "<group>"; };
@@ -74,6 +91,7 @@
 		ACB7C5AE23EB35D70010D603 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACB7C5B023EB35D70010D603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACB7C5B623EB404E0010D603 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		ACF264C92416E36A00BC621E /* TabMetasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMetasViewController.swift; sourceTree = "<group>"; };
 		ACFED43524098FA30094727F /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,6 +200,7 @@
 				AC4D949F240C2F72002CF0DB /* UsuarioDao.swift */,
 				ACB4504B2411E56800B4FF5F /* FamiliaDao.swift */,
 				AC1428DF2412C12100BDBD27 /* MembroDao.swift */,
+				AC58EE25241622DB00CEB18B /* MetaDao.swift */,
 			);
 			path = Dao;
 			sourceTree = "<group>";
@@ -189,17 +208,19 @@
 		AC4F675723EDD1A700D07641 /* CadastroUsuario */ = {
 			isa = PBXGroup;
 			children = (
-				AC4F675823EDD1D500D07641 /* Controller */,
+				AC5109E32417686E00113FB1 /* CadastroUsuarioViewController.swift */,
+				AC5109E42417686E00113FB1 /* CadastroUsuarioViewController.xib */,
 			);
 			path = CadastroUsuario;
 			sourceTree = "<group>";
 		};
-		AC4F675823EDD1D500D07641 /* Controller */ = {
+		AC5109E22417582C00113FB1 /* ScannerQRCode */ = {
 			isa = PBXGroup;
 			children = (
-				AC1F0BE623ECA713005DA588 /* CadastrarUsuarioViewController.swift */,
+				AC5109DF2417582800113FB1 /* ScannerQRCodeViewController.xib */,
+				AC5109DE2417582800113FB1 /* ScannerQRCodeViewController.swift */,
 			);
-			path = Controller;
+			path = ScannerQRCode;
 			sourceTree = "<group>";
 		};
 		AC559BE823F4EB8C000B7EA5 /* Componentes */ = {
@@ -211,6 +232,16 @@
 				ACADB82424152B060087FC24 /* Utils.swift */,
 			);
 			path = Componentes;
+			sourceTree = "<group>";
+		};
+		AC58EE1E241616A700CEB18B /* CadastroMeta */ = {
+			isa = PBXGroup;
+			children = (
+				AC58EE22241616DE00CEB18B /* CadastroMetaViewController.xib */,
+				AC58EE21241616DE00CEB18B /* CadastroMetaViewController.swift */,
+			);
+			name = CadastroMeta;
+			path = Componentes/CadastroMeta;
 			sourceTree = "<group>";
 		};
 		AC6123A723F25D1100C4DEA1 /* View */ = {
@@ -225,32 +256,17 @@
 		AC702FC423FC4B2D00F86049 /* Convite */ = {
 			isa = PBXGroup;
 			children = (
-				AC702FC623FC4B5100F86049 /* View */,
-				AC702FC523FC4B4900F86049 /* Controller */,
-			);
-			path = Convite;
-			sourceTree = "<group>";
-		};
-		AC702FC523FC4B4900F86049 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
+				AC702FC823FC4DD500F86049 /* ConviteViewController.xib */,
 				AC702FC723FC4DD500F86049 /* ConviteViewController.swift */,
 			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		AC702FC623FC4B5100F86049 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				AC702FC823FC4DD500F86049 /* ConviteViewController.xib */,
-			);
-			path = View;
+			path = Convite;
 			sourceTree = "<group>";
 		};
 		AC702FCD23FCC6F700F86049 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				AC702FCE23FCC74500F86049 /* Usuario.swift */,
+				AC58EE272416234500CEB18B /* Meta.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -258,17 +274,9 @@
 		AC7461F6240EC7CC000795C6 /* Perfil */ = {
 			isa = PBXGroup;
 			children = (
-				AC7461F7240EC7E6000795C6 /* Controller */,
-			);
-			path = Perfil;
-			sourceTree = "<group>";
-		};
-		AC7461F7240EC7E6000795C6 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
 				AC7461F4240EC7C1000795C6 /* PerfilViewController.swift */,
 			);
-			path = Controller;
+			path = Perfil;
 			sourceTree = "<group>";
 		};
 		ACB7C59623EB35D60010D603 = {
@@ -298,13 +306,16 @@
 				AC702FCD23FCC6F700F86049 /* Model */,
 				AC4D949E240C2F52002CF0DB /* Dao */,
 				ACB7C5B823EB40530010D603 /* Login */,
-				AC4F675723EDD1A700D07641 /* CadastroUsuario */,
-				AC48556824083CAB009D81AA /* Tutorial */,
 				AC1BB46223EDD8DC00AA88F5 /* Home */,
+				ACF264CB2416E36F00BC621E /* TabMetas */,
+				AC4F675723EDD1A700D07641 /* CadastroUsuario */,
+				AC1428D62412B7DA00BDBD27 /* CadastroMembro */,
+				AC58EE1E241616A700CEB18B /* CadastroMeta */,
+				AC48556824083CAB009D81AA /* Tutorial */,
 				AC1BB46623EDD99C00AA88F5 /* Tarefas */,
 				AC7461F6240EC7CC000795C6 /* Perfil */,
 				AC702FC423FC4B2D00F86049 /* Convite */,
-				AC1428D62412B7DA00BDBD27 /* CadastroMembro */,
+				AC5109E22417582C00113FB1 /* ScannerQRCode */,
 				AC559BE823F4EB8C000B7EA5 /* Componentes */,
 				ACB7C5AB23EB35D70010D603 /* Assets.xcassets */,
 				ACB7C5B023EB35D70010D603 /* Info.plist */,
@@ -315,7 +326,6 @@
 		ACB7C5B823EB40530010D603 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				ACB7C5BA23EB406A0010D603 /* View */,
 				ACB7C5B923EB40600010D603 /* Controller */,
 			);
 			path = Login;
@@ -329,11 +339,13 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		ACB7C5BA23EB406A0010D603 /* View */ = {
+		ACF264CB2416E36F00BC621E /* TabMetas */ = {
 			isa = PBXGroup;
 			children = (
+				ACF264C92416E36A00BC621E /* TabMetasViewController.swift */,
+				AC5109DA241748FB00113FB1 /* MetaTableViewCell.swift */,
 			);
-			path = View;
+			path = TabMetas;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,11 +413,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC48556C24083CDA009D81AA /* Tela1ViewController.xib in Resources */,
+				AC58EE24241616DE00CEB18B /* CadastroMetaViewController.xib in Resources */,
 				ACB7C5AF23EB35D70010D603 /* LaunchScreen.storyboard in Resources */,
 				ACB7C5AC23EB35D70010D603 /* Assets.xcassets in Resources */,
+				AC5109E62417686E00113FB1 /* CadastroUsuarioViewController.xib in Resources */,
 				AC1A0DAC23F470970037AAB7 /* DetalhesTarefaViewController.xib in Resources */,
 				AC702FCA23FC4DD500F86049 /* ConviteViewController.xib in Resources */,
 				AC48557224083DF6009D81AA /* Tela2ViewController.xib in Resources */,
+				AC5109E12417582800113FB1 /* ScannerQRCodeViewController.xib in Resources */,
 				AC1428DA2412B80500BDBD27 /* CadastroMembroViewController.xib in Resources */,
 				ACB7C5AA23EB35D60010D603 /* Main.storyboard in Resources */,
 			);
@@ -418,28 +433,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC5109DB241748FB00113FB1 /* MetaTableViewCell.swift in Sources */,
 				AC702FCF23FCC74500F86049 /* Usuario.swift in Sources */,
 				AC702FCC23FCC6C700F86049 /* Mensagem.swift in Sources */,
 				ACB4504C2411E56800B4FF5F /* FamiliaDao.swift in Sources */,
 				AC1BB46423EDD90300AA88F5 /* HomeViewController.swift in Sources */,
+				AC5109E02417582800113FB1 /* ScannerQRCodeViewController.swift in Sources */,
 				AC1BB46923EDD9B400AA88F5 /* TarefasViewController.swift in Sources */,
 				AC48557124083DF6009D81AA /* Tela2ViewController.swift in Sources */,
-				AC1F0BE723ECA713005DA588 /* CadastrarUsuarioViewController.swift in Sources */,
 				AC4D949D240C1748002CF0DB /* TarefasCollectionViewCell.swift in Sources */,
 				AC7461F5240EC7C1000795C6 /* PerfilViewController.swift in Sources */,
 				AC1428E02412C12100BDBD27 /* MembroDao.swift in Sources */,
+				AC58EE282416234500CEB18B /* Meta.swift in Sources */,
 				AC702FC923FC4DD500F86049 /* ConviteViewController.swift in Sources */,
 				ACB7C5B723EB404E0010D603 /* LoginViewController.swift in Sources */,
 				AC48556B24083CDA009D81AA /* Tela1ViewController.swift in Sources */,
+				AC5109E52417686E00113FB1 /* CadastroUsuarioViewController.swift in Sources */,
 				AC4D949C240C1748002CF0DB /* MetasCollectionViewCell.swift in Sources */,
 				AC1428D92412B80500BDBD27 /* CadastroMembroViewController.swift in Sources */,
 				ACADB82524152B060087FC24 /* Utils.swift in Sources */,
 				ACFED43624098FA30094727F /* Configuration.swift in Sources */,
 				ACB7C5A323EB35D60010D603 /* AppDelegate.swift in Sources */,
+				ACF264CA2416E36A00BC621E /* TabMetasViewController.swift in Sources */,
 				AC1A0DAB23F470970037AAB7 /* DetalhesTarefaViewController.swift in Sources */,
 				ACB7C5A523EB35D60010D603 /* SceneDelegate.swift in Sources */,
+				AC58EE23241616DE00CEB18B /* CadastroMetaViewController.swift in Sources */,
 				AC4D94A0240C2F72002CF0DB /* UsuarioDao.swift in Sources */,
 				AC6123A923F25D2F00C4DEA1 /* TarefaTableViewCell.swift in Sources */,
+				AC58EE26241622DB00CEB18B /* MetaDao.swift in Sources */,
 				AC8B01A323FCCB8100F4B79E /* MenuOpcoesEnvio.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

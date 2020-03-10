@@ -1,16 +1,16 @@
 //
-//  CadastrarViewController.swift
+//  CadastroUsuarioViewController.swift
 //  FamilyDay
 //
-//  Created by Alexandre Robaert on 06/02/20.
+//  Created by Alexandre Robaert on 10/03/20.
 //  Copyright © 2020 Alexandre Robaert. All rights reserved.
 //
 
 import UIKit
 import Alamofire
 
-class CadastrarUsuarioViewController: UIViewController {
-
+class CadastroUsuarioViewController: UIViewController {
+    
     @IBOutlet weak var nomeTextField: UITextField!
     @IBOutlet weak var dataNascimentoTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -20,6 +20,7 @@ class CadastrarUsuarioViewController: UIViewController {
     @IBOutlet weak var mensagemLabel: UILabel!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var generoTextField: UITextField!
+    @IBOutlet weak var cadastrarButton: UIButton!
     
     
     lazy var tipoGeneroPicker: UIPickerView = {
@@ -32,10 +33,10 @@ class CadastrarUsuarioViewController: UIViewController {
     var datePicker: UIDatePicker = UIDatePicker()
     
     let generos: [String] = ["Masculino", "Feminino", "Outros"]
-    var perfil: String!
     
     let formatData = DateFormatter()
     var dataSelecionada: Date = Date()
+    var idade: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,6 +82,23 @@ class CadastrarUsuarioViewController: UIViewController {
         dataNascimentoTextField.text = formatData.string(from: datePicker.date)
         dataSelecionada = datePicker.date
         cancel()
+        
+        let now = Date()
+        let calendar = Calendar.current
+        
+        let ageComponents = calendar.dateComponents([.year], from: dataSelecionada, to: now)
+        idade = ageComponents.year!
+        
+        if idade < 18 {
+            mostrarAlertaDeIdade()
+        }
+    }
+    
+    func mostrarAlertaDeIdade(){
+        let alert = UIAlertController(title: "Menores de Idade", message: "Menores de idade não podem utilizar este app sem a permissão do responsável", preferredStyle: .alert)
+        let cancelar = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(cancelar)
+        present(alert, animated: true, completion: nil)
     }
     
     func irParaTutorial(){
@@ -95,6 +113,11 @@ class CadastrarUsuarioViewController: UIViewController {
     
     func salvarUsuario(){
         
+        for textField in Utils.getTextfield(view: view) {
+            textField.layer.borderWidth = 0.0
+        }
+        
+        cadastrarButton.isEnabled = false
         if !Utils.temTextFieldVazia(view: view){
             indicator.isHidden = false
             if let nome = nomeTextField.text, let email = emailTextField.text,
@@ -111,29 +134,35 @@ class CadastrarUsuarioViewController: UIViewController {
                 }
                 
                 if senha == senhaRepetida {
-                    let user = Usuario(id: "", nome: nome, dataNascimento: dataSelecionada, telefone: telefone, tipo: perfil, email: email, genero: sexo, senha: senha)
+                    let user = Usuario(id: "", nome: nome, dataNascimento: dataSelecionada, telefone: telefone, tipo: "RESPONSAVEL", email: email, genero: sexo, senha: senha)
                     UsuarioDao.cadastrarUsuario(user, deviceID: "DeviceInventado") { (user, arrayErros) in
                         if let _ = user?.id {
                             self.irParaTutorial()
                         }
                     }
                 }else{
+                    cadastrarButton.isEnabled = true
                     mensagemLabel.text = "Senha diferente do confirma senha!"
                     indicator.isHidden = true
                 }
             }
         }else{
+            cadastrarButton.isEnabled = true
             mensagemLabel.text = "Todos os campos devem ser preenchidos corretamente"
             indicator.isHidden = true
         }
     }
-
+    
     @IBAction func cadastrarUsuario(_ sender: UIButton) {
-        salvarUsuario()
+        if idade > 18 || idade == 0 {
+            salvarUsuario()
+        }else{
+            mostrarAlertaDeIdade()
+        }
     }
 }
 
-extension CadastrarUsuarioViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+extension CadastroUsuarioViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

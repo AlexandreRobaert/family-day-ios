@@ -37,7 +37,7 @@
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="rn8-q8-xQF"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="name"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" textContentType="name"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Data de nascimento" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Twe-8Q-skF">
                             <rect key="frame" x="0.0" y="257" width="374" height="45"/>

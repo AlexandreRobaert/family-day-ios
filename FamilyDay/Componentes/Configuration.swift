@@ -49,6 +49,5 @@ class Configuration {
     }
     
     private init() {
-        print("idFamilia \(idFamilia)")
     }
 }

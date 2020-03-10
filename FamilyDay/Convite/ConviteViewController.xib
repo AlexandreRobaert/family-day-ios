@@ -50,7 +50,7 @@
                                 <constraint firstAttribute="height" constant="45" id="3r0-sB-KH9"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" keyboardType="namePhonePad" textContentType="name"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="namePhonePad" textContentType="name"/>
                         </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ktU-xp-3no">
                             <rect key="frame" x="0.0" y="259" width="374" height="1"/>

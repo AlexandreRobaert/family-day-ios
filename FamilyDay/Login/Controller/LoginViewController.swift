@@ -46,12 +46,14 @@ class LoginViewController: UIViewController {
     @IBAction func login(_ sender: UIButton) {
         mensagemLoginLabel.text = ""
         indicator.isHidden = false
-        
+        entrarButton.isEnabled = false
         if let login = loginTextField.text, !login.isEmpty, let senha = senhaTextField.text, !senha.isEmpty {
             
             UsuarioDao.getToken(login: "alexandrenet.robaert@gmail.com", senha: "psl159357") { (token) in
+                self.entrarButton.isEnabled = true
                 if let token = token {
                     UsuarioDao.getUserfor(token: token) { (usuario) in
+                        self.entrarButton.isEnabled = true
                         if let usuario = usuario {
                             self.irParaHome(usuario: usuario)
                         }else{
@@ -65,11 +67,16 @@ class LoginViewController: UIViewController {
                 }
             }
         }else{
+            self.entrarButton.isEnabled = true
             self.mensagemLoginLabel.text = "Campo Login e Senha devem ser preenchidos!"
             self.indicator.isHidden = true
         }
-    }
+    } 
+    
     @IBAction func testeTela(_ sender: Any) {
-        navigationController?.pushViewController(CadastroMembroViewController(), animated: true)
+        
+    }
+    @IBAction func abrirTelaQRCode(_ sender: UIButton) {
+        navigationController?.pushViewController(ScannerQRCodeViewController(), animated: true)
     }
 }
