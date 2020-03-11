@@ -36,7 +36,7 @@ class CadastroMetaViewController: UIViewController {
             textField.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         }
         if let meta = criarMeta() {
-            MetaDao.cadastrarMeta(meta: meta, idFamilia: Configuration.shared.idFamilia) { (retorno) in
+            MetaDao.cadastrarMeta(meta: meta, idFamilia: Configuration.shared.idFamilia!) { (retorno) in
                 print("CadastrarMeta")
             }
         }

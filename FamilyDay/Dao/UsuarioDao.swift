@@ -31,9 +31,12 @@ class UsuarioDao {
         AF.request("\(Configuration.URL_API)/login", method: .post, headers: headers).responseJSON { (response) in
             switch response.result {
             case .success(let value as [String: Any]):
-                let token = value["token"] as! String
-                Configuration.shared.token = token
-                completion(token)
+                if let token = value["token"] as? String {
+                    Configuration.shared.token = token
+                    completion(token)
+                }else{
+                    completion(nil)
+                }
                 break
             case .success(_):
                 print("Sucesso sem usuário")
@@ -45,8 +48,7 @@ class UsuarioDao {
         }
     }
     
-    class func cadastrarUsuario(_ usuario: Usuario, deviceID: String, completion: @escaping (Usuario?, _ arrayDeErros: Array<String>?) -> Void){
-        let headers: HTTPHeaders = ["x-access-token": Configuration.shared.token]
+    class func cadastrarUsuario(_ usuario: Usuario, deviceID: String, completion: @escaping (String?, _ arrayDeErros: Array<String>?) -> Void){
         
         let fullISO8610Formatter = DateFormatter()
         fullISO8610Formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
@@ -54,16 +56,14 @@ class UsuarioDao {
         
         let parametros = ["nome": usuario.nome, "dataNascimento": stringData, "telefone": usuario.telefone, "tipo": usuario.tipo, "genero": usuario.genero, "email": usuario.email, "senha": usuario.senha, "os": "IOS", "deviceId": deviceID]
         
-        AF.request("\(Configuration.URL_API)/usuarios", method: .post, parameters: parametros, headers: headers).responseJSON { (response) in
+        AF.request("\(Configuration.URL_API)/usuarios", method: .post, parameters: parametros).responseJSON { (response) in
             switch response.result {
             case .success(let result as [String: Any]):
                 switch response.response?.statusCode {
                 case 201:
                     if let token = result["token"] as? String{
                         Configuration.shared.token = token
-                        var user = usuario
-                        user.id = (result["id"] as! String)
-                        completion(user, nil)
+                        completion((result["id"] as! String), nil)
                     }
                 default:
                     if let mensagens = result["motivo"] as? Array<String> {

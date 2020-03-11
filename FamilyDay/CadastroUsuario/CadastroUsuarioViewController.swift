@@ -135,8 +135,8 @@ class CadastroUsuarioViewController: UIViewController {
                 
                 if senha == senhaRepetida {
                     let user = Usuario(id: "", nome: nome, dataNascimento: dataSelecionada, telefone: telefone, tipo: "RESPONSAVEL", email: email, genero: sexo, senha: senha)
-                    UsuarioDao.cadastrarUsuario(user, deviceID: "DeviceInventado") { (user, arrayErros) in
-                        if let _ = user?.id {
+                    UsuarioDao.cadastrarUsuario(user, deviceID: "DeviceInventado") { (idUsuario, arrayErros) in
+                        if idUsuario != nil {
                             self.irParaTutorial()
                         }
                     }

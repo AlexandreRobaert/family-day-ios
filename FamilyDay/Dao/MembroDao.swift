@@ -17,7 +17,7 @@ class MembroDao {
         fullISO8610Formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         let stringData = fullISO8610Formatter.string(from: usuario.dataNascimento!)
         
-        let header: HTTPHeaders = ["x-access-token": Configuration.shared.token]
+        let header: HTTPHeaders = ["x-access-token": Configuration.shared.token!]
         
         let parametros = ["nome": usuario.nome, "dataNascimento": stringData, "telefone": usuario.telefone, "tipo": usuario.tipo, "genero": usuario.genero, "email": usuario.email, "familia": idFamilia]
         

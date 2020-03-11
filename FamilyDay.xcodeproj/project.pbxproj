@@ -37,7 +37,9 @@
 		AC702FCC23FCC6C700F86049 /* Mensagem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC702FCB23FCC6C700F86049 /* Mensagem.swift */; };
 		AC702FCF23FCC74500F86049 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC702FCE23FCC74500F86049 /* Usuario.swift */; };
 		AC7461F5240EC7C1000795C6 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7461F4240EC7C1000795C6 /* PerfilViewController.swift */; };
+		AC85E1CC24198020009D4310 /* MembrosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC85E1CB24198020009D4310 /* MembrosViewController.swift */; };
 		AC8B01A323FCCB8100F4B79E /* MenuOpcoesEnvio.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8B01A223FCCB8100F4B79E /* MenuOpcoesEnvio.swift */; };
+		AC9D47FB241812DE008ABF46 /* AjustesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D47FA241812DE008ABF46 /* AjustesViewController.swift */; };
 		ACADB82524152B060087FC24 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACADB82424152B060087FC24 /* Utils.swift */; };
 		ACB4504C2411E56800B4FF5F /* FamiliaDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB4504B2411E56800B4FF5F /* FamiliaDao.swift */; };
 		ACB7C5A323EB35D60010D603 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB7C5A223EB35D60010D603 /* AppDelegate.swift */; };
@@ -80,7 +82,9 @@
 		AC702FCB23FCC6C700F86049 /* Mensagem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mensagem.swift; sourceTree = "<group>"; };
 		AC702FCE23FCC74500F86049 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		AC7461F4240EC7C1000795C6 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
+		AC85E1CB24198020009D4310 /* MembrosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembrosViewController.swift; sourceTree = "<group>"; };
 		AC8B01A223FCCB8100F4B79E /* MenuOpcoesEnvio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOpcoesEnvio.swift; sourceTree = "<group>"; };
+		AC9D47FA241812DE008ABF46 /* AjustesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AjustesViewController.swift; sourceTree = "<group>"; };
 		ACADB82424152B060087FC24 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		ACB4504B2411E56800B4FF5F /* FamiliaDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamiliaDao.swift; sourceTree = "<group>"; };
 		ACB7C59F23EB35D60010D603 /* Family Day.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Family Day.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,13 +127,13 @@
 			path = CadastroMembro;
 			sourceTree = "<group>";
 		};
-		AC1BB46223EDD8DC00AA88F5 /* Home */ = {
+		AC1BB46223EDD8DC00AA88F5 /* TabHome */ = {
 			isa = PBXGroup;
 			children = (
 				AC4D9499240C1715002CF0DB /* View */,
 				AC1BB46523EDD90700AA88F5 /* Controller */,
 			);
-			path = Home;
+			path = TabHome;
 			sourceTree = "<group>";
 		};
 		AC1BB46523EDD90700AA88F5 /* Controller */ = {
@@ -140,13 +144,13 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		AC1BB46623EDD99C00AA88F5 /* Tarefas */ = {
+		AC1BB46623EDD99C00AA88F5 /* TabTarefas */ = {
 			isa = PBXGroup;
 			children = (
 				AC6123A723F25D1100C4DEA1 /* View */,
 				AC1BB46723EDD9A200AA88F5 /* Controller */,
 			);
-			path = Tarefas;
+			path = TabTarefas;
 			sourceTree = "<group>";
 		};
 		AC1BB46723EDD9A200AA88F5 /* Controller */ = {
@@ -279,6 +283,22 @@
 			path = Perfil;
 			sourceTree = "<group>";
 		};
+		AC85E1CD24198027009D4310 /* TabMembros */ = {
+			isa = PBXGroup;
+			children = (
+				AC85E1CB24198020009D4310 /* MembrosViewController.swift */,
+			);
+			path = TabMembros;
+			sourceTree = "<group>";
+		};
+		AC9D47FC241812E2008ABF46 /* TabAjustes */ = {
+			isa = PBXGroup;
+			children = (
+				AC9D47FA241812DE008ABF46 /* AjustesViewController.swift */,
+			);
+			path = TabAjustes;
+			sourceTree = "<group>";
+		};
 		ACB7C59623EB35D60010D603 = {
 			isa = PBXGroup;
 			children = (
@@ -306,13 +326,15 @@
 				AC702FCD23FCC6F700F86049 /* Model */,
 				AC4D949E240C2F52002CF0DB /* Dao */,
 				ACB7C5B823EB40530010D603 /* Login */,
-				AC1BB46223EDD8DC00AA88F5 /* Home */,
+				AC1BB46223EDD8DC00AA88F5 /* TabHome */,
+				AC1BB46623EDD99C00AA88F5 /* TabTarefas */,
 				ACF264CB2416E36F00BC621E /* TabMetas */,
+				AC85E1CD24198027009D4310 /* TabMembros */,
+				AC9D47FC241812E2008ABF46 /* TabAjustes */,
 				AC4F675723EDD1A700D07641 /* CadastroUsuario */,
 				AC1428D62412B7DA00BDBD27 /* CadastroMembro */,
 				AC58EE1E241616A700CEB18B /* CadastroMeta */,
 				AC48556824083CAB009D81AA /* Tutorial */,
-				AC1BB46623EDD99C00AA88F5 /* Tarefas */,
 				AC7461F6240EC7CC000795C6 /* Perfil */,
 				AC702FC423FC4B2D00F86049 /* Convite */,
 				AC5109E22417582C00113FB1 /* ScannerQRCode */,
@@ -440,6 +462,7 @@
 				AC1BB46423EDD90300AA88F5 /* HomeViewController.swift in Sources */,
 				AC5109E02417582800113FB1 /* ScannerQRCodeViewController.swift in Sources */,
 				AC1BB46923EDD9B400AA88F5 /* TarefasViewController.swift in Sources */,
+				AC85E1CC24198020009D4310 /* MembrosViewController.swift in Sources */,
 				AC48557124083DF6009D81AA /* Tela2ViewController.swift in Sources */,
 				AC4D949D240C1748002CF0DB /* TarefasCollectionViewCell.swift in Sources */,
 				AC7461F5240EC7C1000795C6 /* PerfilViewController.swift in Sources */,
@@ -449,6 +472,7 @@
 				ACB7C5B723EB404E0010D603 /* LoginViewController.swift in Sources */,
 				AC48556B24083CDA009D81AA /* Tela1ViewController.swift in Sources */,
 				AC5109E52417686E00113FB1 /* CadastroUsuarioViewController.swift in Sources */,
+				AC9D47FB241812DE008ABF46 /* AjustesViewController.swift in Sources */,
 				AC4D949C240C1748002CF0DB /* MetasCollectionViewCell.swift in Sources */,
 				AC1428D92412B80500BDBD27 /* CadastroMembroViewController.swift in Sources */,
 				ACADB82524152B060087FC24 /* Utils.swift in Sources */,

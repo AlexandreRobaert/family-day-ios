@@ -21,30 +21,21 @@ class Configuration {
     let defaults = UserDefaults.standard
     static var shared: Configuration = Configuration()
     
-    var token: String {
+    var token: String? {
         get {
-            return defaults.string(forKey: UserDefaultsKeys.token.rawValue)!
+            return defaults.string(forKey: UserDefaultsKeys.token.rawValue)
         }
         set {
             defaults.set(newValue, forKey: UserDefaultsKeys.token.rawValue)
         }
     }
     
-    var idFamilia: String {
+    var idFamilia: String? {
         get {
-            return defaults.string(forKey: UserDefaultsKeys.idFamilia.rawValue)!
+            return defaults.string(forKey: UserDefaultsKeys.idFamilia.rawValue)
         }
         set {
             defaults.set(newValue, forKey: UserDefaultsKeys.idFamilia.rawValue)
-        }
-    }
-    
-    var jaIniciouTutorial: Bool {
-        get {
-            return defaults.bool(forKey: UserDefaultsKeys.primeiraVez.rawValue)
-        }
-        set {
-            defaults.set(newValue, forKey: UserDefaultsKeys.primeiraVez.rawValue)
         }
     }
     

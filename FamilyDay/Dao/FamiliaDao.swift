@@ -14,7 +14,7 @@ class FamiliaDao {
     
     static func cadastrarFamilia(nomeFamilia: String, completion: @escaping(String?)->Void){
         
-        let header: HTTPHeaders = ["x-access-token": Configuration.shared.token]
+        let header: HTTPHeaders = ["x-access-token": Configuration.shared.token!]
         let parametros = ["nome": nomeFamilia]
         AF.request("\(Configuration.URL_API)/familias", method: .post, parameters: parametros, headers: header).responseJSON { (response) in
             print(response.result)

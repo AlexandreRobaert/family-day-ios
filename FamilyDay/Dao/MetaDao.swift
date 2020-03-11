@@ -13,7 +13,7 @@ class MetaDao {
     
     static func cadastrarMeta(meta: Meta, idFamilia: String, completion: @escaping(String?) -> Void) {
         
-        let header: HTTPHeaders = ["x-access-token": Configuration.shared.token]
+        let header: HTTPHeaders = ["x-access-token": Configuration.shared.token!]
         let parametros = ["titulo": "PS4", "descricao": "Seja um bom filho e será recompensado", "pontosAlvo": "500", "familia": idFamilia]
         
         AF.request("\(Configuration.URL_API)/metas", method: .post, parameters: parametros, headers: header).responseJSON { (response) in

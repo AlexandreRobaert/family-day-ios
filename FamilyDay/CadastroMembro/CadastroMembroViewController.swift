@@ -108,7 +108,7 @@ class CadastroMembroViewController: UIViewController {
                 
                 let user = Usuario(id: "nome", nome: nome, dataNascimento: dataSelecionada, telefone: telefone, tipo: perfil, email: email, genero: sexo, senha: "")
                 
-                MembroDao.cadastrarMembro(usuario: user, idFamilia: Configuration.shared.idFamilia) { (token) in
+                MembroDao.cadastrarMembro(usuario: user, idFamilia: Configuration.shared.idFamilia!) { (token) in
                     if let token = token {
                         print(token)
                     }

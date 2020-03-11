@@ -29,7 +29,7 @@ class Tela2ViewController: UIViewController {
         let tab = navigation.viewControllers.first as! UITabBarController
         let vcHome = tab.viewControllers?.first as! HomeViewController
         
-        UsuarioDao.getUserfor(token: Configuration.shared.token) { (usuario) in
+        UsuarioDao.getUserfor(token: Configuration.shared.token!) { (usuario) in
             if let user = usuario {
                 vcHome.user = user
 

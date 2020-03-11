@@ -37,16 +37,8 @@ class HomeViewController: UIViewController {
         
         nomePerfilLabel.text = user.nome
         tipoPerfilLabel.text = user.tipo
-        if Configuration.shared.jaIniciouTutorial == false {
-            Configuration.shared.jaIniciouTutorial = true
-        }
+        
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-    }
- 
 }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
