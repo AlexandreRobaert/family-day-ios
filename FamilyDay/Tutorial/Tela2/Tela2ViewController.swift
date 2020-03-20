@@ -11,8 +11,10 @@ import UIKit
 class Tela2ViewController: UIViewController {
 
     @IBOutlet weak var labelDescricao: UILabel!
-    var nomeGrupo: String!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
+    
+    var nomeGrupo: String!
+    var idUsuario: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +44,9 @@ class Tela2ViewController: UIViewController {
     
     @IBAction func gravarFamilia(_ sender: Any) {
         indicator.isHidden = false
-        FamiliaDao.cadastrarFamilia(nomeFamilia: nomeGrupo) { (idFamilia) in
-            if let _ = idFamilia{
+        
+        FamiliaDao.cadastrarFamilia(nomeFamilia: nomeGrupo, idUsuario: idUsuario) { (sucesso) in
+            if sucesso {
                 self.indicator.isHidden = true
                 self.navigationController?.pushViewController(CadastroMetaViewController(), animated: true)
             }

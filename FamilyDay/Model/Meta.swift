@@ -8,11 +8,17 @@
 
 import Foundation
 
-struct Meta {
+struct Meta: Codable {
     
     var id: String?
     var titulo: String
     var descricao: String
-    var pontos: Int
-    var nomeFilho: String?
+    var pontosAlvo: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "_id"
+        case titulo = "titulo"
+        case descricao = "descricao"
+        case pontosAlvo = "pontosAlvo"
+    }
 }

@@ -3,15 +3,18 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CadastroMembroViewController" customModule="Family_Day" customModuleProvider="target">
             <connections>
+                <outlet property="cadastrarButton" destination="EQN-hK-8Fc" id="JhD-df-BDN"/>
                 <outlet property="dataNascimentoTextField" destination="Twe-8Q-skF" id="Bj9-OT-UKc"/>
                 <outlet property="emailTextField" destination="riz-Lj-SCP" id="yqO-lr-Vs1"/>
                 <outlet property="generoTextField" destination="0Ve-34-zaG" id="F2Q-dR-EfB"/>
+                <outlet property="indicator" destination="SZ3-80-HmI" id="cir-jy-Mjl"/>
                 <outlet property="mensagemLabel" destination="goi-3E-lob" id="Bic-ba-4aK"/>
                 <outlet property="nomeTextField" destination="ES5-Jc-7de" id="2yq-gq-qCq"/>
                 <outlet property="perfilTextField" destination="BXW-mX-Bqd" id="lVq-B6-Dc2"/>
@@ -27,8 +30,9 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="daM-i9-yAj">
                     <rect key="frame" x="20" y="44" width="374" height="768"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="pUy-1H-OUg">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="192"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="pUy-1H-OUg">
+                            <rect key="frame" x="0.0" y="0.5" width="374" height="191"/>
+                            <color key="tintColor" name="Roxo"/>
                         </imageView>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome do membro" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="ES5-Jc-7de">
                             <rect key="frame" x="0.0" y="202" width="374" height="45"/>
@@ -93,10 +97,15 @@
                                     <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="SZ3-80-HmI">
+                                    <rect key="frame" x="177" y="80.5" width="20" height="20"/>
+                                </activityIndicatorView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstItem="goi-3E-lob" firstAttribute="centerY" secondItem="Wzt-lY-ihq" secondAttribute="centerY" id="Ea7-gk-YgP"/>
+                                <constraint firstItem="SZ3-80-HmI" firstAttribute="centerY" secondItem="Wzt-lY-ihq" secondAttribute="centerY" id="V1n-Hv-5Bf"/>
+                                <constraint firstItem="SZ3-80-HmI" firstAttribute="centerX" secondItem="Wzt-lY-ihq" secondAttribute="centerX" id="gQ3-r9-RUT"/>
                                 <constraint firstItem="goi-3E-lob" firstAttribute="centerX" secondItem="Wzt-lY-ihq" secondAttribute="centerX" id="oqN-P3-JvL"/>
                                 <constraint firstItem="goi-3E-lob" firstAttribute="leading" secondItem="Wzt-lY-ihq" secondAttribute="leading" constant="5" id="yGz-n4-lzh"/>
                                 <constraint firstAttribute="trailing" secondItem="goi-3E-lob" secondAttribute="trailing" constant="5" id="z2V-DK-FS9"/>
@@ -140,6 +149,9 @@
         </view>
     </objects>
     <resources>
-        <image name="icon" width="69.5" height="43"/>
+        <image name="person.circle.fill" catalog="system" width="64" height="60"/>
+        <namedColor name="Roxo">
+            <color red="0.61960784313725492" green="0.0" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

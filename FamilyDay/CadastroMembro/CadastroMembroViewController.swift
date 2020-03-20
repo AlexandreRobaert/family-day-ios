@@ -17,6 +17,8 @@ class CadastroMembroViewController: UIViewController {
     @IBOutlet weak var perfilTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var mensagemLabel: UILabel!
+    @IBOutlet weak var cadastrarButton: UIButton!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     lazy var tipoGeneroPicker: UIPickerView = {
         let picker = UIPickerView()
@@ -37,6 +39,8 @@ class CadastroMembroViewController: UIViewController {
     var dataSelecionada: Date = Date()
     let generos: [String] = ["Masculino", "Feminino", "Outros"]
     let tipoPerfil = ["DEPENDENTE", "RESPONSAVEL"]
+    
+    var delegate: ListaUsuarioDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,10 +96,11 @@ class CadastroMembroViewController: UIViewController {
     }
     
     func criarUsuario(){
-       
+        cadastrarButton.isEnabled = false
+        indicator.isHidden = false
         if !Utils.temTextFieldVazia(view: view){
             if let nome = nomeTextField.text, let genero = generoTextField.text,
-                let telefone = telefoneTextField.text, let perfil = perfilTextField.text, let email = telefoneTextField.text {
+                let telefone = telefoneTextField.text, let perfil = perfilTextField.text, let email = emailTextField.text {
                 
                 var sexo = ""
                 if genero.uppercased() == "MASCULINO"{
@@ -106,16 +111,29 @@ class CadastroMembroViewController: UIViewController {
                     sexo = "OUTROS"
                 }
                 
-                let user = Usuario(id: "nome", nome: nome, dataNascimento: dataSelecionada, telefone: telefone, tipo: perfil, email: email, genero: sexo, senha: "")
+                let user = Usuario(id: "nome", nome: nome, dataNascimento: dataSelecionada, telefone: telefone, tipo: perfil, email: email, genero: sexo, senha: "", idFamilia: "")
                 
-                MembroDao.cadastrarMembro(usuario: user, idFamilia: Configuration.shared.idFamilia!) { (token) in
-                    if let token = token {
-                        print(token)
+                UsuarioDao.cadastrarMembro(usuario: user, idFamilia: Configuration.shared.idFamilia!) { (idUsuario) in
+                    if let id = idUsuario {
+                        var usuario = user
+                        usuario.id = id
+                        
+                        if self.delegate != nil {
+                            self.delegate?.adicionarUsuarioNaLista(user: usuario)
+                        }
+                        
+                        self.navigationController?.popViewController(animated: true)
+                    }else{
+                        self.indicator.isHidden = true
+                        self.cadastrarButton.isEnabled = true
+                        self.mensagemLabel.text = "Erro ao gravar Membro!"
                     }
                 }
             }
         }else{
+            cadastrarButton.isEnabled = true
             mensagemLabel.text = "Todos os campos devem ser preenchidos!"
+            indicator.isHidden = true
         }
     }
     

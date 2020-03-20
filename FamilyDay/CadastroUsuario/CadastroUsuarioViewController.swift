@@ -21,6 +21,7 @@ class CadastroUsuarioViewController: UIViewController {
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var generoTextField: UITextField!
     @IBOutlet weak var cadastrarButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     
     lazy var tipoGeneroPicker: UIPickerView = {
@@ -62,6 +63,31 @@ class CadastroUsuarioViewController: UIViewController {
         dataNascimentoTextField.inputView = datePicker
         dataNascimentoTextField.inputAccessoryView = toolbarData
         
+        
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        
+    }
+    
+    @objc func adjustForKeyboard(notification: Notification) {
+        guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+
+        print("Entrou")
+        
+        let keyboardScreenEndFrame = keyboardValue.cgRectValue
+        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+
+        if notification.name == UIResponder.keyboardWillHideNotification {
+            scrollView.contentInset = .zero
+        } else {
+            scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height - view.safeAreaInsets.bottom, right: 0)
+        }
+
+        scrollView.scrollIndicatorInsets = scrollView.contentInset
+
+//        let selectedRange = scrollView.selectedRange
+//        scrollView.scrollRangeToVisible(selectedRange)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -101,10 +127,12 @@ class CadastroUsuarioViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func irParaTutorial(){
+    func irParaTutorial(idUsuario: String){
         
         navigationController?.dismiss(animated: false, completion: nil)
-        let navigation = UINavigationController(rootViewController: Tela1ViewController())
+        let vc = Tela1ViewController()
+        vc.idUsuario = idUsuario
+        let navigation = UINavigationController(rootViewController: vc)
         navigation.modalPresentationStyle = .fullScreen
         
         present(navigation, animated: true, completion: nil)
@@ -125,19 +153,23 @@ class CadastroUsuarioViewController: UIViewController {
                 let senhaRepetida = repetirSenhaTextField.text {
                 
                 var sexo = ""
-                if genero.uppercased() == "MASCULINO"{
+                if genero.uppercased() == "MASCULINO" {
                     sexo = "M"
                 }else if genero.uppercased() == "FEMININO"{
                     sexo = "F"
                 }else{
-                    sexo = "OUTROS"
+                    sexo = "OUTRO"
                 }
                 
                 if senha == senhaRepetida {
-                    let user = Usuario(id: "", nome: nome, dataNascimento: dataSelecionada, telefone: telefone, tipo: "RESPONSAVEL", email: email, genero: sexo, senha: senha)
-                    UsuarioDao.cadastrarUsuario(user, deviceID: "DeviceInventado") { (idUsuario, arrayErros) in
-                        if idUsuario != nil {
-                            self.irParaTutorial()
+                    let user = Usuario(id: "", nome: nome, dataNascimento: dataSelecionada, telefone: telefone, tipo: "RESPONSAVEL", email: email, genero: sexo, senha: senha, idFamilia: "")
+                    UsuarioDao.cadastrarUsuario(user, deviceID: "DeviceInventado") { (idUsuario, mensagemErro) in
+                        if let id = idUsuario  {
+                            self.irParaTutorial(idUsuario: id)
+                        }else{
+                            self.cadastrarButton.isEnabled = true
+                            self.indicator.isHidden = true
+                            self.mensagemLabel.text = mensagemErro!
                         }
                     }
                 }else{

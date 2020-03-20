@@ -7,7 +7,7 @@
 //
 import Foundation
 
-struct Usuario: Codable {
+struct Usuario: Codable, Equatable {
     var id: String?
     let nome: String
     let dataNascimento: Date?
@@ -16,6 +16,7 @@ struct Usuario: Codable {
     let email: String
     let genero: String
     let senha: String
+    let idFamilia: String
 
     enum CodingKeys: String, CodingKey {
         case id = "_id"
@@ -26,9 +27,10 @@ struct Usuario: Codable {
         case email = "email"
         case genero = "genero"
         case senha = "senha"
+        case idFamilia = "familia"
     }
     
-    init(id: String, nome: String, dataNascimento: Date, telefone: String, tipo: String, email: String, genero: String, senha: String) {
+    init(id: String, nome: String, dataNascimento: Date, telefone: String, tipo: String, email: String, genero: String, senha: String, idFamilia: String) {
         self.id = id
         self.nome = nome
         self.dataNascimento = dataNascimento
@@ -37,6 +39,8 @@ struct Usuario: Codable {
         self.email = email
         self.genero = genero
         self.senha = senha
+        self.idFamilia = idFamilia
+        
     }
     
     init(from decoder: Decoder) throws {
@@ -54,6 +58,7 @@ struct Usuario: Codable {
         email = try container.decode(String.self, forKey: .email)
         genero = try container.decode(String.self, forKey: .genero)
         senha = ""
+        idFamilia = try container.decode(String.self, forKey: .idFamilia)
     }
     
     func encode(to encoder: Encoder) throws {
@@ -68,6 +73,6 @@ struct Usuario: Codable {
         try container.encode(tipo, forKey: .tipo)
         try container.encode(email, forKey: .email)
         try container.encode(genero, forKey: .genero)
-        try container.encode(senha, forKey: CodingKeys.senha)
+        try container.encode(senha, forKey: .senha)
     }
 }

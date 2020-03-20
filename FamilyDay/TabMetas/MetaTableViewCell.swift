@@ -31,8 +31,7 @@ class MetaTableViewCell: UITableViewCell {
     func configuraCelula(_ meta: Meta){
         imageMeta.image = UIImage(systemName: "tortoise.fill")
         tituloMetaLabel.text = meta.titulo
-        nomeFilhoLabel.text = meta.nomeFilho
-        pontosLabel.text = String(describing: meta.pontos)
+        pontosLabel.text = String(describing: meta.pontosAlvo)
     }
 
 }

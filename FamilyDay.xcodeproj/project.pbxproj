@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		AC1428D92412B80500BDBD27 /* CadastroMembroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1428D72412B80500BDBD27 /* CadastroMembroViewController.swift */; };
 		AC1428DA2412B80500BDBD27 /* CadastroMembroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC1428D82412B80500BDBD27 /* CadastroMembroViewController.xib */; };
-		AC1428E02412C12100BDBD27 /* MembroDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1428DF2412C12100BDBD27 /* MembroDao.swift */; };
 		AC1A0DAB23F470970037AAB7 /* DetalhesTarefaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1A0DA923F470970037AAB7 /* DetalhesTarefaViewController.swift */; };
 		AC1A0DAC23F470970037AAB7 /* DetalhesTarefaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC1A0DAA23F470970037AAB7 /* DetalhesTarefaViewController.xib */; };
 		AC1BB46423EDD90300AA88F5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BB46323EDD90300AA88F5 /* HomeViewController.swift */; };
 		AC1BB46923EDD9B400AA88F5 /* TarefasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BB46823EDD9B400AA88F5 /* TarefasViewController.swift */; };
+		AC36367D2423E7E3001D90DF /* DiasDaSemanaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC36367B2423E7E3001D90DF /* DiasDaSemanaTableViewController.swift */; };
+		AC36367E2423E7E3001D90DF /* DiasDaSemanaTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC36367C2423E7E3001D90DF /* DiasDaSemanaTableViewController.xib */; };
+		AC36368624240FE7001D90DF /* DiaDaSemanaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC36368524240FE7001D90DF /* DiaDaSemanaTableViewCell.swift */; };
+		AC363688242411B8001D90DF /* DiaDaSemanaViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC363687242411B8001D90DF /* DiaDaSemanaViewCell.xib */; };
 		AC48556B24083CDA009D81AA /* Tela1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC48556924083CDA009D81AA /* Tela1ViewController.swift */; };
 		AC48556C24083CDA009D81AA /* Tela1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC48556A24083CDA009D81AA /* Tela1ViewController.xib */; };
 		AC48557124083DF6009D81AA /* Tela2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC48556F24083DF6009D81AA /* Tela2ViewController.swift */; };
@@ -37,8 +40,14 @@
 		AC702FCC23FCC6C700F86049 /* Mensagem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC702FCB23FCC6C700F86049 /* Mensagem.swift */; };
 		AC702FCF23FCC74500F86049 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC702FCE23FCC74500F86049 /* Usuario.swift */; };
 		AC7461F5240EC7C1000795C6 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7461F4240EC7C1000795C6 /* PerfilViewController.swift */; };
+		AC7927CD2424566C0082DAAC /* MembroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7927CC2424566C0082DAAC /* MembroTableViewCell.swift */; };
+		AC7927CF24245A0C0082DAAC /* Tarefa.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7927CE24245A0C0082DAAC /* Tarefa.swift */; };
+		AC7927D22424601C0082DAAC /* ListaMembrosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7927D02424601C0082DAAC /* ListaMembrosTableViewController.swift */; };
+		AC7927D32424601C0082DAAC /* ListaMembrosTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC7927D12424601C0082DAAC /* ListaMembrosTableViewController.xib */; };
 		AC85E1CC24198020009D4310 /* MembrosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC85E1CB24198020009D4310 /* MembrosViewController.swift */; };
 		AC8B01A323FCCB8100F4B79E /* MenuOpcoesEnvio.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8B01A223FCCB8100F4B79E /* MenuOpcoesEnvio.swift */; };
+		AC8BAA32241D392A00DEA8A6 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = AC8BAA31241D392A00DEA8A6 /* SwiftyJSON */; };
+		AC8BAA35241D46D100DEA8A6 /* CadastrarTarefaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8BAA33241D46D100DEA8A6 /* CadastrarTarefaViewController.swift */; };
 		AC9D47FB241812DE008ABF46 /* AjustesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D47FA241812DE008ABF46 /* AjustesViewController.swift */; };
 		ACADB82524152B060087FC24 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACADB82424152B060087FC24 /* Utils.swift */; };
 		ACB4504C2411E56800B4FF5F /* FamiliaDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB4504B2411E56800B4FF5F /* FamiliaDao.swift */; };
@@ -48,6 +57,7 @@
 		ACB7C5AC23EB35D70010D603 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB7C5AB23EB35D70010D603 /* Assets.xcassets */; };
 		ACB7C5AF23EB35D70010D603 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB7C5AD23EB35D70010D603 /* LaunchScreen.storyboard */; };
 		ACB7C5B723EB404E0010D603 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB7C5B623EB404E0010D603 /* LoginViewController.swift */; };
+		ACDA89052421DBD400F0488F /* CadastrarTarefaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACDA89042421DBD400F0488F /* CadastrarTarefaViewController.xib */; };
 		ACF264CA2416E36A00BC621E /* TabMetasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF264C92416E36A00BC621E /* TabMetasViewController.swift */; };
 		ACFED43624098FA30094727F /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFED43524098FA30094727F /* Configuration.swift */; };
 /* End PBXBuildFile section */
@@ -55,11 +65,14 @@
 /* Begin PBXFileReference section */
 		AC1428D72412B80500BDBD27 /* CadastroMembroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroMembroViewController.swift; sourceTree = "<group>"; };
 		AC1428D82412B80500BDBD27 /* CadastroMembroViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CadastroMembroViewController.xib; sourceTree = "<group>"; };
-		AC1428DF2412C12100BDBD27 /* MembroDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembroDao.swift; sourceTree = "<group>"; };
 		AC1A0DA923F470970037AAB7 /* DetalhesTarefaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesTarefaViewController.swift; sourceTree = "<group>"; };
 		AC1A0DAA23F470970037AAB7 /* DetalhesTarefaViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetalhesTarefaViewController.xib; sourceTree = "<group>"; };
 		AC1BB46323EDD90300AA88F5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AC1BB46823EDD9B400AA88F5 /* TarefasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarefasViewController.swift; sourceTree = "<group>"; };
+		AC36367B2423E7E3001D90DF /* DiasDaSemanaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiasDaSemanaTableViewController.swift; sourceTree = "<group>"; };
+		AC36367C2423E7E3001D90DF /* DiasDaSemanaTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiasDaSemanaTableViewController.xib; sourceTree = "<group>"; };
+		AC36368524240FE7001D90DF /* DiaDaSemanaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaDaSemanaTableViewCell.swift; sourceTree = "<group>"; };
+		AC363687242411B8001D90DF /* DiaDaSemanaViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaDaSemanaViewCell.xib; sourceTree = "<group>"; };
 		AC48556924083CDA009D81AA /* Tela1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tela1ViewController.swift; sourceTree = "<group>"; };
 		AC48556A24083CDA009D81AA /* Tela1ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Tela1ViewController.xib; sourceTree = "<group>"; };
 		AC48556F24083DF6009D81AA /* Tela2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tela2ViewController.swift; sourceTree = "<group>"; };
@@ -82,8 +95,13 @@
 		AC702FCB23FCC6C700F86049 /* Mensagem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mensagem.swift; sourceTree = "<group>"; };
 		AC702FCE23FCC74500F86049 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		AC7461F4240EC7C1000795C6 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
+		AC7927CC2424566C0082DAAC /* MembroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembroTableViewCell.swift; sourceTree = "<group>"; };
+		AC7927CE24245A0C0082DAAC /* Tarefa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tarefa.swift; sourceTree = "<group>"; };
+		AC7927D02424601C0082DAAC /* ListaMembrosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaMembrosTableViewController.swift; sourceTree = "<group>"; };
+		AC7927D12424601C0082DAAC /* ListaMembrosTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListaMembrosTableViewController.xib; sourceTree = "<group>"; };
 		AC85E1CB24198020009D4310 /* MembrosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembrosViewController.swift; sourceTree = "<group>"; };
 		AC8B01A223FCCB8100F4B79E /* MenuOpcoesEnvio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOpcoesEnvio.swift; sourceTree = "<group>"; };
+		AC8BAA33241D46D100DEA8A6 /* CadastrarTarefaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastrarTarefaViewController.swift; sourceTree = "<group>"; };
 		AC9D47FA241812DE008ABF46 /* AjustesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AjustesViewController.swift; sourceTree = "<group>"; };
 		ACADB82424152B060087FC24 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		ACB4504B2411E56800B4FF5F /* FamiliaDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamiliaDao.swift; sourceTree = "<group>"; };
@@ -95,6 +113,7 @@
 		ACB7C5AE23EB35D70010D603 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACB7C5B023EB35D70010D603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACB7C5B623EB404E0010D603 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		ACDA89042421DBD400F0488F /* CadastrarTarefaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CadastrarTarefaViewController.xib; sourceTree = "<group>"; };
 		ACF264C92416E36A00BC621E /* TabMetasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMetasViewController.swift; sourceTree = "<group>"; };
 		ACFED43524098FA30094727F /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC8BAA32241D392A00DEA8A6 /* SwiftyJSON in Frameworks */,
 				AC6F18D6240AA9E8003DC31D /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				AC1BB46823EDD9B400AA88F5 /* TarefasViewController.swift */,
+				AC6123A823F25D2F00C4DEA1 /* TarefaTableViewCell.swift */,
 				AC1A0DA923F470970037AAB7 /* DetalhesTarefaViewController.swift */,
 			);
 			path = Controller;
@@ -203,7 +224,6 @@
 			children = (
 				AC4D949F240C2F72002CF0DB /* UsuarioDao.swift */,
 				ACB4504B2411E56800B4FF5F /* FamiliaDao.swift */,
-				AC1428DF2412C12100BDBD27 /* MembroDao.swift */,
 				AC58EE25241622DB00CEB18B /* MetaDao.swift */,
 			);
 			path = Dao;
@@ -212,8 +232,8 @@
 		AC4F675723EDD1A700D07641 /* CadastroUsuario */ = {
 			isa = PBXGroup;
 			children = (
-				AC5109E32417686E00113FB1 /* CadastroUsuarioViewController.swift */,
 				AC5109E42417686E00113FB1 /* CadastroUsuarioViewController.xib */,
+				AC5109E32417686E00113FB1 /* CadastroUsuarioViewController.swift */,
 			);
 			path = CadastroUsuario;
 			sourceTree = "<group>";
@@ -251,7 +271,6 @@
 		AC6123A723F25D1100C4DEA1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AC6123A823F25D2F00C4DEA1 /* TarefaTableViewCell.swift */,
 				AC1A0DAA23F470970037AAB7 /* DetalhesTarefaViewController.xib */,
 			);
 			path = View;
@@ -271,6 +290,7 @@
 			children = (
 				AC702FCE23FCC74500F86049 /* Usuario.swift */,
 				AC58EE272416234500CEB18B /* Meta.swift */,
+				AC7927CE24245A0C0082DAAC /* Tarefa.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -287,8 +307,24 @@
 			isa = PBXGroup;
 			children = (
 				AC85E1CB24198020009D4310 /* MembrosViewController.swift */,
+				AC7927CC2424566C0082DAAC /* MembroTableViewCell.swift */,
 			);
 			path = TabMembros;
+			sourceTree = "<group>";
+		};
+		AC8BAA37241D46EC00DEA8A6 /* CadastroTarefa */ = {
+			isa = PBXGroup;
+			children = (
+				ACDA89042421DBD400F0488F /* CadastrarTarefaViewController.xib */,
+				AC8BAA33241D46D100DEA8A6 /* CadastrarTarefaViewController.swift */,
+				AC36367C2423E7E3001D90DF /* DiasDaSemanaTableViewController.xib */,
+				AC36367B2423E7E3001D90DF /* DiasDaSemanaTableViewController.swift */,
+				AC36368524240FE7001D90DF /* DiaDaSemanaTableViewCell.swift */,
+				AC363687242411B8001D90DF /* DiaDaSemanaViewCell.xib */,
+				AC7927D12424601C0082DAAC /* ListaMembrosTableViewController.xib */,
+				AC7927D02424601C0082DAAC /* ListaMembrosTableViewController.swift */,
+			);
+			path = CadastroTarefa;
 			sourceTree = "<group>";
 		};
 		AC9D47FC241812E2008ABF46 /* TabAjustes */ = {
@@ -332,6 +368,7 @@
 				AC85E1CD24198027009D4310 /* TabMembros */,
 				AC9D47FC241812E2008ABF46 /* TabAjustes */,
 				AC4F675723EDD1A700D07641 /* CadastroUsuario */,
+				AC8BAA37241D46EC00DEA8A6 /* CadastroTarefa */,
 				AC1428D62412B7DA00BDBD27 /* CadastroMembro */,
 				AC58EE1E241616A700CEB18B /* CadastroMeta */,
 				AC48556824083CAB009D81AA /* Tutorial */,
@@ -388,6 +425,7 @@
 			name = FamilyDay;
 			packageProductDependencies = (
 				AC6F18D5240AA9E8003DC31D /* Alamofire */,
+				AC8BAA31241D392A00DEA8A6 /* SwiftyJSON */,
 			);
 			productName = FamilyDay;
 			productReference = ACB7C59F23EB35D60010D603 /* Family Day.app */;
@@ -419,6 +457,7 @@
 			mainGroup = ACB7C59623EB35D60010D603;
 			packageReferences = (
 				AC6F18D4240AA9E8003DC31D /* XCRemoteSwiftPackageReference "Alamofire" */,
+				AC8BAA30241D392A00DEA8A6 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = ACB7C5A023EB35D60010D603 /* Products */;
 			projectDirPath = "";
@@ -437,12 +476,16 @@
 				AC48556C24083CDA009D81AA /* Tela1ViewController.xib in Resources */,
 				AC58EE24241616DE00CEB18B /* CadastroMetaViewController.xib in Resources */,
 				ACB7C5AF23EB35D70010D603 /* LaunchScreen.storyboard in Resources */,
+				ACDA89052421DBD400F0488F /* CadastrarTarefaViewController.xib in Resources */,
 				ACB7C5AC23EB35D70010D603 /* Assets.xcassets in Resources */,
+				AC36367E2423E7E3001D90DF /* DiasDaSemanaTableViewController.xib in Resources */,
 				AC5109E62417686E00113FB1 /* CadastroUsuarioViewController.xib in Resources */,
 				AC1A0DAC23F470970037AAB7 /* DetalhesTarefaViewController.xib in Resources */,
+				AC7927D32424601C0082DAAC /* ListaMembrosTableViewController.xib in Resources */,
 				AC702FCA23FC4DD500F86049 /* ConviteViewController.xib in Resources */,
 				AC48557224083DF6009D81AA /* Tela2ViewController.xib in Resources */,
 				AC5109E12417582800113FB1 /* ScannerQRCodeViewController.xib in Resources */,
+				AC363688242411B8001D90DF /* DiaDaSemanaViewCell.xib in Resources */,
 				AC1428DA2412B80500BDBD27 /* CadastroMembroViewController.xib in Resources */,
 				ACB7C5AA23EB35D60010D603 /* Main.storyboard in Resources */,
 			);
@@ -455,9 +498,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC8BAA35241D46D100DEA8A6 /* CadastrarTarefaViewController.swift in Sources */,
 				AC5109DB241748FB00113FB1 /* MetaTableViewCell.swift in Sources */,
+				AC36367D2423E7E3001D90DF /* DiasDaSemanaTableViewController.swift in Sources */,
 				AC702FCF23FCC74500F86049 /* Usuario.swift in Sources */,
 				AC702FCC23FCC6C700F86049 /* Mensagem.swift in Sources */,
+				AC7927CD2424566C0082DAAC /* MembroTableViewCell.swift in Sources */,
 				ACB4504C2411E56800B4FF5F /* FamiliaDao.swift in Sources */,
 				AC1BB46423EDD90300AA88F5 /* HomeViewController.swift in Sources */,
 				AC5109E02417582800113FB1 /* ScannerQRCodeViewController.swift in Sources */,
@@ -465,8 +511,8 @@
 				AC85E1CC24198020009D4310 /* MembrosViewController.swift in Sources */,
 				AC48557124083DF6009D81AA /* Tela2ViewController.swift in Sources */,
 				AC4D949D240C1748002CF0DB /* TarefasCollectionViewCell.swift in Sources */,
+				AC7927D22424601C0082DAAC /* ListaMembrosTableViewController.swift in Sources */,
 				AC7461F5240EC7C1000795C6 /* PerfilViewController.swift in Sources */,
-				AC1428E02412C12100BDBD27 /* MembroDao.swift in Sources */,
 				AC58EE282416234500CEB18B /* Meta.swift in Sources */,
 				AC702FC923FC4DD500F86049 /* ConviteViewController.swift in Sources */,
 				ACB7C5B723EB404E0010D603 /* LoginViewController.swift in Sources */,
@@ -478,10 +524,12 @@
 				ACADB82524152B060087FC24 /* Utils.swift in Sources */,
 				ACFED43624098FA30094727F /* Configuration.swift in Sources */,
 				ACB7C5A323EB35D60010D603 /* AppDelegate.swift in Sources */,
+				AC36368624240FE7001D90DF /* DiaDaSemanaTableViewCell.swift in Sources */,
 				ACF264CA2416E36A00BC621E /* TabMetasViewController.swift in Sources */,
 				AC1A0DAB23F470970037AAB7 /* DetalhesTarefaViewController.swift in Sources */,
 				ACB7C5A523EB35D60010D603 /* SceneDelegate.swift in Sources */,
 				AC58EE23241616DE00CEB18B /* CadastroMetaViewController.swift in Sources */,
+				AC7927CF24245A0C0082DAAC /* Tarefa.swift in Sources */,
 				AC4D94A0240C2F72002CF0DB /* UsuarioDao.swift in Sources */,
 				AC6123A923F25D2F00C4DEA1 /* TarefaTableViewCell.swift in Sources */,
 				AC58EE26241622DB00CEB18B /* MetaDao.swift in Sources */,
@@ -630,13 +678,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9SAH7798E4;
+				DEVELOPMENT_TEAM = KY9KTSK9G3;
 				INFOPLIST_FILE = FamilyDay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.alexandre.FamilyDay;
+				PRODUCT_BUNDLE_IDENTIFIER = com.robaert.alexandre.FamilyDay;
 				PRODUCT_NAME = "Family Day";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -648,13 +696,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9SAH7798E4;
+				DEVELOPMENT_TEAM = KY9KTSK9G3;
 				INFOPLIST_FILE = FamilyDay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.alexandre.FamilyDay;
+				PRODUCT_BUNDLE_IDENTIFIER = com.robaert.alexandre.FamilyDay;
 				PRODUCT_NAME = "Family Day";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -693,6 +741,14 @@
 				minimumVersion = 5.0.2;
 			};
 		};
+		AC8BAA30241D392A00DEA8A6 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -700,6 +756,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AC6F18D4240AA9E8003DC31D /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		AC8BAA31241D392A00DEA8A6 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC8BAA30241D392A00DEA8A6 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

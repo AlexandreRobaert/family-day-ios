@@ -23,8 +23,9 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let token = Configuration.shared.token {
-            print(token)
             getUser(for: token)
+            entrarButton.isEnabled = false
+            indicator.isHidden = false
             return
         }
         criarContaButton.layer.borderWidth = 2
@@ -55,6 +56,7 @@ class LoginViewController: UIViewController {
             }else{
                 self.mensagemLoginLabel.text = "Usuário Não Encontrado"
             }
+            self.indicator.isHidden = true
         }
     }
 

@@ -12,23 +12,24 @@ import Alamofire
 class FamiliaDao {
     
     
-    static func cadastrarFamilia(nomeFamilia: String, completion: @escaping(String?)->Void){
+    static func cadastrarFamilia(nomeFamilia: String, idUsuario: String, completion: @escaping(Bool)->Void) {
         
-        let header: HTTPHeaders = ["x-access-token": Configuration.shared.token!]
-        let parametros = ["nome": nomeFamilia]
-        AF.request("\(Configuration.URL_API)/familias", method: .post, parameters: parametros, headers: header).responseJSON { (response) in
+        let parametros = ["nome": nomeFamilia, "dono": idUsuario]
+        AF.request("\(Configuration.URL_API)/familias", method: .post, parameters: parametros).responseJSON { (response) in
             print(response.result)
             switch response.result {
                 case .success(let body as [String: Any]):
                     let id = (body["retorno"] as! [String: String])["idFamilia"]
-                    Configuration.shared.idFamilia = id!
-                    completion(id)
+                    let token = (body["retorno"] as! [String: String])["token"]
+                    Configuration.shared.idFamilia = id
+                    Configuration.shared.token = token
+                    completion(true)
                     break
                 case .failure(let error):
                     print(error)
-                    completion(nil)
+                    completion(false)
                 case .success(_):
-                    completion(nil)
+                    completion(false)
                 
             }
         }

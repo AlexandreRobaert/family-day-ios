@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellTodoDia" id="Q1Y-gI-Fn3" customClass="DiaDaSemanaTableViewCell" customModule="Family_Day" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="488" height="57"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q1Y-gI-Fn3" id="gl3-9M-2DH">
+                <rect key="frame" x="0.0" y="0.0" width="488" height="57"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todo dia?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nX-Pc-xn8">
+                        <rect key="frame" x="20" y="18" width="74" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rvp-Rx-Nhg">
+                        <rect key="frame" x="419" y="13" width="51" height="31"/>
+                        <color key="onTintColor" name="Roxo"/>
+                        <connections>
+                            <action selector="mudouTodoDia:" destination="Q1Y-gI-Fn3" eventType="valueChanged" id="nD1-I8-Tqk"/>
+                        </connections>
+                    </switch>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="rvp-Rx-Nhg" secondAttribute="trailing" constant="20" id="cHM-4b-xbQ"/>
+                    <constraint firstItem="1nX-Pc-xn8" firstAttribute="leading" secondItem="gl3-9M-2DH" secondAttribute="leading" constant="20" id="fne-Db-jpU"/>
+                    <constraint firstItem="1nX-Pc-xn8" firstAttribute="centerY" secondItem="gl3-9M-2DH" secondAttribute="centerY" id="gVc-Ot-jZn"/>
+                    <constraint firstItem="rvp-Rx-Nhg" firstAttribute="centerY" secondItem="1nX-Pc-xn8" secondAttribute="centerY" id="nsY-Xr-W45"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="uiSwitch" destination="rvp-Rx-Nhg" id="X8a-TS-Re6"/>
+            </connections>
+            <point key="canvasLocation" x="806" y="-258"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Roxo">
+            <color red="0.61960784313725492" green="0.0" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

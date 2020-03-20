@@ -12,16 +12,18 @@ class Tela1ViewController: UIViewController {
 
     @IBOutlet weak var nomeGrupoTextField: UITextField!
     
+    var idUsuario: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     
     @IBAction func irParaSegundaTela(_ sender: UIButton) {
         let vc = Tela2ViewController()
         vc.nomeGrupo = nomeGrupoTextField.text
+        vc.idUsuario = idUsuario
         navigationController?.pushViewController(vc, animated: true)
     }
 }
