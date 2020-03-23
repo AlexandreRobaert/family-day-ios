@@ -1,10 +1,3 @@
-//
-//  UsuarioDao.swift
-//  FamilyDay
-//
-//  Created by Alexandre Robaert on 01/03/20.
-//  Copyright © 2020 Alexandre Robaert. All rights reserved.
-//
 
 import Foundation
 import Alamofire

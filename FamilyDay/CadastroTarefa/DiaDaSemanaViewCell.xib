@@ -25,9 +25,6 @@
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rvp-Rx-Nhg">
                         <rect key="frame" x="419" y="13" width="51" height="31"/>
                         <color key="onTintColor" name="Roxo"/>
-                        <connections>
-                            <action selector="mudouTodoDia:" destination="Q1Y-gI-Fn3" eventType="valueChanged" id="nD1-I8-Tqk"/>
-                        </connections>
                     </switch>
                 </subviews>
                 <constraints>
@@ -38,7 +35,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="uiSwitch" destination="rvp-Rx-Nhg" id="X8a-TS-Re6"/>
+                <outlet property="uiSwitch" destination="rvp-Rx-Nhg" id="eWY-pl-SKh"/>
             </connections>
             <point key="canvasLocation" x="806" y="-258"/>
         </tableViewCell>

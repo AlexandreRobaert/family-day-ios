@@ -9,7 +9,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CadastrarTarefaViewController" customModule="Family_Day" customModuleProvider="target">
             <connections>
+                <outlet property="dataFimTextField" destination="ckt-qt-iYS" id="Fkf-2c-yo9"/>
+                <outlet property="dataInicioTextField" destination="oZu-ae-J0B" id="BWu-1c-Rtq"/>
+                <outlet property="descricaoTextField" destination="Vef-jh-43D" id="MuB-rD-sS4"/>
+                <outlet property="metasTextField" destination="uHl-kD-9Xz" id="NwT-Fe-zue"/>
+                <outlet property="pontosTextField" destination="Eay-4i-Irn" id="3hH-o4-Xgm"/>
                 <outlet property="tableView" destination="Efo-S6-fMs" id="Gwh-y1-nVB"/>
+                <outlet property="tituloTextField" destination="whB-q5-jaZ" id="1KE-3U-caf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -59,10 +65,10 @@
                             </subviews>
                         </stackView>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Efo-S6-fMs">
-                            <rect key="frame" x="0.0" y="216" width="394" height="162.5"/>
+                            <rect key="frame" x="0.0" y="216" width="394" height="203.5"/>
                         </tableView>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pontos" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Eay-4i-Irn">
-                            <rect key="frame" x="0.0" y="400.5" width="394" height="50"/>
+                            <rect key="frame" x="0.0" y="441.5" width="394" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="wOH-xM-8Sp"/>
                             </constraints>
@@ -70,7 +76,7 @@
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Meta" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="uHl-kD-9Xz">
-                            <rect key="frame" x="0.0" y="472.5" width="394" height="50"/>
+                            <rect key="frame" x="0.0" y="513.5" width="394" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="Stx-Ms-FFI"/>
                             </constraints>
@@ -78,7 +84,7 @@
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g51-gW-qvL">
-                            <rect key="frame" x="0.0" y="544.5" width="394" height="45"/>
+                            <rect key="frame" x="0.0" y="585.5" width="394" height="45"/>
                             <color key="backgroundColor" red="1" green="0.2784313725" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="ugb-bG-6xL"/>
@@ -93,14 +99,17 @@
                                     <integer key="value" value="22"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="salvarTarefa:" destination="-1" eventType="touchUpInside" id="bdS-R0-vzi"/>
+                            </connections>
                         </button>
                         <view contentMode="scaleToFill" verticalHuggingPriority="100" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="gA5-i7-lPf">
-                            <rect key="frame" x="0.0" y="611.5" width="394" height="201.5"/>
+                            <rect key="frame" x="0.0" y="652.5" width="394" height="160.5"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </view>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="Efo-S6-fMs" firstAttribute="height" secondItem="khV-gM-nLv" secondAttribute="height" multiplier="0.2" id="9zY-MU-n9a"/>
+                        <constraint firstItem="Efo-S6-fMs" firstAttribute="height" secondItem="khV-gM-nLv" secondAttribute="height" multiplier="0.25" id="9zY-MU-n9a"/>
                     </constraints>
                 </stackView>
             </subviews>
