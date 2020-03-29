@@ -15,6 +15,8 @@ class ScannerQRCodeViewController: UIViewController, AVCaptureMetadataOutputObje
     
     @IBOutlet weak var quadroQrCode: UIView!
     
+    var delegate: FazerLoginDelegate!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -92,7 +94,18 @@ class ScannerQRCodeViewController: UIViewController, AVCaptureMetadataOutputObje
     }
 
     func found(code: String) {
-        print(code)
+        
+        Configuration.shared.token = code
+        UsuarioDao.getUserfor(token: code) { (usuario) in
+            let vc = CadastroUsuarioViewController()
+            vc.delegate = self.delegate
+            vc.usuario = usuario!
+            self.navigationController?.popViewController(animated: false)
+            self.present(vc, animated: true) {
+                print("Sair")
+            }
+        }
+        
     }
 
     override var prefersStatusBarHidden: Bool {

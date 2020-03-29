@@ -22,6 +22,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if let token = Configuration.shared.token {
             getUser(for: token)
             entrarButton.isEnabled = false
@@ -30,6 +31,7 @@ class LoginViewController: UIViewController {
         }
         criarContaButton.layer.borderWidth = 2
         criarContaButton.layer.borderColor = UIColor(named: "Roxo")?.cgColor
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,7 +68,7 @@ class LoginViewController: UIViewController {
         entrarButton.isEnabled = false
         
         if let login = loginTextField.text, !login.isEmpty, let senha = senhaTextField.text, !senha.isEmpty {
-            UsuarioDao.getToken(login: "alexandrenet.robaert@gmail.com", senha: "psl159357") { (token) in
+            UsuarioDao.getToken(login: login, senha: senha) { (token) in
                 self.entrarButton.isEnabled = true
                 if let token = token {
                     self.getUser(for: token)
@@ -88,6 +90,25 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func abrirTelaQRCode(_ sender: UIButton) {
-        navigationController?.pushViewController(ScannerQRCodeViewController(), animated: true)
+        let vc = ScannerQRCodeViewController()
+        vc.delegate = self
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension LoginViewController: FazerLoginDelegate {
+    
+    func fazerLogin(usuario: Usuario) {
+        irParaHome(usuario: usuario)
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    
+     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        
+        return true
     }
 }

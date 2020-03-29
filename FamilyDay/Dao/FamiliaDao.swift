@@ -9,7 +9,7 @@ class FamiliaDao {
         
         let parametros = ["nome": nomeFamilia, "dono": idUsuario]
         AF.request("\(Configuration.URL_API)/familias", method: .post, parameters: parametros).responseJSON { (response) in
-            print(response.result)
+            
             switch response.result {
                 case .success(let body as [String: Any]):
                     let id = (body["retorno"] as! [String: String])["idFamilia"]

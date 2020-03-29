@@ -16,6 +16,8 @@
 		AC34D1882427B86400C76BA7 /* ComprovacaoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC34D1872427B86400C76BA7 /* ComprovacaoViewCell.xib */; };
 		AC34D18A2427B8FE00C76BA7 /* DiaDaSemanaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC34D1892427B8FE00C76BA7 /* DiaDaSemanaTableViewCell.swift */; };
 		AC34D18C2427B94800C76BA7 /* ComprovacaoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC34D18B2427B94800C76BA7 /* ComprovacaoTableViewCell.swift */; };
+		AC362A39242ED7BB00A6DAE1 /* DetalhesUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC362A37242ED7BB00A6DAE1 /* DetalhesUsuarioViewController.swift */; };
+		AC362A3A242ED7BB00A6DAE1 /* DetalhesUsuarioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC362A38242ED7BB00A6DAE1 /* DetalhesUsuarioViewController.xib */; };
 		AC36367D2423E7E3001D90DF /* DiasDaSemanaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC36367B2423E7E3001D90DF /* DiasDaSemanaTableViewController.swift */; };
 		AC36367E2423E7E3001D90DF /* DiasDaSemanaTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC36367C2423E7E3001D90DF /* DiasDaSemanaTableViewController.xib */; };
 		AC363688242411B8001D90DF /* DiaDaSemanaViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC363687242411B8001D90DF /* DiaDaSemanaViewCell.xib */; };
@@ -60,6 +62,7 @@
 		ACB7C5AC23EB35D70010D603 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB7C5AB23EB35D70010D603 /* Assets.xcassets */; };
 		ACB7C5AF23EB35D70010D603 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB7C5AD23EB35D70010D603 /* LaunchScreen.storyboard */; };
 		ACB7C5B723EB404E0010D603 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB7C5B623EB404E0010D603 /* LoginViewController.swift */; };
+		ACB7F961242A5981006267D4 /* Historico.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB7F960242A5981006267D4 /* Historico.swift */; };
 		ACDA89052421DBD400F0488F /* CadastrarTarefaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACDA89042421DBD400F0488F /* CadastrarTarefaViewController.xib */; };
 		ACF264CA2416E36A00BC621E /* TabMetasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF264C92416E36A00BC621E /* TabMetasViewController.swift */; };
 		ACFED43624098FA30094727F /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFED43524098FA30094727F /* Configuration.swift */; };
@@ -75,6 +78,8 @@
 		AC34D1872427B86400C76BA7 /* ComprovacaoViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComprovacaoViewCell.xib; sourceTree = "<group>"; };
 		AC34D1892427B8FE00C76BA7 /* DiaDaSemanaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaDaSemanaTableViewCell.swift; sourceTree = "<group>"; };
 		AC34D18B2427B94800C76BA7 /* ComprovacaoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComprovacaoTableViewCell.swift; sourceTree = "<group>"; };
+		AC362A37242ED7BB00A6DAE1 /* DetalhesUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesUsuarioViewController.swift; sourceTree = "<group>"; };
+		AC362A38242ED7BB00A6DAE1 /* DetalhesUsuarioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetalhesUsuarioViewController.xib; sourceTree = "<group>"; };
 		AC36367B2423E7E3001D90DF /* DiasDaSemanaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiasDaSemanaTableViewController.swift; sourceTree = "<group>"; };
 		AC36367C2423E7E3001D90DF /* DiasDaSemanaTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiasDaSemanaTableViewController.xib; sourceTree = "<group>"; };
 		AC363687242411B8001D90DF /* DiaDaSemanaViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaDaSemanaViewCell.xib; sourceTree = "<group>"; };
@@ -119,6 +124,7 @@
 		ACB7C5AE23EB35D70010D603 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACB7C5B023EB35D70010D603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACB7C5B623EB404E0010D603 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		ACB7F960242A5981006267D4 /* Historico.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Historico.swift; sourceTree = "<group>"; };
 		ACDA89042421DBD400F0488F /* CadastrarTarefaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CadastrarTarefaViewController.xib; sourceTree = "<group>"; };
 		ACF264C92416E36A00BC621E /* TabMetasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMetasViewController.swift; sourceTree = "<group>"; };
 		ACFED43524098FA30094727F /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
@@ -298,6 +304,7 @@
 				AC702FCE23FCC74500F86049 /* Usuario.swift */,
 				AC58EE272416234500CEB18B /* Meta.swift */,
 				AC7927CE24245A0C0082DAAC /* Tarefa.swift */,
+				ACB7F960242A5981006267D4 /* Historico.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -315,6 +322,8 @@
 			children = (
 				AC85E1CB24198020009D4310 /* MembrosViewController.swift */,
 				AC7927CC2424566C0082DAAC /* MembroTableViewCell.swift */,
+				AC362A38242ED7BB00A6DAE1 /* DetalhesUsuarioViewController.xib */,
+				AC362A37242ED7BB00A6DAE1 /* DetalhesUsuarioViewController.swift */,
 			);
 			path = TabMembros;
 			sourceTree = "<group>";
@@ -492,6 +501,7 @@
 				AC1A0DAC23F470970037AAB7 /* DetalhesTarefaViewController.xib in Resources */,
 				AC7927D32424601C0082DAAC /* ListaMembrosTableViewController.xib in Resources */,
 				AC702FCA23FC4DD500F86049 /* ConviteViewController.xib in Resources */,
+				AC362A3A242ED7BB00A6DAE1 /* DetalhesUsuarioViewController.xib in Resources */,
 				AC48557224083DF6009D81AA /* Tela2ViewController.xib in Resources */,
 				AC5109E12417582800113FB1 /* ScannerQRCodeViewController.xib in Resources */,
 				AC363688242411B8001D90DF /* DiaDaSemanaViewCell.xib in Resources */,
@@ -520,8 +530,10 @@
 				AC1BB46423EDD90300AA88F5 /* HomeViewController.swift in Sources */,
 				AC5109E02417582800113FB1 /* ScannerQRCodeViewController.swift in Sources */,
 				AC1BB46923EDD9B400AA88F5 /* TarefasViewController.swift in Sources */,
+				ACB7F961242A5981006267D4 /* Historico.swift in Sources */,
 				AC85E1CC24198020009D4310 /* MembrosViewController.swift in Sources */,
 				AC48557124083DF6009D81AA /* Tela2ViewController.swift in Sources */,
+				AC362A39242ED7BB00A6DAE1 /* DetalhesUsuarioViewController.swift in Sources */,
 				AC4D949D240C1748002CF0DB /* TarefasCollectionViewCell.swift in Sources */,
 				AC7927D22424601C0082DAAC /* ListaMembrosTableViewController.swift in Sources */,
 				AC7461F5240EC7C1000795C6 /* PerfilViewController.swift in Sources */,

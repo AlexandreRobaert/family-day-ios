@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,6 +10,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetalhesTarefaViewController" customModule="Family_Day" customModuleProvider="target">
             <connections>
+                <outlet property="dataFimLabel" destination="ZbX-yN-FpL" id="feQ-N3-nv8"/>
+                <outlet property="pontosLabel" destination="OuR-X9-cfR" id="VL1-i5-s2I"/>
+                <outlet property="statusLabel" destination="WBX-fU-uu8" id="zMp-AH-nTQ"/>
+                <outlet property="tituloLabel" destination="TTp-Ri-Luc" id="W7u-Qb-xMi"/>
+                <outlet property="tituloMetaLabel" destination="SWa-ya-nbL" id="D0W-SY-RCa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,13 +31,13 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preparar jantar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTp-Ri-Luc">
-                    <rect key="frame" x="100" y="38" width="127" height="24"/>
+                    <rect key="frame" x="90" y="38" width="127" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" name="Roxo"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Pontos" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OuR-X9-cfR">
-                    <rect key="frame" x="267" y="40" width="68" height="20.5"/>
+                    <rect key="frame" x="287" y="40" width="68" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -60,33 +65,45 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="BDo-B1-gfZ">
                     <rect key="frame" x="216" y="117" width="150" height="150"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nível da tarefa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLJ-f9-pto">
-                            <rect key="frame" x="0.0" y="0.0" width="115" height="36"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data Final" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLJ-f9-pto">
+                            <rect key="frame" x="0.0" y="0.0" width="79" height="23.5"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                             <color key="textColor" name="Roxo"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Média" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbX-yN-FpL">
-                            <rect key="frame" x="0.0" y="38" width="42" height="36"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20/04/2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbX-yN-FpL">
+                            <rect key="frame" x="0.0" y="25.5" width="82.5" height="23"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Objetivo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4h-O4-kqe">
-                            <rect key="frame" x="0.0" y="76" width="67" height="36"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4h-O4-kqe">
+                            <rect key="frame" x="0.0" y="50.5" width="40.5" height="23.5"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                             <color key="textColor" name="Roxo"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preparar Jantar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWa-ya-nbL">
-                            <rect key="frame" x="0.0" y="114" width="106" height="36"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PS4 Pro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWa-ya-nbL">
+                            <rect key="frame" x="0.0" y="76" width="55.5" height="23.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0V-BN-zfh">
+                            <rect key="frame" x="0.0" y="101.5" width="61.5" height="23"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                            <color key="textColor" red="1" green="0.2784313725" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Concluida" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBX-fU-uu8">
+                            <rect key="frame" x="0.0" y="126.5" width="68.5" height="23.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                 </stackView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cmP-tp-RiT">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cmP-tp-RiT">
                     <rect key="frame" x="20" y="275" width="335" height="372"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="Já deixei o frango descongelando, só temperar e colocar para assar!" borderStyle="roundedRect" placeholder="Comentário sobre a tarefa" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="E0a-HO-zYM">
@@ -95,7 +112,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4D-Bt-N48">
-                            <rect key="frame" x="0.0" y="167" width="335" height="160"/>
+                            <rect key="frame" x="0.0" y="187" width="335" height="120"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <state key="normal" title="Responder">
                                 <color key="titleColor" red="1" green="0.2784313725" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -130,13 +147,13 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eDG-B6-YFX" secondAttribute="trailing" constant="20" id="Hjd-IH-IWZ"/>
                 <constraint firstItem="whj-cq-wee" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="IFV-8B-A3D"/>
                 <constraint firstItem="E0a-HO-zYM" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.25" id="Q3c-eH-3Vz"/>
-                <constraint firstItem="TTp-Ri-Luc" firstAttribute="leading" secondItem="s3K-ZF-b3S" secondAttribute="trailing" constant="20" id="Q9H-wW-9Ou"/>
+                <constraint firstItem="TTp-Ri-Luc" firstAttribute="leading" secondItem="s3K-ZF-b3S" secondAttribute="trailing" constant="10" id="Q9H-wW-9Ou"/>
                 <constraint firstItem="tp3-d4-U61" firstAttribute="height" secondItem="whj-cq-wee" secondAttribute="height" multiplier="0.8" id="WfD-gi-O9u"/>
                 <constraint firstItem="tp3-d4-U61" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Ynu-Qq-Hb7"/>
                 <constraint firstItem="eDG-B6-YFX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="bbQ-Zc-L9l"/>
                 <constraint firstItem="BDo-B1-gfZ" firstAttribute="width" secondItem="whj-cq-wee" secondAttribute="width" id="cBC-Ez-fFF"/>
                 <constraint firstItem="s3K-ZF-b3S" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="eBG-hp-ndI"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OuR-X9-cfR" secondAttribute="trailing" constant="40" id="j61-EI-1IH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OuR-X9-cfR" secondAttribute="trailing" constant="20" id="j61-EI-1IH"/>
                 <constraint firstItem="BDo-B1-gfZ" firstAttribute="centerY" secondItem="whj-cq-wee" secondAttribute="centerY" id="jXj-mV-Ua2"/>
                 <constraint firstItem="TTp-Ri-Luc" firstAttribute="centerY" secondItem="s3K-ZF-b3S" secondAttribute="centerY" id="jxf-17-mPO"/>
                 <constraint firstItem="OuR-X9-cfR" firstAttribute="centerY" secondItem="s3K-ZF-b3S" secondAttribute="centerY" id="lo9-ae-N13"/>

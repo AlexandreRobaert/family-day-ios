@@ -10,16 +10,22 @@ import UIKit
 
 class TarefaTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var tituloTarefa: UILabel!
+    @IBOutlet weak var tituloTarefaLabel: UILabel!
+    @IBOutlet weak var usuarioDaTarefaLabel: UILabel!
+    @IBOutlet weak var pontosLabel: UILabel!
+    @IBOutlet weak var dataFimLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func configuraCell(tarefa: Tarefa){
+        
+        let formatData = DateFormatter()
+        formatData.dateFormat = "dd/MM/yyyy"
+        
+        tituloTarefaLabel.text = tarefa.titulo
+        pontosLabel.text = tarefa.pontos > 1 ? "\(tarefa.pontos) Pontos" : "\(tarefa.pontos) Ponto"
+        dataFimLabel.text = formatData.string(from: tarefa.dataFim)
     }
-
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,6 +18,8 @@
                 <outlet property="mensagemLabel" destination="goi-3E-lob" id="Bic-ba-4aK"/>
                 <outlet property="nomeTextField" destination="ES5-Jc-7de" id="2yq-gq-qCq"/>
                 <outlet property="perfilTextField" destination="BXW-mX-Bqd" id="lVq-B6-Dc2"/>
+                <outlet property="repetirSenhaTextField" destination="8ii-8I-TML" id="BVL-WF-j2Y"/>
+                <outlet property="senhaTextField" destination="zvt-Or-Rw6" id="N6X-ql-fcK"/>
                 <outlet property="telefoneTextField" destination="zHh-fO-9q5" id="xdF-bM-xIf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -31,11 +33,11 @@
                     <rect key="frame" x="20" y="44" width="374" height="768"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="pUy-1H-OUg">
-                            <rect key="frame" x="0.0" y="0.5" width="374" height="191"/>
+                            <rect key="frame" x="0.0" y="0.5" width="374" height="152.5"/>
                             <color key="tintColor" name="Roxo"/>
                         </imageView>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome do membro" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="ES5-Jc-7de">
-                            <rect key="frame" x="0.0" y="202" width="374" height="45"/>
+                            <rect key="frame" x="0.0" y="163.5" width="374" height="45"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="UUl-Ss-sJF"/>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="rn8-q8-xQF"/>
@@ -44,7 +46,7 @@
                             <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" textContentType="name"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Data de nascimento" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Twe-8Q-skF">
-                            <rect key="frame" x="0.0" y="257" width="374" height="45"/>
+                            <rect key="frame" x="0.0" y="218.5" width="374" height="45"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="dNM-RA-ynC"/>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="ucZ-Ka-eLM"/>
@@ -53,7 +55,7 @@
                             <textInputTraits key="textInputTraits" returnKeyType="done"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gênero" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="0Ve-34-zaG">
-                            <rect key="frame" x="0.0" y="312" width="374" height="45"/>
+                            <rect key="frame" x="0.0" y="273.5" width="374" height="45"/>
                             <constraints>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="Hwv-Rc-yKs"/>
                                 <constraint firstAttribute="height" constant="45" id="jT5-bx-X8R"/>
@@ -62,7 +64,7 @@
                             <textInputTraits key="textInputTraits" returnKeyType="done"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu telefone" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="zHh-fO-9q5">
-                            <rect key="frame" x="0.0" y="367" width="374" height="45"/>
+                            <rect key="frame" x="0.0" y="328.5" width="374" height="45"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="HNs-7D-mpP"/>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="R5I-Nu-sKn"/>
@@ -71,7 +73,7 @@
                             <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done" textContentType="tel"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Responsável ou Dependente" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="BXW-mX-Bqd">
-                            <rect key="frame" x="0.0" y="422" width="374" height="45"/>
+                            <rect key="frame" x="0.0" y="383.5" width="374" height="45"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="K5G-Zd-Hzl"/>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="TOP-iJ-Lha"/>
@@ -80,7 +82,7 @@
                             <textInputTraits key="textInputTraits" returnKeyType="done"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="riz-Lj-SCP">
-                            <rect key="frame" x="0.0" y="477" width="374" height="45"/>
+                            <rect key="frame" x="0.0" y="438.5" width="374" height="45"/>
                             <constraints>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="Yan-hF-zr3"/>
                                 <constraint firstAttribute="height" constant="45" id="tlv-ey-Rc9"/>
@@ -88,17 +90,35 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done" textContentType="email"/>
                         </textField>
+                        <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="zvt-Or-Rw6">
+                            <rect key="frame" x="0.0" y="488.5" width="374" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="buX-gU-1J6"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="yNm-3i-KK4"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
+                        </textField>
+                        <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repetir Senha" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="8ii-8I-TML">
+                            <rect key="frame" x="0.0" y="488.5" width="374" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="OX3-rW-Kru"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="aJZ-a9-69K"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="new-password"/>
+                        </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wzt-lY-ihq">
-                            <rect key="frame" x="0.0" y="532" width="374" height="181"/>
+                            <rect key="frame" x="0.0" y="493.5" width="374" height="219.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="goi-3E-lob">
-                                    <rect key="frame" x="5" y="90.5" width="364" height="0.0"/>
+                                    <rect key="frame" x="5" y="110" width="364" height="0.0"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="SZ3-80-HmI">
-                                    <rect key="frame" x="177" y="80.5" width="20" height="20"/>
+                                    <rect key="frame" x="177" y="100" width="20" height="20"/>
                                 </activityIndicatorView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -133,7 +153,7 @@
                         </button>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="pUy-1H-OUg" firstAttribute="height" secondItem="daM-i9-yAj" secondAttribute="height" multiplier="0.25" id="uDw-cI-yi4"/>
+                        <constraint firstItem="pUy-1H-OUg" firstAttribute="height" secondItem="daM-i9-yAj" secondAttribute="height" multiplier="0.2" id="uDw-cI-yi4"/>
                     </constraints>
                 </stackView>
             </subviews>
@@ -149,7 +169,7 @@
         </view>
     </objects>
     <resources>
-        <image name="person.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="Roxo">
             <color red="0.61960784313725492" green="0.0" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

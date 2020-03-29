@@ -18,6 +18,7 @@ class CadastrarTarefaViewController: UIViewController {
     @IBOutlet weak var pontosTextField: UITextField!
     @IBOutlet weak var metasTextField: UITextField!
     
+    //MARK: - Propriedades
     var switchTodoDia: UISwitch!
     var switchComprovacao: UISwitch!
     var detailTextDiasSemana = ""
@@ -26,8 +27,9 @@ class CadastrarTarefaViewController: UIViewController {
     let listaDePontos = [1, 2, 5, 10, 20, 50, 100]
     var usuariosDaFamilia: [Usuario] = []
     
+    let diasDaSemana = ["DOMINGO", "SEGUNDA", "TERCA", "QUARTA", "QUINTA", "SEXTA", "SABADO"]
     var metaSelecionada: Meta?
-    var diasSelecionados: [String] = []
+    var diasSelecionados: [Int] = []
     var usuariosSelecionados: [Usuario] = []
     var pontoSelecionado: Int = 0
     
@@ -51,9 +53,22 @@ class CadastrarTarefaViewController: UIViewController {
         return picker
     }()
     
+    //MARK: - Life Cicle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        carregaDadosDaAPI()
+        configUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        configDetailsCelulas()
+    }
+    
+    //MARK: - Métodos
+    func carregaDadosDaAPI(){
         MetaDao.getMetasDaFamilia { (metas) in
             if let metas = metas {
                 self.metasDaFamilia = metas
@@ -65,17 +80,7 @@ class CadastrarTarefaViewController: UIViewController {
                 self.usuariosDaFamilia = usuarios
             }
         }
-        
-        configUI()
     }
-    
-    @objc func adicionarDataInicio() {
-        dataInicioTextField.text = formatData.string(from: datePickerInicio.date)
-    }
-    @objc func adicionarDataFim() {
-        dataFimTextField.text = formatData.string(from: datePickerFim.date)
-    }
-    
     
     func configUI(){
         tableView.delegate = self
@@ -102,9 +107,7 @@ class CadastrarTarefaViewController: UIViewController {
         metasTextField.inputView = metasPicker
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+    func configDetailsCelulas(){
         let count = usuariosSelecionados.count
         if  count == 0 {
             detailTextMembros = "Nenhum"
@@ -116,15 +119,23 @@ class CadastrarTarefaViewController: UIViewController {
         
         if !diasSelecionados.isEmpty {
             detailTextDiasSemana = ""
-            for dia in diasSelecionados {
-                let index = dia.index(dia.startIndex, offsetBy: 3)
-                detailTextDiasSemana.append(String(dia[..<index] + " "))
+            for diaInt in diasSelecionados {
+                let diaSemana = diasDaSemana[diaInt]
+                detailTextDiasSemana.append(String(diaSemana.prefix(3) + " "))
             }
         }else{
             detailTextDiasSemana = "Nenhum dia Selecionado"
         }
         tableView.reloadData()
     }
+    
+    @objc func adicionarDataInicio() {
+        dataInicioTextField.text = formatData.string(from: datePickerInicio.date)
+    }
+    @objc func adicionarDataFim() {
+        dataFimTextField.text = formatData.string(from: datePickerFim.date)
+    }
+    
     
     @objc func mudouSwitchTodoDia() {
         let cell = tableView.cellForRow(at: IndexPath(row: 1, section: 0))
@@ -140,7 +151,7 @@ class CadastrarTarefaViewController: UIViewController {
         
         if !Utils.temTextFieldVazia(view: view){
             if !usuariosSelecionados.isEmpty {
-                if switchTodoDia.isOn == false || diasSelecionados.isEmpty {
+                if switchTodoDia.isOn == false && diasSelecionados.isEmpty {
                     let alertControl = UIAlertController(title: "Em quais dias será executado?", message: "Você precisa me dizer se será todos os dias ou alguns dias da semana!", preferredStyle: .alert)
                     let action = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
                     alertControl.addAction(action)
@@ -224,8 +235,10 @@ extension CadastrarTarefaViewController: UITableViewDataSource, UITableViewDeleg
     }
 }
 
-extension CadastrarTarefaViewController: ListaDiasDelegate {
-    func carregarListaDiasDaSemana(dias: [String]) {
+//MARK: - Delegates Personalizados
+extension CadastrarTarefaViewController: ListaDelegate {
+    func carregarLista(array: [Any]) {
+        let dias = array as! [Int]
         self.diasSelecionados = dias
     }
 }

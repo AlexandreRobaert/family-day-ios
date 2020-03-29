@@ -11,7 +11,6 @@ class MetaDao {
         let parametros = ["titulo": meta.titulo, "descricao": meta.descricao, "pontosAlvo": String(meta.pontosAlvo), "familia": Configuration.shared.idFamilia!]
         
         AF.request("\(Configuration.URL_API)/metas", method: .post, parameters: parametros, headers: header).responseJSON { (response) in
-            print(response.result)
             
             switch response.result {
                 case .success(let value as [String: Any]):
@@ -55,7 +54,6 @@ class MetaDao {
         let parametros = ["titulo": meta.titulo, "descricao": meta.descricao, "pontosAlvo": String(meta.pontosAlvo)]
         
         AF.request("\(Configuration.URL_API)/metas/\(meta.id!)", method: .put, parameters: parametros, headers: header).responseJSON { (response) in
-            print(response.result)
             switch response.response?.statusCode {
             case 200:
                 print("Atualizou")

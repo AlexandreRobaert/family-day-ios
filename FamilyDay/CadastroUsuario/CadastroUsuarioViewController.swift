@@ -9,20 +9,26 @@
 import UIKit
 import Alamofire
 
+protocol FazerLoginDelegate {
+    func fazerLogin(usuario: Usuario)
+}
+
 class CadastroUsuarioViewController: UIViewController {
     
     @IBOutlet weak var nomeTextField: UITextField!
-    @IBOutlet weak var dataNascimentoTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var telefoneTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var dataNascimentoTextField: UITextField!
+    @IBOutlet weak var generoTextField: UITextField!
     @IBOutlet weak var senhaTextField: UITextField!
     @IBOutlet weak var repetirSenhaTextField: UITextField!
+    
     @IBOutlet weak var mensagemLabel: UILabel!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
-    @IBOutlet weak var generoTextField: UITextField!
     @IBOutlet weak var cadastrarButton: UIButton!
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var imageHeader: UIImageView!
     
+    var delegate: FazerLoginDelegate?
     
     lazy var tipoGeneroPicker: UIPickerView = {
         let picker = UIPickerView()
@@ -38,6 +44,7 @@ class CadastroUsuarioViewController: UIViewController {
     let formatData = DateFormatter()
     var dataSelecionada: Date = Date()
     var idade: Int = 0
+    var usuario: Usuario?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,31 +70,27 @@ class CadastroUsuarioViewController: UIViewController {
         dataNascimentoTextField.inputView = datePicker
         dataNascimentoTextField.inputAccessoryView = toolbarData
         
-        
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-        
-    }
-    
-    @objc func adjustForKeyboard(notification: Notification) {
-        guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
-
-        print("Entrou")
-        
-        let keyboardScreenEndFrame = keyboardValue.cgRectValue
-        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
-
-        if notification.name == UIResponder.keyboardWillHideNotification {
-            scrollView.contentInset = .zero
-        } else {
-            scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height - view.safeAreaInsets.bottom, right: 0)
+        if let usuario = usuario {
+            cadastrarButton.tag = 1
+            cadastrarButton.setTitle("Ativar Membro", for: .normal)
+            imageHeader.image = UIImage(systemName: "person.crop.circle.badge.checkmark")
+            nomeTextField.text = usuario.nome
+            dataNascimentoTextField.text = formatData.string(from: usuario.dataNascimento!)
+            emailTextField.text = usuario.email
+            telefoneTextField.text = usuario.telefone
+            
+            var genero = ""
+            switch usuario.genero {
+            case "M":
+                genero = "MASCULINO"
+            case "F":
+                genero = "FEMININO"
+            default:
+                genero = "OUTROS"
+            }
+            generoTextField.text = genero
         }
-
-        scrollView.scrollIndicatorInsets = scrollView.contentInset
-
-//        let selectedRange = scrollView.selectedRange
-//        scrollView.scrollRangeToVisible(selectedRange)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -115,7 +118,7 @@ class CadastroUsuarioViewController: UIViewController {
         let ageComponents = calendar.dateComponents([.year], from: dataSelecionada, to: now)
         idade = ageComponents.year!
         
-        if idade < 18 {
+        if idade < 18 && usuario == nil {
             mostrarAlertaDeIdade()
         }
     }
@@ -162,14 +165,34 @@ class CadastroUsuarioViewController: UIViewController {
                 }
                 
                 if senha == senhaRepetida {
-                    let user = Usuario(id: "", nome: nome, dataNascimento: dataSelecionada, telefone: telefone, tipo: "RESPONSAVEL", email: email, genero: sexo, senha: senha, idFamilia: "")
-                    UsuarioDao.cadastrarUsuario(user, deviceID: "DeviceInventado") { (idUsuario, mensagemErro) in
-                        if let id = idUsuario  {
-                            self.irParaTutorial(idUsuario: id)
-                        }else{
-                            self.cadastrarButton.isEnabled = true
-                            self.indicator.isHidden = true
-                            self.mensagemLabel.text = mensagemErro!
+                    
+                    if cadastrarButton.tag == 0 {
+                        let user = Usuario(id: "", nome: nome, dataNascimento: dataSelecionada, telefone: telefone, tipo: "RESPONSAVEL", email: email, genero: sexo, senha: senha, idFamilia: "", ativo: true)
+                        
+                        UsuarioDao.cadastrarUsuario(user, deviceID: "DeviceInventado") { (idUsuario, mensagemErro) in
+                            if let id = idUsuario  {
+                                self.irParaTutorial(idUsuario: id)
+                            }else{
+                                self.cadastrarButton.isEnabled = true
+                                self.indicator.isHidden = true
+                                self.mensagemLabel.text = mensagemErro!
+                            }
+                        }
+                    }else{
+                        if var usuario = usuario {
+                            usuario.nome = nome
+                            usuario.telefone = telefone
+                            usuario.email = email
+                            usuario.senha = senha
+                            usuario.ativo = true
+                            usuario.dataNascimento = dataSelecionada
+                            usuario.genero = sexo
+                            UsuarioDao.atualizarUsuario(usuario, deviceID: "DeviceID Fake") { (idUsuario, erros) in
+                                if idUsuario != nil {
+                                    self.dismiss(animated: true, completion: nil)
+                                    self.delegate?.fazerLogin(usuario: usuario)
+                                }
+                            }
                         }
                     }
                 }else{
@@ -186,7 +209,7 @@ class CadastroUsuarioViewController: UIViewController {
     }
     
     @IBAction func cadastrarUsuario(_ sender: UIButton) {
-        if idade > 18 || idade == 0 {
+        if idade > 18 || idade == 0 || usuario != nil{
             salvarUsuario()
         }else{
             mostrarAlertaDeIdade()
@@ -194,6 +217,7 @@ class CadastroUsuarioViewController: UIViewController {
     }
 }
 
+// MARK: - Delegate PickerView
 extension CadastroUsuarioViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -205,5 +229,32 @@ extension CadastroUsuarioViewController: UIPickerViewDataSource, UIPickerViewDel
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return generos[row]
+    }
+}
+
+extension CadastroUsuarioViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        switch textField {
+        case nomeTextField:
+            dataNascimentoTextField.becomeFirstResponder()
+        case telefoneTextField:
+            emailTextField.becomeFirstResponder()
+        case emailTextField:
+            dataNascimentoTextField.becomeFirstResponder()
+        case dataNascimentoTextField:
+            generoTextField.becomeFirstResponder()
+        case generoTextField:
+            senhaTextField.becomeFirstResponder()
+        case senhaTextField:
+            repetirSenhaTextField.becomeFirstResponder()
+        case repetirSenhaTextField:
+            repetirSenhaTextField.resignFirstResponder()
+        default:
+            print()
+        }
+        
+        return true
     }
 }

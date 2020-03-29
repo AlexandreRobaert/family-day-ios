@@ -35,6 +35,8 @@ class MembrosViewController: UIViewController {
     }
 }
 
+// MARK: - TableView Delegate e DataSource
+
 extension MembrosViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,6 +54,12 @@ extension MembrosViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return 80
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = DetalhesUsuarioViewController()
+        vc.usuario = usuarios[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

@@ -8,16 +8,16 @@
 
 import UIKit
 
-protocol ListaDiasDelegate {
-    func carregarListaDiasDaSemana(dias: [String])
+protocol ListaDelegate {
+    func carregarLista(array: [Any])
 }
 
 class DiasDaSemanaTableViewController: UITableViewController {
     
-    let diasDaSemana = ["SEGUNDA", "TERCA", "QUARTA", "QUINTA", "SEXTA", "SABADO", "DOMINGO"]
+    let diasDaSemana = ["DOMINGO", "SEGUNDA", "TERCA", "QUARTA", "QUINTA", "SEXTA", "SABADO"]
     
-    var diasSelecionados: [String] = []
-    var delegate: ListaDiasDelegate?
+    var diasSelecionados: [Int] = []
+    var delegate: ListaDelegate?
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class DiasDaSemanaTableViewController: UITableViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        delegate?.carregarListaDiasDaSemana(dias: diasSelecionados)
+        delegate?.carregarLista(array: diasSelecionados)
     }
 
     // MARK: - Table view data source
@@ -40,9 +40,9 @@ class DiasDaSemanaTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "celula", for: indexPath)
 
         let dia = diasDaSemana[indexPath.row]
-        cell.textLabel?.text = indexPath.row < 5 ? "Toda \(dia.lowercased())-feira" : "Todo \(dia.lowercased())"
+        cell.textLabel?.text = indexPath.row > 0 && indexPath.row < 6 ? "Toda \(dia.lowercased())-feira" : "Todo \(dia.lowercased())"
         
-        if diasSelecionados.contains(dia){
+        if diasSelecionados.contains(indexPath.row){
             cell.accessoryType = .checkmark
         }
         
@@ -52,15 +52,13 @@ class DiasDaSemanaTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         guard let cell = tableView.cellForRow(at: indexPath) else {return}
-        
         if cell.accessoryType == .none {
             cell.accessoryType = .checkmark
-            diasSelecionados.append(diasDaSemana[indexPath.row])
+            diasSelecionados.append(indexPath.row)
         }else{
             cell.accessoryType = .none
-            if let position = diasSelecionados.firstIndex(of: diasDaSemana[indexPath.row]){
-                diasSelecionados.remove(at: position)
-            }
+            let index = diasSelecionados.firstIndex(where: {$0 == indexPath.row})
+            diasSelecionados.remove(at: index!)
         }
     }
 }

@@ -9,14 +9,15 @@ import Foundation
 
 struct Usuario: Codable, Equatable {
     var id: String?
-    let nome: String
-    let dataNascimento: Date?
-    let telefone: String
+    var nome: String
+    var dataNascimento: Date?
+    var telefone: String
     let tipo: String?
-    let email: String
-    let genero: String
-    let senha: String
+    var email: String
+    var genero: String
+    var senha: String
     let idFamilia: String
+    var ativo: Bool
 
     enum CodingKeys: String, CodingKey {
         case id = "_id"
@@ -28,9 +29,10 @@ struct Usuario: Codable, Equatable {
         case genero = "genero"
         case senha = "senha"
         case idFamilia = "familia"
+        case ativo = "ativo"
     }
     
-    init(id: String, nome: String, dataNascimento: Date, telefone: String, tipo: String, email: String, genero: String, senha: String, idFamilia: String) {
+    init(id: String, nome: String, dataNascimento: Date, telefone: String, tipo: String, email: String, genero: String, senha: String, idFamilia: String, ativo: Bool) {
         self.id = id
         self.nome = nome
         self.dataNascimento = dataNascimento
@@ -40,6 +42,7 @@ struct Usuario: Codable, Equatable {
         self.genero = genero
         self.senha = senha
         self.idFamilia = idFamilia
+        self.ativo = ativo
         
     }
     
@@ -59,6 +62,7 @@ struct Usuario: Codable, Equatable {
         genero = try container.decode(String.self, forKey: .genero)
         senha = ""
         idFamilia = try container.decode(String.self, forKey: .idFamilia)
+        ativo = try container.decode(Bool.self, forKey: .ativo)
     }
     
     func encode(to encoder: Encoder) throws {
@@ -74,5 +78,6 @@ struct Usuario: Codable, Equatable {
         try container.encode(email, forKey: .email)
         try container.encode(genero, forKey: .genero)
         try container.encode(senha, forKey: .senha)
+        try container.encode(ativo, forKey: .ativo)
     }
 }

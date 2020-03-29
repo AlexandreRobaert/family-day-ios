@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -28,11 +28,11 @@
                     <rect key="frame" x="20" y="44" width="374" height="745"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="750" image="tortoise.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="WNv-8e-RC9">
-                            <rect key="frame" x="0.0" y="3.5" width="374" height="219.5"/>
+                            <rect key="frame" x="0.0" y="3.5" width="374" height="145"/>
                             <color key="tintColor" name="Roxo"/>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gA7-Oa-cyJ">
-                            <rect key="frame" x="0.0" y="233.5" width="374" height="74.5"/>
+                            <rect key="frame" x="0.0" y="159" width="374" height="74.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastre sua Meta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWm-5O-TGX">
                                     <rect key="frame" x="80.5" y="22.5" width="213" height="30"/>
@@ -48,7 +48,7 @@
                             </constraints>
                         </view>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Título da meta" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="k6w-vp-WIY">
-                            <rect key="frame" x="0.0" y="318" width="374" height="45"/>
+                            <rect key="frame" x="0.0" y="243.5" width="374" height="45"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="FRK-s7-8zh"/>
                             </constraints>
@@ -56,7 +56,7 @@
                             <textInputTraits key="textInputTraits" returnKeyType="done"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Descrição da sua meta" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Vz7-K4-vLU">
-                            <rect key="frame" x="0.0" y="373" width="374" height="45"/>
+                            <rect key="frame" x="0.0" y="298.5" width="374" height="45"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="h01-Po-RjZ"/>
                             </constraints>
@@ -64,7 +64,7 @@
                             <textInputTraits key="textInputTraits" returnKeyType="done"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pontos a serem alcançados" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="HNb-l8-YYB">
-                            <rect key="frame" x="0.0" y="428" width="374" height="45"/>
+                            <rect key="frame" x="0.0" y="353.5" width="374" height="45"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="1Kb-aS-u6O"/>
                             </constraints>
@@ -72,7 +72,7 @@
                             <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
                         </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nZk-Jt-ZFK">
-                            <rect key="frame" x="0.0" y="483" width="374" height="207"/>
+                            <rect key="frame" x="0.0" y="408.5" width="374" height="281.5"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </view>
                         <button opaque="NO" tag="111" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ntk-FX-UAz">
@@ -98,7 +98,7 @@
                     </subviews>
                     <constraints>
                         <constraint firstItem="gA7-Oa-cyJ" firstAttribute="height" secondItem="TPN-Oi-axh" secondAttribute="height" multiplier="0.1" id="S45-JO-cpx"/>
-                        <constraint firstItem="WNv-8e-RC9" firstAttribute="height" secondItem="TPN-Oi-axh" secondAttribute="height" multiplier="0.3" id="b4a-Vp-EbB"/>
+                        <constraint firstItem="WNv-8e-RC9" firstAttribute="height" secondItem="TPN-Oi-axh" secondAttribute="height" multiplier="0.2" id="b4a-Vp-EbB"/>
                     </constraints>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPj-PT-jff">
@@ -121,7 +121,7 @@
         </view>
     </objects>
     <resources>
-        <image name="tortoise.fill" catalog="system" width="64" height="32"/>
+        <image name="tortoise.fill" catalog="system" width="128" height="66"/>
         <namedColor name="Roxo">
             <color red="0.61960784313725492" green="0.0" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

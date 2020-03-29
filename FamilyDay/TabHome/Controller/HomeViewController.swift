@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
     let identifierTarefa = "celulaTarefa"
     var user: Usuario!
     
-    override func viewDidLoad() {
+    override func viewDidLoad(){
         super.viewDidLoad()
         
         self.fotoPerfilImage.layer.cornerRadius = self.fotoPerfilImage.frame.width / 2
@@ -37,7 +37,6 @@ class HomeViewController: UIViewController {
         
         nomePerfilLabel.text = user.nome
         tipoPerfilLabel.text = user.tipo
-        
     }
 }
 

@@ -10,19 +10,15 @@ import UIKit
 
 class DetalhesTarefaViewController: UIViewController {
 
+    @IBOutlet weak var tituloLabel: UILabel!
+    @IBOutlet weak var pontosLabel: UILabel!
+    @IBOutlet weak var dataFimLabel: UILabel!
+    @IBOutlet weak var tituloMetaLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
+    
+    var tarefa: Tarefa?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

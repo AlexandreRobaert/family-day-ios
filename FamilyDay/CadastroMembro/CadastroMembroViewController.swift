@@ -19,6 +19,8 @@ class CadastroMembroViewController: UIViewController {
     @IBOutlet weak var mensagemLabel: UILabel!
     @IBOutlet weak var cadastrarButton: UIButton!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var senhaTextField: UITextField!
+    @IBOutlet weak var repetirSenhaTextField: UITextField!
     
     lazy var tipoGeneroPicker: UIPickerView = {
         let picker = UIPickerView()
@@ -73,6 +75,10 @@ class CadastroMembroViewController: UIViewController {
         perfilTextField.inputAccessoryView = toolbarTipoPerfil
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     @objc func cancel(){
         generoTextField.resignFirstResponder()
         dataNascimentoTextField.resignFirstResponder()
@@ -95,6 +101,36 @@ class CadastroMembroViewController: UIViewController {
         cancel()
     }
     
+    func showAlertQRCode(id: String){
+        
+        UsuarioDao.getTokenMembroFor(id: id) { (token) in
+            if let token = token {
+                let alertController = UIAlertController(title: "QRCode de Convite", message: "Mostro este QRCode para o dependente cadastrado, para ele entrar no Family Day", preferredStyle: .alert)
+                
+                let tamanho80DaTela = self.view.frame.width * 0.80
+                
+                let height:NSLayoutConstraint = NSLayoutConstraint(item: alertController.view, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: tamanho80DaTela)
+                let width:NSLayoutConstraint = NSLayoutConstraint(item: alertController.view, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: tamanho80DaTela)
+                
+                alertController.view.addConstraint(height);
+                alertController.view.addConstraint(width);
+                
+                let actionOK = UIAlertAction(title: "OK", style: .cancel) { (alertAction) in
+                    self.navigationController?.popViewController(animated: true)
+                }
+                let imageQRCode = Utils.generateQRCode(from: token)
+                let uiImageView = UIImageView(frame: CGRect(x: 30, y: 30, width: self.view.frame.width * 0.60, height: self.view.frame.width * 0.60))
+            
+                uiImageView.image = imageQRCode
+                
+                alertController.view.addSubview(uiImageView)
+                alertController.addAction(actionOK)
+                self.present(alertController, animated: true, completion: nil)
+                
+            }
+        }
+    }
+    
     func criarUsuario(){
         cadastrarButton.isEnabled = false
         indicator.isHidden = false
@@ -111,7 +147,7 @@ class CadastroMembroViewController: UIViewController {
                     sexo = "OUTROS"
                 }
                 
-                let user = Usuario(id: "nome", nome: nome, dataNascimento: dataSelecionada, telefone: telefone, tipo: perfil, email: email, genero: sexo, senha: "", idFamilia: "")
+                let user = Usuario(id: "nome", nome: nome, dataNascimento: dataSelecionada, telefone: telefone, tipo: perfil, email: email, genero: sexo, senha: "", idFamilia: "", ativo: false)
                 
                 UsuarioDao.cadastrarMembro(usuario: user, idFamilia: Configuration.shared.idFamilia!) { (idUsuario) in
                     if let id = idUsuario {

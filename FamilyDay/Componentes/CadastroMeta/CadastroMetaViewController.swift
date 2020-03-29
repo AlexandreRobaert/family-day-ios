@@ -23,12 +23,13 @@ class CadastroMetaViewController: UIViewController {
     
     var meta: Meta?
     var delegate: TabelaMetasDelegate?
-    
+    var metaInicial: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -39,6 +40,23 @@ class CadastroMetaViewController: UIViewController {
             tituloTextField.text = meta.titulo
             descricaoTextField.text = meta.descricao
             pontosTextField.text = String(meta.pontosAlvo)
+        }
+    }
+    
+    func irParaHome(){
+        dismiss(animated: false, completion: nil)
+        let tab = self.storyboard?.instantiateViewController(withIdentifier: "tabbarhome") as! UITabBarController
+        let navigation = tab.viewControllers?.first as! UINavigationController
+        let vcHome = navigation.viewControllers[0] as! HomeViewController
+        
+        UsuarioDao.getUserfor(token: Configuration.shared.token!) { (usuario) in
+            if let user = usuario {
+                vcHome.user = user
+
+                self.present(tab, animated: true, completion: nil)
+                self.navigationController?.popToRootViewController(animated: false)
+                self.navigationController?.dismiss(animated: false, completion: nil)
+            }
         }
     }
 
@@ -57,7 +75,12 @@ class CadastroMetaViewController: UIViewController {
                     if let id = idMeta {
                         self.meta?.id = id
                         self.delegate?.atualizarTabelaDeMetas(meta: self.meta!)
-                        self.navigationController?.popViewController(animated: true)
+                        
+                        if !self.metaInicial {
+                            self.navigationController?.popViewController(animated: true)
+                        }else{
+                            self.irParaHome()
+                        }
                     }
                 }
             }else{

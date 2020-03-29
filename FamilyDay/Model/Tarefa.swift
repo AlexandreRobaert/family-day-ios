@@ -15,8 +15,11 @@ struct Tarefa: Codable {
     var descricao: String
     var dataInicio: Date
     var dataFim: Date
-    var personalizado: [String]
+    var personalizado: [Int]
     var diariamente: Bool
     var pontos: Int
     var exigeComprovacao: Bool
+    var usuarios:[Usuario]?
+    var meta: Meta?
+    var historico: [Historico]?
 }

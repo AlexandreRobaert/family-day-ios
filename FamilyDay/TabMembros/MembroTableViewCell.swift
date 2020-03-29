@@ -28,7 +28,7 @@ class MembroTableViewCell: UITableViewCell {
 
     func configuraCelula(user: Usuario){
         self.nomeLabel.text = user.nome
-        self.tipoPerfilLabel.text = user.tipo
+        self.tipoPerfilLabel.text = user.tipo!
         
         if user.id! == Configuration.shared.idUsuario! {
             self.nomeLabel.text = user.nome + " - Você"
