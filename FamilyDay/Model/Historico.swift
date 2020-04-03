@@ -12,8 +12,9 @@ struct Historico: Codable {
 
     let id: String
     let dataExecucao: Date
-    let status: String
-    let membro: Usuario
-    let pontosGanhos: Int
+    var status: String
+    let idMembro: String
+    let pontos: Int
     let fotos: [String]
+    var comentario: String
 }

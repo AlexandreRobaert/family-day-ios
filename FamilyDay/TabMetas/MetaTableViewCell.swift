@@ -19,7 +19,6 @@ class MetaTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -31,7 +30,7 @@ class MetaTableViewCell: UITableViewCell {
     func configuraCelula(_ meta: Meta){
         imageMeta.image = UIImage(systemName: "tortoise.fill")
         tituloMetaLabel.text = meta.titulo
-        pontosLabel.text = String(describing: meta.pontosAlvo)
+        pontosLabel.text = "Pontos \(String(describing: meta.pontosAlvo))"
     }
 
 }

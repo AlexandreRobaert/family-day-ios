@@ -9,11 +9,11 @@
 import UIKit
 
 class TarefaTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var tituloTarefaLabel: UILabel!
-    @IBOutlet weak var usuarioDaTarefaLabel: UILabel!
-    @IBOutlet weak var pontosLabel: UILabel!
-    @IBOutlet weak var dataFimLabel: UILabel!
+    
+    @IBOutlet weak var tituloTarefa: UILabel!
+    @IBOutlet weak var nomeMembro: UILabel!
+    @IBOutlet weak var pontosTarefa: UILabel!
+    @IBOutlet weak var dataProximaTarefa: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,8 +24,23 @@ class TarefaTableViewCell: UITableViewCell {
         let formatData = DateFormatter()
         formatData.dateFormat = "dd/MM/yyyy"
         
-        tituloTarefaLabel.text = tarefa.titulo
-        pontosLabel.text = tarefa.pontos > 1 ? "\(tarefa.pontos) Pontos" : "\(tarefa.pontos) Ponto"
-        dataFimLabel.text = formatData.string(from: tarefa.dataFim)
+        var historico:Historico!
+        var countHistorico = 0
+        
+        for itemHistorico in tarefa.historico! {
+            if itemHistorico.status == StatusTarefa.pendente.rawValue {
+                historico = itemHistorico
+                break
+            }
+        }
+    
+        for itemHis in tarefa.historico! {
+            countHistorico += itemHis.status != StatusTarefa.aprovado.rawValue && itemHis.status != StatusTarefa.expirado.rawValue ? 1 : 0
+        }
+        
+        let vezesTarefa = countHistorico > 1 ? "\(countHistorico) Vezes" : "\(countHistorico) Vez"
+        tituloTarefa.text = "\(tarefa.titulo)  - \(vezesTarefa)"
+        pontosTarefa.text = tarefa.pontos > 1 ? "\(tarefa.pontos) Pontos" : "\(tarefa.pontos) Ponto"
+        dataProximaTarefa.text = historico != nil ? formatData.string(from: historico.dataExecucao) : "Nenhuma"
     }
 }

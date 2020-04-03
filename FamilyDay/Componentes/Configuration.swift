@@ -13,6 +13,7 @@ enum UserDefaultsKeys: String {
     case primeiraVez = "primeiraVez"
     case idFamilia = "idFamilia"
     case idUsuario = "idUsuario"
+    case usuarioResponsavel = "usuarioResponsavel"
 }
 
 class Configuration {
@@ -46,6 +47,15 @@ class Configuration {
         }
         set {
             defaults.set(newValue, forKey: UserDefaultsKeys.idUsuario.rawValue)
+        }
+    }
+    
+    var usuarioResponsavel: Bool? {
+        get {
+            return defaults.bool(forKey: UserDefaultsKeys.usuarioResponsavel.rawValue)
+        }
+        set {
+            defaults.set(newValue, forKey: UserDefaultsKeys.usuarioResponsavel.rawValue)
         }
     }
     

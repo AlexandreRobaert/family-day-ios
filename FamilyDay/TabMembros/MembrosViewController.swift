@@ -28,9 +28,16 @@ class MembrosViewController: UIViewController {
                 self.indicator.isHidden = true
             }
         }
+        
+        guard let responsavel = Configuration.shared.usuarioResponsavel else { return }
+        
+        if responsavel {
+            print(responsavel)
+            navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showCadastrarTarefa)), animated: true)
+        }
     }
     
-    @IBAction func telaNovoMembro(_ sender: UIBarButtonItem) {
+    @objc func showCadastrarTarefa() {
         navigationController?.pushViewController(CadastroMembroViewController(), animated: true)
     }
 }

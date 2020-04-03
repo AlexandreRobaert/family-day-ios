@@ -23,13 +23,20 @@ class TabMetasViewController: UIViewController {
                 self.tableView.reloadData()
             }
         }
+        
+        guard let responsavel = Configuration.shared.usuarioResponsavel else { return }
+        
+        if responsavel {
+            print(responsavel)
+            navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showCadastrarMeta)), animated: true)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     
-    @IBAction func telaCadastrarMeta(_ sender: Any) {
+    @objc func showCadastrarMeta() {
         navigationController?.pushViewController(CadastroMetaViewController(), animated: true)
     }
 }

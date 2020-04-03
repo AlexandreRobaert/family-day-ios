@@ -12,7 +12,8 @@
 		AC1A0DAB23F470970037AAB7 /* DetalhesTarefaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1A0DA923F470970037AAB7 /* DetalhesTarefaViewController.swift */; };
 		AC1A0DAC23F470970037AAB7 /* DetalhesTarefaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC1A0DAA23F470970037AAB7 /* DetalhesTarefaViewController.xib */; };
 		AC1BB46423EDD90300AA88F5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BB46323EDD90300AA88F5 /* HomeViewController.swift */; };
-		AC1BB46923EDD9B400AA88F5 /* TarefasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BB46823EDD9B400AA88F5 /* TarefasViewController.swift */; };
+		AC2BCD972434489F000CEFD6 /* ConclusaoTarefaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2BCD952434489F000CEFD6 /* ConclusaoTarefaViewController.swift */; };
+		AC2BCD982434489F000CEFD6 /* ConclusaoTarefaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC2BCD962434489F000CEFD6 /* ConclusaoTarefaViewController.xib */; };
 		AC34D1882427B86400C76BA7 /* ComprovacaoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC34D1872427B86400C76BA7 /* ComprovacaoViewCell.xib */; };
 		AC34D18A2427B8FE00C76BA7 /* DiaDaSemanaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC34D1892427B8FE00C76BA7 /* DiaDaSemanaTableViewCell.swift */; };
 		AC34D18C2427B94800C76BA7 /* ComprovacaoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC34D18B2427B94800C76BA7 /* ComprovacaoTableViewCell.swift */; };
@@ -21,6 +22,8 @@
 		AC36367D2423E7E3001D90DF /* DiasDaSemanaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC36367B2423E7E3001D90DF /* DiasDaSemanaTableViewController.swift */; };
 		AC36367E2423E7E3001D90DF /* DiasDaSemanaTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC36367C2423E7E3001D90DF /* DiasDaSemanaTableViewController.xib */; };
 		AC363688242411B8001D90DF /* DiaDaSemanaViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC363687242411B8001D90DF /* DiaDaSemanaViewCell.xib */; };
+		AC3A2708243157F5009A9E09 /* TarefasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3A2706243157F5009A9E09 /* TarefasTableViewController.swift */; };
+		AC3C2F7F24305895002E0564 /* TarefasDashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3C2F7E24305895002E0564 /* TarefasDashViewController.swift */; };
 		AC48556B24083CDA009D81AA /* Tela1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC48556924083CDA009D81AA /* Tela1ViewController.swift */; };
 		AC48556C24083CDA009D81AA /* Tela1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC48556A24083CDA009D81AA /* Tela1ViewController.xib */; };
 		AC48557124083DF6009D81AA /* Tela2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC48556F24083DF6009D81AA /* Tela2ViewController.swift */; };
@@ -38,6 +41,8 @@
 		AC58EE26241622DB00CEB18B /* MetaDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC58EE25241622DB00CEB18B /* MetaDao.swift */; };
 		AC58EE282416234500CEB18B /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC58EE272416234500CEB18B /* Meta.swift */; };
 		AC6123A923F25D2F00C4DEA1 /* TarefaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6123A823F25D2F00C4DEA1 /* TarefaTableViewCell.swift */; };
+		AC654E0624365D0100043169 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC654E0524365D0100043169 /* CardCollectionViewCell.swift */; };
+		AC654E082436719700043169 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC654E072436719700043169 /* DateUtil.swift */; };
 		AC6F18D6240AA9E8003DC31D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AC6F18D5240AA9E8003DC31D /* Alamofire */; };
 		AC702FC923FC4DD500F86049 /* ConviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC702FC723FC4DD500F86049 /* ConviteViewController.swift */; };
 		AC702FCA23FC4DD500F86049 /* ConviteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC702FC823FC4DD500F86049 /* ConviteViewController.xib */; };
@@ -53,6 +58,8 @@
 		AC8B01A323FCCB8100F4B79E /* MenuOpcoesEnvio.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8B01A223FCCB8100F4B79E /* MenuOpcoesEnvio.swift */; };
 		AC8BAA32241D392A00DEA8A6 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = AC8BAA31241D392A00DEA8A6 /* SwiftyJSON */; };
 		AC8BAA35241D46D100DEA8A6 /* CadastrarTarefaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8BAA33241D46D100DEA8A6 /* CadastrarTarefaViewController.swift */; };
+		AC8E4C3024345190008B595D /* FotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8E4C2E24345190008B595D /* FotoCollectionViewCell.swift */; };
+		AC8E4C3124345190008B595D /* FotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC8E4C2F24345190008B595D /* FotoCollectionViewCell.xib */; };
 		AC9D47FB241812DE008ABF46 /* AjustesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9D47FA241812DE008ABF46 /* AjustesViewController.swift */; };
 		ACADB82524152B060087FC24 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACADB82424152B060087FC24 /* Utils.swift */; };
 		ACB4504C2411E56800B4FF5F /* FamiliaDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB4504B2411E56800B4FF5F /* FamiliaDao.swift */; };
@@ -74,7 +81,8 @@
 		AC1A0DA923F470970037AAB7 /* DetalhesTarefaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesTarefaViewController.swift; sourceTree = "<group>"; };
 		AC1A0DAA23F470970037AAB7 /* DetalhesTarefaViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetalhesTarefaViewController.xib; sourceTree = "<group>"; };
 		AC1BB46323EDD90300AA88F5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		AC1BB46823EDD9B400AA88F5 /* TarefasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarefasViewController.swift; sourceTree = "<group>"; };
+		AC2BCD952434489F000CEFD6 /* ConclusaoTarefaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConclusaoTarefaViewController.swift; sourceTree = "<group>"; };
+		AC2BCD962434489F000CEFD6 /* ConclusaoTarefaViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConclusaoTarefaViewController.xib; sourceTree = "<group>"; };
 		AC34D1872427B86400C76BA7 /* ComprovacaoViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComprovacaoViewCell.xib; sourceTree = "<group>"; };
 		AC34D1892427B8FE00C76BA7 /* DiaDaSemanaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaDaSemanaTableViewCell.swift; sourceTree = "<group>"; };
 		AC34D18B2427B94800C76BA7 /* ComprovacaoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComprovacaoTableViewCell.swift; sourceTree = "<group>"; };
@@ -83,6 +91,8 @@
 		AC36367B2423E7E3001D90DF /* DiasDaSemanaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiasDaSemanaTableViewController.swift; sourceTree = "<group>"; };
 		AC36367C2423E7E3001D90DF /* DiasDaSemanaTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiasDaSemanaTableViewController.xib; sourceTree = "<group>"; };
 		AC363687242411B8001D90DF /* DiaDaSemanaViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaDaSemanaViewCell.xib; sourceTree = "<group>"; };
+		AC3A2706243157F5009A9E09 /* TarefasTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarefasTableViewController.swift; sourceTree = "<group>"; };
+		AC3C2F7E24305895002E0564 /* TarefasDashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarefasDashViewController.swift; sourceTree = "<group>"; };
 		AC48556924083CDA009D81AA /* Tela1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tela1ViewController.swift; sourceTree = "<group>"; };
 		AC48556A24083CDA009D81AA /* Tela1ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Tela1ViewController.xib; sourceTree = "<group>"; };
 		AC48556F24083DF6009D81AA /* Tela2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tela2ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +110,8 @@
 		AC58EE25241622DB00CEB18B /* MetaDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaDao.swift; sourceTree = "<group>"; };
 		AC58EE272416234500CEB18B /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
 		AC6123A823F25D2F00C4DEA1 /* TarefaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarefaTableViewCell.swift; sourceTree = "<group>"; };
+		AC654E0524365D0100043169 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		AC654E072436719700043169 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		AC702FC723FC4DD500F86049 /* ConviteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConviteViewController.swift; sourceTree = "<group>"; };
 		AC702FC823FC4DD500F86049 /* ConviteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConviteViewController.xib; sourceTree = "<group>"; };
 		AC702FCB23FCC6C700F86049 /* Mensagem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mensagem.swift; sourceTree = "<group>"; };
@@ -113,6 +125,8 @@
 		AC85E1CB24198020009D4310 /* MembrosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembrosViewController.swift; sourceTree = "<group>"; };
 		AC8B01A223FCCB8100F4B79E /* MenuOpcoesEnvio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOpcoesEnvio.swift; sourceTree = "<group>"; };
 		AC8BAA33241D46D100DEA8A6 /* CadastrarTarefaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastrarTarefaViewController.swift; sourceTree = "<group>"; };
+		AC8E4C2E24345190008B595D /* FotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		AC8E4C2F24345190008B595D /* FotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		AC9D47FA241812DE008ABF46 /* AjustesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AjustesViewController.swift; sourceTree = "<group>"; };
 		ACADB82424152B060087FC24 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		ACB4504B2411E56800B4FF5F /* FamiliaDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamiliaDao.swift; sourceTree = "<group>"; };
@@ -188,9 +202,13 @@
 		AC1BB46723EDD9A200AA88F5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AC1BB46823EDD9B400AA88F5 /* TarefasViewController.swift */,
+				AC3A2706243157F5009A9E09 /* TarefasTableViewController.swift */,
 				AC6123A823F25D2F00C4DEA1 /* TarefaTableViewCell.swift */,
 				AC1A0DA923F470970037AAB7 /* DetalhesTarefaViewController.swift */,
+				AC3C2F7E24305895002E0564 /* TarefasDashViewController.swift */,
+				AC2BCD952434489F000CEFD6 /* ConclusaoTarefaViewController.swift */,
+				AC8E4C2E24345190008B595D /* FotoCollectionViewCell.swift */,
+				AC654E0524365D0100043169 /* CardCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -267,6 +285,7 @@
 				AC8B01A223FCCB8100F4B79E /* MenuOpcoesEnvio.swift */,
 				ACFED43524098FA30094727F /* Configuration.swift */,
 				ACADB82424152B060087FC24 /* Utils.swift */,
+				AC654E072436719700043169 /* DateUtil.swift */,
 			);
 			path = Componentes;
 			sourceTree = "<group>";
@@ -285,6 +304,8 @@
 			isa = PBXGroup;
 			children = (
 				AC1A0DAA23F470970037AAB7 /* DetalhesTarefaViewController.xib */,
+				AC2BCD962434489F000CEFD6 /* ConclusaoTarefaViewController.xib */,
+				AC8E4C2F24345190008B595D /* FotoCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -492,12 +513,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC48556C24083CDA009D81AA /* Tela1ViewController.xib in Resources */,
+				AC8E4C3124345190008B595D /* FotoCollectionViewCell.xib in Resources */,
 				AC58EE24241616DE00CEB18B /* CadastroMetaViewController.xib in Resources */,
 				ACB7C5AF23EB35D70010D603 /* LaunchScreen.storyboard in Resources */,
 				ACDA89052421DBD400F0488F /* CadastrarTarefaViewController.xib in Resources */,
 				ACB7C5AC23EB35D70010D603 /* Assets.xcassets in Resources */,
 				AC36367E2423E7E3001D90DF /* DiasDaSemanaTableViewController.xib in Resources */,
 				AC5109E62417686E00113FB1 /* CadastroUsuarioViewController.xib in Resources */,
+				AC2BCD982434489F000CEFD6 /* ConclusaoTarefaViewController.xib in Resources */,
 				AC1A0DAC23F470970037AAB7 /* DetalhesTarefaViewController.xib in Resources */,
 				AC7927D32424601C0082DAAC /* ListaMembrosTableViewController.xib in Resources */,
 				AC702FCA23FC4DD500F86049 /* ConviteViewController.xib in Resources */,
@@ -524,19 +547,22 @@
 				AC36367D2423E7E3001D90DF /* DiasDaSemanaTableViewController.swift in Sources */,
 				AC702FCF23FCC74500F86049 /* Usuario.swift in Sources */,
 				AC702FCC23FCC6C700F86049 /* Mensagem.swift in Sources */,
+				AC654E082436719700043169 /* DateUtil.swift in Sources */,
 				AC7927CD2424566C0082DAAC /* MembroTableViewCell.swift in Sources */,
 				AC852B7224271F22001D86E4 /* TarefaDao.swift in Sources */,
 				ACB4504C2411E56800B4FF5F /* FamiliaDao.swift in Sources */,
 				AC1BB46423EDD90300AA88F5 /* HomeViewController.swift in Sources */,
 				AC5109E02417582800113FB1 /* ScannerQRCodeViewController.swift in Sources */,
-				AC1BB46923EDD9B400AA88F5 /* TarefasViewController.swift in Sources */,
 				ACB7F961242A5981006267D4 /* Historico.swift in Sources */,
 				AC85E1CC24198020009D4310 /* MembrosViewController.swift in Sources */,
+				AC8E4C3024345190008B595D /* FotoCollectionViewCell.swift in Sources */,
 				AC48557124083DF6009D81AA /* Tela2ViewController.swift in Sources */,
 				AC362A39242ED7BB00A6DAE1 /* DetalhesUsuarioViewController.swift in Sources */,
 				AC4D949D240C1748002CF0DB /* TarefasCollectionViewCell.swift in Sources */,
+				AC3C2F7F24305895002E0564 /* TarefasDashViewController.swift in Sources */,
 				AC7927D22424601C0082DAAC /* ListaMembrosTableViewController.swift in Sources */,
 				AC7461F5240EC7C1000795C6 /* PerfilViewController.swift in Sources */,
+				AC2BCD972434489F000CEFD6 /* ConclusaoTarefaViewController.swift in Sources */,
 				AC58EE282416234500CEB18B /* Meta.swift in Sources */,
 				AC702FC923FC4DD500F86049 /* ConviteViewController.swift in Sources */,
 				ACB7C5B723EB404E0010D603 /* LoginViewController.swift in Sources */,
@@ -552,11 +578,13 @@
 				ACF264CA2416E36A00BC621E /* TabMetasViewController.swift in Sources */,
 				AC1A0DAB23F470970037AAB7 /* DetalhesTarefaViewController.swift in Sources */,
 				ACB7C5A523EB35D60010D603 /* SceneDelegate.swift in Sources */,
+				AC654E0624365D0100043169 /* CardCollectionViewCell.swift in Sources */,
 				AC58EE23241616DE00CEB18B /* CadastroMetaViewController.swift in Sources */,
 				AC7927CF24245A0C0082DAAC /* Tarefa.swift in Sources */,
 				AC4D94A0240C2F72002CF0DB /* UsuarioDao.swift in Sources */,
 				AC6123A923F25D2F00C4DEA1 /* TarefaTableViewCell.swift in Sources */,
 				AC58EE26241622DB00CEB18B /* MetaDao.swift in Sources */,
+				AC3A2708243157F5009A9E09 /* TarefasTableViewController.swift in Sources */,
 				AC8B01A323FCCB8100F4B79E /* MenuOpcoesEnvio.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,6 +13,7 @@ class UsuarioDao {
             case .success(let usuario):
                 Configuration.shared.idFamilia = usuario.idFamilia
                 Configuration.shared.idUsuario = usuario.id
+                Configuration.shared.usuarioResponsavel = usuario.tipo == "RESPONSAVEL" ? true : false
                 completion(usuario)
             case .failure(_):
                 completion(nil)
@@ -76,7 +77,7 @@ class UsuarioDao {
     class func getToken(login: String, senha: String, completion: @escaping (String?) -> Void) {
         
         let headers: HTTPHeaders = [.authorization(username: login, password: senha)]
-        let parametros = ["os": "IOS", "deviceId": "deviceID FAKE"]
+        let parametros = ["os": "IOS", "deviceId": "deviceID Alexandre"]
 
         AF.request("\(Configuration.URL_API)/login", method: .post, parameters: parametros, headers: headers).responseJSON { (response) in
             print(response.result)

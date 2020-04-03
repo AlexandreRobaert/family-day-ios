@@ -161,7 +161,14 @@ class CadastrarTarefaViewController: UIViewController {
                     
                     TarefaDao.cadastrarTarefa(tarefa: tarefa, meta: metaSelecionada!, usuarios: usuariosSelecionados) { (cadastrou) in
                         if cadastrou {
-                            self.navigationController?.popViewController(animated: true)
+                            let alertControl = UIAlertController(title: "Tarefa Inserido", message: "Sua tarefa foi gravada com sucesso!", preferredStyle: .alert)
+                            let actionOk = UIAlertAction(title: "OK", style: .cancel) { (alertAction) in
+                                self.navigationController?.popViewController(animated: true)
+                            }
+                            alertControl.addAction(actionOk)
+                            self.present(alertControl, animated: true, completion: nil)
+                        }else{
+                            
                         }
                     }
                 }
