@@ -877,7 +877,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="YQ9-2M-Pgo">
             <objects>
-                <tabBarController storyboardIdentifier="tabbarhome" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="oaE-yJ-GEp" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabbarhome" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oaE-yJ-GEp" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="S0v-Hk-N17"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rCU-7H-8h4">

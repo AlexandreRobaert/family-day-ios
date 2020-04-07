@@ -44,11 +44,12 @@ class CadastroMetaViewController: UIViewController {
     }
     
     func irParaHome(){
-        dismiss(animated: false, completion: nil)
-        let tab = self.storyboard?.instantiateViewController(withIdentifier: "tabbarhome") as! UITabBarController
+        //let tab = self.storyboard?.instantiateViewController(withIdentifier: "tabbarhome") as! UITabBarController
+        let tab:UITabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabbarhome") as! UITabBarController
         let navigation = tab.viewControllers?.first as! UINavigationController
         let vcHome = navigation.viewControllers[0] as! HomeViewController
         
+        dismiss(animated: false, completion: nil)
         UsuarioDao.getUserfor(token: Configuration.shared.token!) { (usuario) in
             if let user = usuario {
                 vcHome.user = user
@@ -74,9 +75,9 @@ class CadastroMetaViewController: UIViewController {
                 MetaDao.cadastrarMeta(meta: meta!) { (idMeta) in
                     if let id = idMeta {
                         self.meta?.id = id
-                        self.delegate?.atualizarTabelaDeMetas(meta: self.meta!)
-                        
+                        print(!self.metaInicial)
                         if !self.metaInicial {
+                            self.delegate?.atualizarTabelaDeMetas(meta: self.meta!)
                             self.navigationController?.popViewController(animated: true)
                         }else{
                             self.irParaHome()

@@ -188,7 +188,7 @@ class UsuarioDao {
         }
     }
     
-    static func cadastrarMembro(usuario: Usuario, idFamilia: String, completion: @escaping(String?) -> Void){
+    static func cadastrarMembro(usuario: Usuario, idFamilia: String, completion: @escaping(Bool) -> Void){
         
         let fullISO8610Formatter = DateFormatter()
         fullISO8610Formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
@@ -199,15 +199,13 @@ class UsuarioDao {
         let parametros = ["nome": usuario.nome, "dataNascimento": stringData, "telefone": usuario.telefone, "tipo": usuario.tipo, "genero": usuario.genero, "email": usuario.email, "familia": idFamilia]
         
         AF.request("\(Configuration.URL_API)/usuarios/cadastrar-membro-familia", method: .post, parameters: parametros, headers: header).responseJSON { (retorno) in
-            
             switch retorno.result {
             case .success(let body):
                 print(body)
-                let idUsuario = (body as! [String: String])["_id"]
-                completion(idUsuario)
+                completion(true)
                 break
             case .failure(_):
-                completion(nil)
+                completion(false)
             }
         }
     }

@@ -21,14 +21,6 @@ class MembrosViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        UsuarioDao.getAllUsersFamily { (usuarios) in
-            if let usuarios = usuarios {
-                self.usuarios = usuarios
-                self.tableView.reloadData()
-                self.indicator.isHidden = true
-            }
-        }
-        
         guard let responsavel = Configuration.shared.usuarioResponsavel else { return }
         
         if responsavel {
@@ -37,8 +29,21 @@ class MembrosViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UsuarioDao.getAllUsersFamily { (usuarios) in
+            if let usuarios = usuarios {
+                self.usuarios = usuarios
+                self.tableView.reloadData()
+                self.indicator.isHidden = true
+            }
+        }
+    }
+    
     @objc func showCadastrarTarefa() {
-        navigationController?.pushViewController(CadastroMembroViewController(), animated: true)
+        let vc = CadastroMembroViewController()
+        vc.delegate = self
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

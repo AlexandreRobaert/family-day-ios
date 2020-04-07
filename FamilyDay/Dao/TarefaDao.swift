@@ -10,7 +10,6 @@ enum StatusTarefa: String {
     case reprovado = "reprovado"
     case expirado = "expirado"
     case refazer = "refazer"
-    
 }
 
 class TarefaDao {

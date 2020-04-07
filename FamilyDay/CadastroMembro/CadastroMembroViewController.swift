@@ -134,43 +134,44 @@ class CadastroMembroViewController: UIViewController {
     func criarUsuario(){
         cadastrarButton.isEnabled = false
         indicator.isHidden = false
-        if !Utils.temTextFieldVazia(view: view){
-            if let nome = nomeTextField.text, let genero = generoTextField.text,
-                let telefone = telefoneTextField.text, let perfil = perfilTextField.text, let email = emailTextField.text {
-                
-                var sexo = ""
-                if genero.uppercased() == "MASCULINO"{
-                    sexo = "M"
-                }else if genero.uppercased() == "FEMININO"{
-                    sexo = "F"
-                }else{
-                    sexo = "OUTROS"
-                }
-                
-                let user = Usuario(id: "nome", nome: nome, dataNascimento: dataSelecionada, telefone: telefone, tipo: perfil, email: email, genero: sexo, senha: "", idFamilia: "", ativo: false)
-                
-                UsuarioDao.cadastrarMembro(usuario: user, idFamilia: Configuration.shared.idFamilia!) { (idUsuario) in
-                    if let id = idUsuario {
-                        var usuario = user
-                        usuario.id = id
-                        
-                        if self.delegate != nil {
-                            self.delegate?.adicionarUsuarioNaLista(user: usuario)
-                        }
-                        
-                        self.navigationController?.popViewController(animated: true)
-                    }else{
-                        self.indicator.isHidden = true
-                        self.cadastrarButton.isEnabled = true
-                        self.mensagemLabel.text = "Erro ao gravar Membro!"
+        
+        if let nome = nomeTextField.text, let genero = generoTextField.text,
+            let telefone = telefoneTextField.text, let perfil = perfilTextField.text, let email = emailTextField.text {
+            
+            var sexo = ""
+            if genero.uppercased() == "MASCULINO"{
+                sexo = "M"
+            }else if genero.uppercased() == "FEMININO"{
+                sexo = "F"
+            }else{
+                sexo = "OUTROS"
+            }
+            
+            let user = Usuario(id: "nome", nome: nome, dataNascimento: dataSelecionada, telefone: telefone, tipo: perfil, email: email, genero: sexo, senha: "", idFamilia: "", ativo: false)
+            
+            UsuarioDao.cadastrarMembro(usuario: user, idFamilia: Configuration.shared.idFamilia!) { (sucesso) in
+                if sucesso {
+                    
+                    if self.delegate != nil {
+                        self.delegate?.adicionarUsuarioNaLista(user: user)
                     }
+                    
+                    self.navigationController?.popViewController(animated: true)
+                }else{
+                    self.indicator.isHidden = true
+                    self.cadastrarButton.isEnabled = true
+                    self.mensagemLabel.text = "Erro ao gravar Membro!"
                 }
             }
-        }else{
-            cadastrarButton.isEnabled = true
-            mensagemLabel.text = "Todos os campos devem ser preenchidos!"
-            indicator.isHidden = true
         }
+        
+//        if !Utils.temTextFieldVazia(view: view){
+//
+//        }else{
+//            cadastrarButton.isEnabled = true
+//            mensagemLabel.text = "Todos os campos devem ser preenchidos!"
+//            indicator.isHidden = true
+//        }
     }
     
     @IBAction func cadastrarMembro(_ sender: Any) {

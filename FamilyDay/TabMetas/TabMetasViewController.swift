@@ -17,13 +17,6 @@ class TabMetasViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        MetaDao.getMetasDaFamilia { (metas) in
-            if let arrayMetas = metas {
-                self.metas = arrayMetas
-                self.tableView.reloadData()
-            }
-        }
-        
         guard let responsavel = Configuration.shared.usuarioResponsavel else { return }
         
         if responsavel {
@@ -34,6 +27,12 @@ class TabMetasViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        MetaDao.getMetasDaFamilia { (metas) in
+            if let arrayMetas = metas {
+                self.metas = arrayMetas
+                self.tableView.reloadData()
+            }
+        }
     }
     
     @objc func showCadastrarMeta() {
