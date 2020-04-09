@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import Firebase
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
@@ -110,5 +111,12 @@ extension LoginViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         
         return true
+    }
+}
+
+extension LoginViewController: MessagingDelegate {
+    
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        print(fcmToken)
     }
 }

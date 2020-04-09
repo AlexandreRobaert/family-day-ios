@@ -10,12 +10,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConclusaoTarefaViewController" customModule="Family_Day" customModuleProvider="target">
             <connections>
-                <outlet property="cameraButton" destination="yWT-Ni-Bnh" id="ZQR-wP-Y21"/>
                 <outlet property="collectionView" destination="YYL-v5-n9Y" id="Gye-Ui-u6z"/>
                 <outlet property="comentarioTextField" destination="MpF-5l-rKv" id="xqR-xq-slZ"/>
                 <outlet property="concluirTarefaButton" destination="5v4-pT-f6s" id="9Xm-Ua-lB1"/>
                 <outlet property="dataExecucaoHistorico" destination="tFH-Wf-cug" id="kMd-vk-ykE"/>
                 <outlet property="descricaoTarefa" destination="w1L-AU-Vnq" id="lSJ-9S-pSd"/>
+                <outlet property="progressLabel" destination="e7Q-Bi-3jM" id="Sg3-px-7FK"/>
+                <outlet property="progressUploadImage" destination="RGq-bX-MTd" id="nVV-KD-6dh"/>
                 <outlet property="stackBotoes" destination="fHm-Vh-Kso" id="9OL-zf-KDU"/>
                 <outlet property="statusHistorico" destination="2l7-u5-yv4" id="9Im-IF-1v9"/>
                 <outlet property="tituloTarefa" destination="fiS-ho-P19" id="dtg-Vg-CTI"/>
@@ -119,12 +120,17 @@
                                 </button>
                             </subviews>
                         </stackView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWT-Ni-Bnh" userLabel="Tirar Foto Button">
-                            <rect key="frame" x="0.0" y="659.5" width="374" height="22"/>
-                            <state key="normal" image="camera" catalog="system"/>
-                        </button>
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enviando" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7Q-Bi-3jM">
+                            <rect key="frame" x="0.0" y="649.5" width="374" height="0.0"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="0.99607843139999996" green="0.31764705879999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RGq-bX-MTd">
+                            <rect key="frame" x="0.0" y="649.5" width="374" height="0.0"/>
+                        </progressView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5v4-pT-f6s">
-                            <rect key="frame" x="0.0" y="701.5" width="374" height="30"/>
+                            <rect key="frame" x="0.0" y="659.5" width="374" height="72"/>
                             <state key="normal" title="Concluir Tarefa"/>
                             <connections>
                                 <action selector="concluirTarefa:" destination="-1" eventType="touchUpInside" id="KFf-SX-kf6"/>
@@ -154,7 +160,6 @@
         </view>
     </objects>
     <resources>
-        <image name="camera" catalog="system" width="128" height="96"/>
         <image name="checkmark.rectangle.fill" catalog="system" width="128" height="93"/>
         <namedColor name="Roxo">
             <color red="0.61960784313725492" green="0.0" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

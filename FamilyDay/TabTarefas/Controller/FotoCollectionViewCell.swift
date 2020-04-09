@@ -11,9 +11,9 @@ import UIKit
 class FotoCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var foto: UIImageView!
+    @IBOutlet weak var botaoCamera: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
 }

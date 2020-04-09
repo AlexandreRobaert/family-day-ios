@@ -2,8 +2,19 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import Firebase
 
 class UsuarioDao {
+    
+    class func getTokeApp(){
+        InstanceID.instanceID().instanceID { (result, error) in
+          if let error = error {
+            print("Erro no TokenID do App: \(error)")
+          } else if let result = result {
+            Configuration.shared.deviceId = result.token
+          }
+        }
+    }
     
     class func getUserfor(token: String, completion: @escaping (Usuario?) -> Void) -> Void {
         let headers: HTTPHeaders = ["x-access-token": token]
@@ -77,7 +88,8 @@ class UsuarioDao {
     class func getToken(login: String, senha: String, completion: @escaping (String?) -> Void) {
         
         let headers: HTTPHeaders = [.authorization(username: login, password: senha)]
-        let parametros = ["os": "IOS", "deviceId": "deviceID Alexandre"]
+        UsuarioDao.getTokeApp()
+        let parametros = ["os": "IOS", "deviceId": Configuration.shared.deviceId]
 
         AF.request("\(Configuration.URL_API)/login", method: .post, parameters: parametros, headers: headers).responseJSON { (response) in
             print(response.result)

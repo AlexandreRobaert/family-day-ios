@@ -21,11 +21,17 @@
                         <rect key="frame" x="0.0" y="1.5" width="100" height="97.5"/>
                         <color key="tintColor" name="Roxo"/>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nng-UI-r2n">
+                        <rect key="frame" x="71" y="73" width="24" height="22"/>
+                        <state key="normal" image="camera" catalog="system"/>
+                    </button>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="nng-UI-r2n" secondAttribute="bottom" constant="5" id="5Br-9k-K77"/>
                 <constraint firstAttribute="trailing" secondItem="H6z-rm-i8z" secondAttribute="trailing" id="6Of-Df-uPB"/>
                 <constraint firstAttribute="bottom" secondItem="H6z-rm-i8z" secondAttribute="bottom" id="HPl-dQ-DBO"/>
+                <constraint firstAttribute="trailing" secondItem="nng-UI-r2n" secondAttribute="trailing" constant="5" id="qVQ-e8-yNC"/>
                 <constraint firstItem="H6z-rm-i8z" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="sAF-6H-04x"/>
                 <constraint firstItem="H6z-rm-i8z" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="sjs-7p-A8i"/>
             </constraints>
@@ -40,12 +46,14 @@
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="botaoCamera" destination="nng-UI-r2n" id="ObG-Co-oj3"/>
                 <outlet property="foto" destination="H6z-rm-i8z" id="xHX-pe-hBc"/>
             </connections>
             <point key="canvasLocation" x="173.91304347826087" y="168.75"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="camera" catalog="system" width="128" height="96"/>
         <image name="list.bullet.below.rectangle" catalog="system" width="128" height="112"/>
         <namedColor name="Roxo">
             <color red="0.61960784313725492" green="0.0" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

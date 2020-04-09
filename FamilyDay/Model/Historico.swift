@@ -15,6 +15,6 @@ struct Historico: Codable {
     var status: String
     let idMembro: String
     let pontos: Int
-    let fotos: [String]
+    var fotos: [String]
     var comentario: String
 }

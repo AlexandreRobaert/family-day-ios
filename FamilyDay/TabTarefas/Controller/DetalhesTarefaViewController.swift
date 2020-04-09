@@ -57,15 +57,7 @@ extension DetalhesTarefaViewController: UITableViewDelegate, UITableViewDataSour
       
         cell.textLabel?.text = "\(dataTexto)"
         cell.selectionStyle = .none
-    
-        //        case pendente = "pendente"
-        //        case aprovacao = "aprovacao"
-        //        case aprovado = "aprovado"
-        //        case reprovado = "reprovado"
-        //        case expirado = "expirado"
-        //        case refazer = "refazer"
         
-        print(historico.status)
         switch historico.status {
         case StatusTarefa.validacao.rawValue.uppercased():
             cell.detailTextLabel?.textColor = .orange

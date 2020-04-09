@@ -11,8 +11,8 @@ import UIKit
 class CadastrarTarefaViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var tituloTextField: UITextField!
-    @IBOutlet weak var descricaoTextField: UITextField!
+    @IBOutlet weak var nomeTextField: UITextField!
+    @IBOutlet weak var descricaoTextView: UITextView!
     @IBOutlet weak var dataInicioTextField: UITextField!
     @IBOutlet weak var dataFimTextField: UITextField!
     @IBOutlet weak var pontosTextField: UITextField!
@@ -89,6 +89,10 @@ class CadastrarTarefaViewController: UIViewController {
         tableView.register(UINib(nibName: "ComprovacaoViewCell", bundle: nil), forCellReuseIdentifier: "cellComprovacao")
         
         formatData.dateFormat = "dd/MM/yyyy"
+        descricaoTextView.delegate = self
+        descricaoTextView.layer.borderWidth = 1
+        descricaoTextView.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        descricaoTextView.layer.cornerRadius = 5
         
         datePickerInicio.datePickerMode = .date
         datePickerInicio.minimumDate = Date()
@@ -96,6 +100,7 @@ class CadastrarTarefaViewController: UIViewController {
         datePickerInicio.addTarget(self, action: #selector(adicionarDataInicio), for: .valueChanged)
         dataInicioTextField.inputView = datePickerInicio
         dataInicioTextField.text = formatData.string(from: Date())
+        dataFimTextField.text = formatData.string(from: Date())
         
         datePickerFim.datePickerMode = .date
         datePickerFim.minimumDate = Date()
@@ -157,7 +162,7 @@ class CadastrarTarefaViewController: UIViewController {
                     alertControl.addAction(action)
                     self.navigationController?.present(alertControl, animated: true, completion: nil)
                 }else{
-                    let tarefa = Tarefa(id: "", titulo: tituloTextField.text!, descricao: descricaoTextField.text!, dataInicio: datePickerInicio.date, dataFim: datePickerFim.date, personalizado: diasSelecionados, diariamente: switchComprovacao.isOn, pontos: pontoSelecionado, exigeComprovacao: switchComprovacao.isOn)
+                    let tarefa = Tarefa(id: "", titulo: nomeTextField.text!, descricao: descricaoTextView.text!, dataInicio: datePickerInicio.date, dataFim: datePickerFim.date, personalizado: diasSelecionados, diariamente: switchComprovacao.isOn, pontos: pontoSelecionado, exigeComprovacao: switchComprovacao.isOn)
                     
                     TarefaDao.cadastrarTarefa(tarefa: tarefa, meta: metaSelecionada!, usuarios: usuariosSelecionados) { (cadastrou) in
                         if cadastrou {
@@ -289,6 +294,23 @@ extension CadastrarTarefaViewController: UIPickerViewDelegate, UIPickerViewDataS
         }else{
             metasTextField.text = metasDaFamilia[row].titulo
             metaSelecionada = metasDaFamilia[row]
+        }
+    }
+}
+
+extension CadastrarTarefaViewController: UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.textColor = .black
+            textView.text = nil
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.textColor = .lightGray
+            textView.text = "Descrição de como você quer que esta tarefa seja feita"
         }
     }
 }
