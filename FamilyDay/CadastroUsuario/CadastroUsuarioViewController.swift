@@ -16,7 +16,6 @@ protocol FazerLoginDelegate {
 class CadastroUsuarioViewController: UIViewController {
     
     @IBOutlet weak var nomeTextField: UITextField!
-    @IBOutlet weak var telefoneTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var dataNascimentoTextField: UITextField!
     @IBOutlet weak var generoTextField: UITextField!
@@ -29,6 +28,11 @@ class CadastroUsuarioViewController: UIViewController {
     @IBOutlet weak var imageHeader: UIImageView!
     
     var delegate: FazerLoginDelegate?
+    let generos: [String] = ["Masculino", "Feminino", "Outros"]
+    let formatData = DateFormatter()
+    var dataSelecionada: Date = Date()
+    var idade: Int = 0
+    var usuario: Usuario?
     
     lazy var tipoGeneroPicker: UIPickerView = {
         let picker = UIPickerView()
@@ -39,12 +43,6 @@ class CadastroUsuarioViewController: UIViewController {
     
     var datePicker: UIDatePicker = UIDatePicker()
     
-    let generos: [String] = ["Masculino", "Feminino", "Outros"]
-    
-    let formatData = DateFormatter()
-    var dataSelecionada: Date = Date()
-    var idade: Int = 0
-    var usuario: Usuario?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,7 +75,6 @@ class CadastroUsuarioViewController: UIViewController {
             nomeTextField.text = usuario.nome
             dataNascimentoTextField.text = formatData.string(from: usuario.dataNascimento!)
             emailTextField.text = usuario.email
-            telefoneTextField.text = usuario.telefone
             
             var genero = ""
             switch usuario.genero {
@@ -152,7 +149,7 @@ class CadastroUsuarioViewController: UIViewController {
         if !Utils.temTextFieldVazia(view: view){
             indicator.isHidden = false
             if let nome = nomeTextField.text, let email = emailTextField.text,
-                let telefone = telefoneTextField.text, let senha = senhaTextField.text, let genero = generoTextField.text,
+               let senha = senhaTextField.text, let genero = generoTextField.text,
                 let senhaRepetida = repetirSenhaTextField.text {
                 
                 var sexo = ""
@@ -167,9 +164,9 @@ class CadastroUsuarioViewController: UIViewController {
                 if senha == senhaRepetida {
                     
                     if cadastrarButton.tag == 0 {
-                        let user = Usuario(id: "", nome: nome, dataNascimento: dataSelecionada, telefone: telefone, tipo: "RESPONSAVEL", email: email, genero: sexo, senha: senha, idFamilia: "", ativo: true)
+                        let user = Usuario(id: "", nome: nome, dataNascimento: dataSelecionada, tipo: "RESPONSAVEL", email: email, genero: sexo, senha: senha, idFamilia: "", ativo: true)
                         
-                        UsuarioDao.cadastrarUsuario(user, deviceID: "DeviceInventado") { (idUsuario, mensagemErro) in
+                        UsuarioDao.cadastrarUsuario(user, deviceID: Configuration.shared.deviceId!) { (idUsuario, mensagemErro) in
                             if let id = idUsuario  {
                                 self.irParaTutorial(idUsuario: id)
                             }else{
@@ -181,13 +178,12 @@ class CadastroUsuarioViewController: UIViewController {
                     }else{
                         if var usuario = usuario {
                             usuario.nome = nome
-                            usuario.telefone = telefone
                             usuario.email = email
                             usuario.senha = senha
                             usuario.ativo = true
                             usuario.dataNascimento = dataSelecionada
                             usuario.genero = sexo
-                            UsuarioDao.atualizarUsuario(usuario, deviceID: "DeviceID Fake") { (idUsuario, erros) in
+                            UsuarioDao.atualizarUsuario(usuario, deviceID: Configuration.shared.deviceId!) { (idUsuario, erros) in
                                 if idUsuario != nil {
                                     self.dismiss(animated: true, completion: nil)
                                     self.delegate?.fazerLogin(usuario: usuario)
@@ -239,8 +235,6 @@ extension CadastroUsuarioViewController: UITextFieldDelegate {
         switch textField {
         case nomeTextField:
             dataNascimentoTextField.becomeFirstResponder()
-        case telefoneTextField:
-            emailTextField.becomeFirstResponder()
         case emailTextField:
             dataNascimentoTextField.becomeFirstResponder()
         case dataNascimentoTextField:

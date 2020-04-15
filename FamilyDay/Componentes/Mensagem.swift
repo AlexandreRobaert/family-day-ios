@@ -17,11 +17,8 @@ class Mensagem: NSObject, MFMessageComposeViewControllerDelegate {
         if MFMessageComposeViewController.canSendText() {
             let componenteMensagem = MFMessageComposeViewController()
             
-            if !usuario.telefone.isEmpty {
-                componenteMensagem.recipients = [usuario.telefone]
-                componenteMensagem.body = "Olá \(usuario.nome), baixe no App Family Day, seu filho já criou o grupo e precisa da sua permissão!"
-                componenteMensagem.messageComposeDelegate = self
-            }
+            componenteMensagem.body = "Olá \(usuario.nome), baixe no App Family Day, seu filho já criou o grupo e precisa da sua permissão!"
+            componenteMensagem.messageComposeDelegate = self
             return componenteMensagem
         }
     

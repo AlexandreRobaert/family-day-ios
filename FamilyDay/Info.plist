@@ -23,16 +23,14 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.377205793927-8s7otj1eegkrprvs12htieh72oi3el8p</string>
+				<string>com.googleusercontent.apps.377205793927-26o2hrhdkib99vck5340alji9irmdan6</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>FirebaseAppDelegateProxyEnabled</key>
-	<false/>
 	<key>LSApplicationCategoryType</key>
-	<string></string>
+	<string>public.app-category.productivity</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>

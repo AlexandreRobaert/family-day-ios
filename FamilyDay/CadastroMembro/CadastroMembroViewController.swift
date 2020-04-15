@@ -13,14 +13,14 @@ class CadastroMembroViewController: UIViewController {
     @IBOutlet weak var nomeTextField: UITextField!
     @IBOutlet weak var dataNascimentoTextField: UITextField!
     @IBOutlet weak var generoTextField: UITextField!
-    @IBOutlet weak var telefoneTextField: UITextField!
     @IBOutlet weak var perfilTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var mensagemLabel: UILabel!
     @IBOutlet weak var cadastrarButton: UIButton!
-    @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var senhaTextField: UITextField!
     @IBOutlet weak var repetirSenhaTextField: UITextField!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var mensagemLabel: UILabel!
+    @IBOutlet weak var viewCentral: UIView!
     
     lazy var tipoGeneroPicker: UIPickerView = {
         let picker = UIPickerView()
@@ -48,6 +48,17 @@ class CadastroMembroViewController: UIViewController {
         super.viewDidLoad()
         
         navigationController?.setNavigationBarHidden(false, animated: false)
+        
+        configUI()
+    }
+    
+    func configUI(){
+        
+        viewCentral.layer.shadowColor = UIColor.black.cgColor
+        viewCentral.layer.shadowOpacity = 0.8
+        viewCentral.layer.shadowOffset = .zero
+        viewCentral.layer.shadowRadius = 5
+        mensagemLabel.text = ""
         
         let toolbarGenero = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 44))
         toolbarGenero.tintColor = UIColor(named: "Roxo")
@@ -135,8 +146,7 @@ class CadastroMembroViewController: UIViewController {
         cadastrarButton.isEnabled = false
         indicator.isHidden = false
         
-        if let nome = nomeTextField.text, let genero = generoTextField.text,
-            let telefone = telefoneTextField.text, let perfil = perfilTextField.text, let email = emailTextField.text {
+        if let nome = nomeTextField.text, let genero = generoTextField.text, let perfil = perfilTextField.text, let email = emailTextField.text {
             
             var sexo = ""
             if genero.uppercased() == "MASCULINO"{
@@ -147,7 +157,7 @@ class CadastroMembroViewController: UIViewController {
                 sexo = "OUTROS"
             }
             
-            let user = Usuario(id: "nome", nome: nome, dataNascimento: dataSelecionada, telefone: telefone, tipo: perfil, email: email, genero: sexo, senha: "", idFamilia: "", ativo: false)
+            let user = Usuario(id: "nome", nome: nome, dataNascimento: dataSelecionada, tipo: perfil, email: email, genero: sexo, senha: "", idFamilia: "", ativo: false)
             
             UsuarioDao.cadastrarMembro(usuario: user, idFamilia: Configuration.shared.idFamilia!) { (sucesso) in
                 if sucesso {

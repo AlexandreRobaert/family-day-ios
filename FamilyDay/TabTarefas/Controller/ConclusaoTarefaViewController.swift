@@ -18,8 +18,7 @@ class ConclusaoTarefaViewController: UIViewController {
     @IBOutlet weak var statusHistorico: UILabel!
     @IBOutlet weak var concluirTarefaButton: UIButton!
     @IBOutlet weak var comentarioTextField: UITextField!
-    @IBOutlet weak var progressUploadImage: UIProgressView!
-    @IBOutlet weak var progressLabel: UILabel!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     
     let responsavel = Configuration.shared.usuarioResponsavel!
@@ -35,9 +34,11 @@ class ConclusaoTarefaViewController: UIViewController {
         collectionView.delegate = self
         collectionView.register(UINib(nibName: "FotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cellFoto")
         configUI()
+        carregarFotos()
     }
     
     func configUI(){
+        indicator.isHidden = true
         let formatData = DateFormatter()
         formatData.dateFormat = "dd/MM/yyyy"
         tituloTarefa.text = tarefa.titulo
@@ -92,6 +93,19 @@ class ConclusaoTarefaViewController: UIViewController {
         }
     }
     
+    func carregarFotos(){
+        indicator.isHidden = false
+        for url in historicoSelecionado.fotos {
+            FirebaseDao.downloadImagen(forUrl: url) { (image) in
+                if let image = image {
+                    self.imagens.append(image)
+                }
+                self.collectionView.reloadData()
+            }
+        }
+        indicator.isHidden = true
+    }
+    
     @IBAction func aceitarReprovarRefazerTarefa(_ sender: UIButton) {
         
         switch sender.tag {
@@ -108,37 +122,41 @@ class ConclusaoTarefaViewController: UIViewController {
         }
     }
     
-    @IBAction func concluirTarefa(_ sender: Any) {
-        
-//        self.progressLabel.isHidden = false
-//        self.progressUploadImage.isHidden = false
-//        self.progressLabel.text = "Enviando imagem \(1)"
-//        FirebaseDao.uploadImagens(idTarefa: tarefa.id, numeroDaFoto: 1, imagem: imagens[0], progress: { (progress) in
-//            self.progressUploadImage.progress = Float(progress)
-//        }) { (url) in
-//            self.historicoSelecionado.fotos.append(url!.absoluteString)
-//            self.progressLabel.text = "CONCLUIDO"
-//            self.progressLabel.textColor = .green
-//            print(url!.absoluteString)
-//        }
-        
-        for (i, image) in imagens.enumerated() {
-            self.progressLabel.isHidden = false
-            self.progressUploadImage.isHidden = false
-            self.progressLabel.text = "Enviando imagem \(i+1)"
-            FirebaseDao.uploadImagens(idTarefa: tarefa.id, numeroDaFoto: i, imagem: image, progress: { (progress) in
-                self.progressUploadImage.progress = Float(progress)
-            }) { (url) in
-                self.historicoSelecionado.fotos.append(url!)
-                print(url!)
+    func fazerUploadDasImagensEConcluirTarefa(){
+        FirebaseDao.uploadImagens(idTarefa: tarefa.id, numeroDaFoto: 1, imagem: imagens[0]) { (urlDownload) in
+            if let url = urlDownload {
+                self.historicoSelecionado.fotos.append(url)
+                FirebaseDao.uploadImagens(idTarefa: self.tarefa.id, numeroDaFoto: 2, imagem: self.imagens[1]) { (urlDownload) in
+                    if let url = urlDownload {
+                        self.historicoSelecionado.fotos.append(url)
+                        FirebaseDao.uploadImagens(idTarefa: self.tarefa.id, numeroDaFoto: 3, imagem: self.imagens[2]) { (urlDownload) in
+                            if let url = urlDownload {
+                                self.historicoSelecionado.fotos.append(url)
+                                self.indicator.isHidden = true
+                                
+                                self.historicoSelecionado.status = StatusTarefa.validacao.rawValue.uppercased()
+                                self.historicoSelecionado.comentario = self.comentarioTextField.text!
+                                TarefaDao.atualizarTarefa(historico: self.historicoSelecionado, idTarefa: self.tarefa.id) { (sucesso) in
+                                    self.navigationController?.popToRootViewController(animated: true)
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
+    }
+    
+    @IBAction func concluirTarefa(_ sender: Any) {
+        concluirTarefaButton.isEnabled = false
+        indicator.isHidden = false
         
-//        historicoSelecionado.status = StatusTarefa.validacao.rawValue.uppercased()
-//        historicoSelecionado.comentario = comentarioTextField.text!
-//        TarefaDao.atualizarTarefa(historico: historicoSelecionado, idTarefa: tarefa.id) { (sucesso) in
-//            self.navigationController?.popToRootViewController(animated: true)
-//        }
+        if imagens.count == 3 && tarefa.exigeComprovacao {
+            fazerUploadDasImagensEConcluirTarefa()
+        }else{
+            //Fazer alguma coisa
+        }
+        
     }
 }
 
@@ -185,7 +203,8 @@ extension ConclusaoTarefaViewController: UIImagePickerControllerDelegate, UINavi
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.originalImage] as? UIImage else { return }
-        imagens.append(image)
+        let imageResize = Utils.resizedImage(at: image, for: CGSize(width: 300.0, height: 300.0))
+        imagens.append(imageResize)
         collectionView.reloadData()
         fotoController.dismiss(animated: true, completion: nil)
     }

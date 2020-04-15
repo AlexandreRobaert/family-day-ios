@@ -26,10 +26,10 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIj-nh-TzB">
-                    <rect key="frame" x="30" y="585.5" width="354" height="70"/>
+                    <rect key="frame" x="30" y="585.5" width="354" height="50"/>
                     <color key="backgroundColor" name="Roxo"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="70" id="a3V-i3-Pzp"/>
+                        <constraint firstAttribute="height" constant="50" id="a3V-i3-Pzp"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                     <state key="normal" title="Escanear">
@@ -45,10 +45,10 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAb-hP-RTP">
-                    <rect key="frame" x="30" y="695.5" width="354" height="70"/>
+                    <rect key="frame" x="30" y="675.5" width="354" height="50"/>
                     <color key="backgroundColor" name="Roxo"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="70" id="gsX-MO-1ZY"/>
+                        <constraint firstAttribute="height" constant="50" id="gsX-MO-1ZY"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                     <state key="normal" title="Convidar Responsável">
@@ -91,7 +91,7 @@
     <resources>
         <image name="qrcode" width="300" height="373"/>
         <namedColor name="Roxo">
-            <color red="0.61960784313725492" green="0.0" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.6470588235294118" green="0.12941176470588234" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

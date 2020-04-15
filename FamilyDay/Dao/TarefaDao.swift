@@ -98,7 +98,6 @@ class TarefaDao {
         }
         
         let URL = "\(URL_Tarefas)\(endPoint)\(stringDataInicio)/\(stringDataFim)/\(filtro)"
-        print(URL)
         AF.request(URL, headers: header).responseJSON { (response) in
             var tarefas: [Tarefa] = []
             switch response.result {
@@ -116,14 +115,16 @@ class TarefaDao {
                     var historicos:[Historico] = []
                     for item in historico {
                         
+                        let fotos = item["fotos"].arrayObject as! Array<String>
+                        
                         let data = fullISO8610Formatter.date(from: item["dataExecucao"].stringValue)
-                        let history = Historico(id: item["_id"].stringValue, dataExecucao: data!, status: item["status"].stringValue, idMembro: item["membro"].stringValue, pontos: item["pontos"].intValue, fotos: [], comentario: item["comentario"].stringValue)
+                        let history = Historico(id: item["_id"].stringValue, dataExecucao: data!, status: item["status"].stringValue, idMembro: item["membro"].stringValue, pontos: item["pontos"].intValue, fotos: fotos, comentario: item["comentario"].stringValue)
                         historicos.append(history)
                     }
                     
                     var usuarios: [Usuario] = []
                     for id in idDosUsuarios {
-                        let usuario = Usuario(id: id, nome: "", dataNascimento: Date(), telefone: "", tipo: "", email: "", genero: "", senha: "", idFamilia: "", ativo: true)
+                        let usuario = Usuario(id: id, nome: "", dataNascimento: Date(), tipo: "", email: "", genero: "", senha: "", idFamilia: "", ativo: true)
                         usuarios.append(usuario)
                     }
                     
@@ -147,7 +148,7 @@ class TarefaDao {
         let header: HTTPHeaders = ["x-access-token": Configuration.shared.token!]
         let endPoint = Configuration.shared.usuarioResponsavel! ? "/responsavel-atualiza-status/\(idTarefa)" : "/membro-atualiza-status/\(idTarefa)"
         print("\(URL_Tarefas)\(endPoint)")
-        let parametros = ["id": historico.id, "status": historico.status, "comentario": historico.comentario]
+        let parametros: [String: Any] = ["id": historico.id, "status": historico.status, "comentario": historico.comentario, "fotos": historico.fotos]
        
         AF.request("\(URL_Tarefas)\(endPoint)", method: .put, parameters: parametros, headers: header).responseJSON { (retorno) in
             print(retorno.result)

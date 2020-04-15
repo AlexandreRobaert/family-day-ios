@@ -73,7 +73,7 @@ class UsuarioDao {
                         genero = "OUTROS"
                     }
                     
-                    let user = Usuario(id: item["_id"].stringValue, nome: item["nome"].stringValue, dataNascimento: dataNascimento, telefone: item["telefone"].stringValue, tipo: item["tipo"].stringValue, email: item["email"].stringValue, genero: genero, senha: "", idFamilia: Configuration.shared.idFamilia!, ativo: item["ativo"].boolValue)
+                    let user = Usuario(id: item["_id"].stringValue, nome: item["nome"].stringValue, dataNascimento: dataNascimento, tipo: item["tipo"].stringValue, email: item["email"].stringValue, genero: genero, senha: "", idFamilia: Configuration.shared.idFamilia!, ativo: item["ativo"].boolValue)
                     users.append(user)
                 }
                 completion(users)
@@ -136,7 +136,7 @@ class UsuarioDao {
         fullISO8610Formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         let stringData = fullISO8610Formatter.string(from: usuario.dataNascimento!)
         
-        let parametros = ["nome": usuario.nome, "dataNascimento": stringData, "telefone": usuario.telefone, "tipo": usuario.tipo, "genero": usuario.genero, "email": usuario.email, "senha": usuario.senha, "os": "IOS", "deviceId": deviceID]
+        let parametros = ["nome": usuario.nome, "dataNascimento": stringData, "tipo": usuario.tipo, "genero": usuario.genero, "email": usuario.email, "senha": usuario.senha, "os": "IOS", "deviceId": deviceID]
         
         AF.request("\(Configuration.URL_API)/usuarios", method: .post, parameters: parametros).responseJSON { (response) in
             
@@ -170,7 +170,7 @@ class UsuarioDao {
         fullISO8610Formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         let stringData = fullISO8610Formatter.string(from: usuario.dataNascimento!)
         
-        let parametros: [String: Any] = ["nome": usuario.nome, "dataNascimento": stringData, "telefone": usuario.telefone, "tipo": usuario.tipo! as Any, "genero": usuario.genero, "email": usuario.email, "senha": usuario.senha, "os": "IOS", "deviceId": deviceID, "ativo": usuario.ativo]
+        let parametros: [String: Any] = ["nome": usuario.nome, "dataNascimento": stringData, "tipo": usuario.tipo! as Any, "genero": usuario.genero, "email": usuario.email, "senha": usuario.senha, "os": "IOS", "deviceId": deviceID, "ativo": usuario.ativo]
         
         let header: HTTPHeaders = ["x-access-token": Configuration.shared.token!]
         
@@ -208,7 +208,7 @@ class UsuarioDao {
         
         let header: HTTPHeaders = ["x-access-token": Configuration.shared.token!]
         
-        let parametros = ["nome": usuario.nome, "dataNascimento": stringData, "telefone": usuario.telefone, "tipo": usuario.tipo, "genero": usuario.genero, "email": usuario.email, "familia": idFamilia]
+        let parametros = ["nome": usuario.nome, "dataNascimento": stringData, "tipo": usuario.tipo, "genero": usuario.genero, "email": usuario.email, "familia": idFamilia]
         
         AF.request("\(Configuration.URL_API)/usuarios/cadastrar-membro-familia", method: .post, parameters: parametros, headers: header).responseJSON { (retorno) in
             switch retorno.result {

@@ -14,15 +14,20 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var senhaTextField: UITextField!
     @IBOutlet weak var entrarButton: UIButton!
-    @IBOutlet weak var loginFacebookButton: UIButton!
     @IBOutlet weak var criarContaButton: UIButton!
     @IBOutlet weak var mensagemLoginLabel: UILabel!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var viewCentral: UIView!
     
     let cornerRadiusButtons = CGFloat(integerLiteral: 15)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewCentral.layer.shadowColor = UIColor.black.cgColor
+        viewCentral.layer.shadowOpacity = 0.8
+        viewCentral.layer.shadowOffset = .zero
+        viewCentral.layer.shadowRadius = 5
         
         if let token = Configuration.shared.token {
             getUser(for: token)
@@ -30,8 +35,6 @@ class LoginViewController: UIViewController {
             indicator.isHidden = false
             return
         }
-        criarContaButton.layer.borderWidth = 2
-        criarContaButton.layer.borderColor = UIColor(named: "Roxo")?.cgColor
         
     }
     
@@ -84,10 +87,6 @@ class LoginViewController: UIViewController {
             self.mensagemLoginLabel.text = "Campo Login e Senha devem ser preenchidos!"
             self.indicator.isHidden = true
         }
-    } 
-    
-    @IBAction func testeTela(_ sender: Any) {
-        
     }
     
     @IBAction func abrirTelaQRCode(_ sender: UIButton) {
@@ -111,12 +110,5 @@ extension LoginViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         
         return true
-    }
-}
-
-extension LoginViewController: MessagingDelegate {
-    
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-        print(fcmToken)
     }
 }

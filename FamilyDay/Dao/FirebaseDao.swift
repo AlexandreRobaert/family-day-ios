@@ -11,20 +11,13 @@ import FirebaseStorage
 
 class FirebaseDao {
     
-    class func uploadImagens(idTarefa: String, numeroDaFoto: Int, imagem: UIImage,
-                             progress: @escaping(Double) -> Void, completion: @escaping(String?) -> Void){
+    class func uploadImagens(idTarefa: String, numeroDaFoto: Int, imagem: UIImage, completion: @escaping(String?) -> Void){
         
         let idFamilia = Configuration.shared.idFamilia!
-        let data = imagem.jpegData(compressionQuality: 30)!
+        let data = imagem.jpegData(compressionQuality: 0.2)!
         let refImage = Storage.storage().reference().child("\(idFamilia)/tarefas/\(idTarefa)/imagens/\(numeroDaFoto).jpg")
         
         let uploadTask = refImage.putData(data)
-        
-        uploadTask.observe(.progress) { (snapshot) in
-            let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
-            / Double(snapshot.progress!.totalUnitCount)
-            progress(percentComplete)
-        }
         
         uploadTask.observe(.success) { (snapshot) in
             completion(refImage.fullPath)
@@ -42,8 +35,20 @@ class FirebaseDao {
                 default:
                     print("Algum Erro")
                 }
-                
                 completion(nil)
+            }
+        }
+    }
+    
+    class func downloadImagen(forUrl urlImagem: String, completion: @escaping(UIImage?) -> Void){
+        
+        let refImage = Storage.storage().reference().child(urlImagem)
+        refImage.getData(maxSize: 10 * 1024 * 1024) { (data, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }else{
+                let image = UIImage(data: data!)
+                completion(image)
             }
         }
     }

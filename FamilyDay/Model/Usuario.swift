@@ -11,7 +11,6 @@ struct Usuario: Codable, Equatable {
     var id: String?
     var nome: String
     var dataNascimento: Date?
-    var telefone: String
     let tipo: String?
     var email: String
     var genero: String
@@ -32,11 +31,10 @@ struct Usuario: Codable, Equatable {
         case ativo = "ativo"
     }
     
-    init(id: String, nome: String, dataNascimento: Date, telefone: String, tipo: String, email: String, genero: String, senha: String, idFamilia: String, ativo: Bool) {
+    init(id: String, nome: String, dataNascimento: Date, tipo: String, email: String, genero: String, senha: String, idFamilia: String, ativo: Bool) {
         self.id = id
         self.nome = nome
         self.dataNascimento = dataNascimento
-        self.telefone = telefone
         self.tipo = tipo
         self.email = email
         self.genero = genero
@@ -56,7 +54,6 @@ struct Usuario: Codable, Equatable {
         fullISO8610Formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         dataNascimento = fullISO8610Formatter.date(from: dataString)!
         
-        telefone = try container.decode(String.self, forKey: .telefone)
         tipo = try container.decode(String.self, forKey: .tipo)
         email = try container.decode(String.self, forKey: .email)
         genero = try container.decode(String.self, forKey: .genero)
@@ -73,7 +70,6 @@ struct Usuario: Codable, Equatable {
         codificador.dateEncodingStrategy = .iso8601
         let data = try codificador.encode(dataNascimento)
         try container.encode(data, forKey: .dataNascimento)
-        try container.encode(telefone, forKey: .telefone)
         try container.encode(tipo, forKey: .tipo)
         try container.encode(email, forKey: .email)
         try container.encode(genero, forKey: .genero)
