@@ -112,6 +112,49 @@ class UsuarioDao {
         }
     }
     
+    class func enviarEmailRecuperarSenha(emailNick: String, completion: @escaping (String?, String?)-> Void){
+        
+        let params = ["emailOuNick": emailNick]
+        
+        AF.request("\(Configuration.URL_API)/login/recuperar-senha", method: .post, parameters: params).validate().responseJSON { (data) in
+            print(data.result)
+            switch (data.result) {
+            case .success(let value):
+                let json = JSON(value)
+                if let retorno = json["retorno"].dictionaryObject as? [String: String] {
+                    let email = retorno["email"] as! String
+                    completion(email, nil)
+                }else{
+                    let mensagem = json["mensagem"].stringValue
+                    completion(nil, mensagem)
+                }
+            case .failure(_):
+                completion(nil, "Falha ao se conectar")
+            }
+            
+        }
+    }
+    
+    class func validarCodigoRecuperacao(emailNick: String, codigo: String, completion: @escaping (Bool)-> Void){
+        
+        let params = ["emailOuNick": emailNick, "codigo": codigo]
+        
+        AF.request("\(Configuration.URL_API)/login/validar-codigo", method: .post, parameters: params).validate().responseJSON { (data) in
+            print(data.result)
+            switch (data.response?.statusCode) {
+            case 200:
+                completion(true)
+            case 203:
+                completion(false)
+            case .none:
+                completion(false)
+            case .some(_):
+                completion(false)
+            }
+            
+        }
+    }
+    
     class func getTokenMembroFor(id from: String, completion: @escaping (String?) -> Void){
         let header: HTTPHeaders = ["x-access-token": Configuration.shared.token!]
         
@@ -136,10 +179,10 @@ class UsuarioDao {
         fullISO8610Formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         let stringData = fullISO8610Formatter.string(from: usuario.dataNascimento!)
         
-        let parametros = ["nome": usuario.nome, "dataNascimento": stringData, "tipo": usuario.tipo, "genero": usuario.genero, "email": usuario.email, "senha": usuario.senha, "os": "IOS", "deviceId": deviceID]
+        let parametros = ["nome": usuario.nome, "dataNascimento": stringData, "tipo": usuario.tipo, "genero": usuario.genero, "email": usuario.email, "senha": usuario.senha, "os": "IOS", "deviceId": deviceID, "telefone": "x"]
         
         AF.request("\(Configuration.URL_API)/usuarios", method: .post, parameters: parametros).responseJSON { (response) in
-            
+            print(response.result)
             switch response.result {
             case .success(let result as [String: Any]):
                 switch response.response?.statusCode {

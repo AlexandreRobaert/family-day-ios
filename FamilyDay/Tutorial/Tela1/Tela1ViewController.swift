@@ -17,6 +17,7 @@ class Tela1ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        nomeGrupoTextField.delegate = self
     }
 
     
@@ -25,5 +26,12 @@ class Tela1ViewController: UIViewController {
         vc.nomeGrupo = nomeGrupoTextField.text
         vc.idUsuario = idUsuario
         navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension Tela1ViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
     }
 }

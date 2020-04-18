@@ -45,6 +45,7 @@ class ConclusaoTarefaViewController: UIViewController {
         descricaoTarefa.text = tarefa.descricao
         dataExecucaoHistorico.text = "Data: \(formatData.string(from: historicoSelecionado.dataExecucao))"
         comentarioTextField.text = historicoSelecionado.comentario
+        comentarioTextField.delegate = self
         
         var status = " "
         
@@ -148,13 +149,13 @@ class ConclusaoTarefaViewController: UIViewController {
     }
     
     @IBAction func concluirTarefa(_ sender: Any) {
-        concluirTarefaButton.isEnabled = false
-        indicator.isHidden = false
         
-        if imagens.count == 3 && tarefa.exigeComprovacao {
+        if imagens.count == 3 {
+            concluirTarefaButton.isEnabled = false
+            indicator.isHidden = false
             fazerUploadDasImagensEConcluirTarefa()
         }else{
-            //Fazer alguma coisa
+            print("Não tem 3 fotos")
         }
         
     }
@@ -207,5 +208,12 @@ extension ConclusaoTarefaViewController: UIImagePickerControllerDelegate, UINavi
         imagens.append(imageResize)
         collectionView.reloadData()
         fotoController.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension ConclusaoTarefaViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.endEditing(true)
     }
 }

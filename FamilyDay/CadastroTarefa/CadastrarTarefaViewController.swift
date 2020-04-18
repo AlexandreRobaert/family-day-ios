@@ -37,6 +37,8 @@ class CadastrarTarefaViewController: UIViewController {
     var datePickerInicio = UIDatePicker()
     var datePickerFim = UIDatePicker()
     
+    let locale = Locale.init(identifier: "pt-BR")
+    
     lazy var pontosPicker: UIPickerView = {
         var picker = UIPickerView()
         picker.dataSource = self
@@ -63,8 +65,13 @@ class CadastrarTarefaViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        dataFimTextField.text = formatData.string(from: Date())
+        dataInicioTextField.text = formatData.string(from: Date())
         configDetailsCelulas()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
     
     //MARK: - Métodos
@@ -82,7 +89,44 @@ class CadastrarTarefaViewController: UIViewController {
         }
     }
     
+    func configDataInicio(){
+        let toolbarDataInicio = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 44))
+        toolbarDataInicio.tintColor = UIColor(named: "Roxo")
+        let buttonCancelar = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
+        let buttonDone = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneDataInicio))
+        let buttonSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        toolbarDataInicio.items = [buttonCancelar, buttonSpace, buttonDone]
+        
+        datePickerInicio.datePickerMode = .date
+        datePickerInicio.minimumDate = Date()
+        datePickerInicio.maximumDate = Calendar.current.date(byAdding: .month, value: 1, to: Date())
+        datePickerInicio.locale = locale
+        dataInicioTextField.inputView = datePickerInicio
+        dataInicioTextField.inputAccessoryView = toolbarDataInicio
+    }
+    
+    func configDataFim(){
+        let toolbarDataFim = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 44))
+        toolbarDataFim.tintColor = UIColor(named: "Roxo")
+        let buttonCancelar = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
+        let buttonDone = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneDataFim))
+        let buttonSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        toolbarDataFim.items = [buttonCancelar, buttonSpace, buttonDone]
+        
+        datePickerFim.datePickerMode = .date
+        datePickerFim.minimumDate = Date()
+        datePickerFim.maximumDate = Calendar.current.date(byAdding: .month, value: 6, to: Date())
+        datePickerFim.locale = locale
+        dataFimTextField.inputView = datePickerFim
+        dataFimTextField.inputAccessoryView = toolbarDataFim
+        
+    }
+    
     func configUI(){
+        
+        configDataInicio()
+        configDataFim()
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "DiaDaSemanaViewCell", bundle: nil), forCellReuseIdentifier: "cellTodoDia")
@@ -94,22 +138,23 @@ class CadastrarTarefaViewController: UIViewController {
         descricaoTextView.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         descricaoTextView.layer.cornerRadius = 5
         
-        datePickerInicio.datePickerMode = .date
-        datePickerInicio.minimumDate = Date()
-        datePickerInicio.maximumDate = Calendar.current.date(byAdding: .month, value: 1, to: Date())
-        datePickerInicio.addTarget(self, action: #selector(adicionarDataInicio), for: .valueChanged)
-        dataInicioTextField.inputView = datePickerInicio
-        dataInicioTextField.text = formatData.string(from: Date())
-        dataFimTextField.text = formatData.string(from: Date())
-        
-        datePickerFim.datePickerMode = .date
-        datePickerFim.minimumDate = Date()
-        datePickerFim.maximumDate = Calendar.current.date(byAdding: .month, value: 6, to: Date())
-        datePickerFim.addTarget(self, action: #selector(adicionarDataFim), for: .valueChanged)
-        dataFimTextField.inputView = datePickerFim
-        
         pontosTextField.inputView = pontosPicker
         metasTextField.inputView = metasPicker
+    }
+    
+    @objc func doneDataInicio(){
+        dataInicioTextField.text = formatData.string(from: datePickerInicio.date)
+        dataInicioTextField.resignFirstResponder()
+    }
+    
+    @objc func doneDataFim(){
+           dataFimTextField.text = formatData.string(from: datePickerFim.date)
+           dataFimTextField.resignFirstResponder()
+       }
+    
+    @objc func cancel(){
+        dataInicioTextField.resignFirstResponder()
+        dataFimTextField.resignFirstResponder()
     }
     
     func configDetailsCelulas(){
@@ -133,14 +178,6 @@ class CadastrarTarefaViewController: UIViewController {
         }
         tableView.reloadData()
     }
-    
-    @objc func adicionarDataInicio() {
-        dataInicioTextField.text = formatData.string(from: datePickerInicio.date)
-    }
-    @objc func adicionarDataFim() {
-        dataFimTextField.text = formatData.string(from: datePickerFim.date)
-    }
-    
     
     @objc func mudouSwitchTodoDia() {
         let cell = tableView.cellForRow(at: IndexPath(row: 1, section: 0))

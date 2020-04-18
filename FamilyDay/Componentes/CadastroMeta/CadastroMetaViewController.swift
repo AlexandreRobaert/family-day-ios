@@ -75,7 +75,6 @@ class CadastroMetaViewController: UIViewController {
                 MetaDao.cadastrarMeta(meta: meta!) { (idMeta) in
                     if let id = idMeta {
                         self.meta?.id = id
-                        print(!self.metaInicial)
                         if !self.metaInicial {
                             self.delegate?.atualizarTabelaDeMetas(meta: self.meta!)
                             self.navigationController?.popViewController(animated: true)

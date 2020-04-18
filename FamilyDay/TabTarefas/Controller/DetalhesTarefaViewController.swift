@@ -25,6 +25,7 @@ class DetalhesTarefaViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.separatorStyle = .singleLine
         
         formatData.dateFormat = "dd/MM/yyyy"
         historicos = tarefa.historico!

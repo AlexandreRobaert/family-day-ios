@@ -127,7 +127,7 @@ class ScannerQRCodeViewController: UIViewController, AVCaptureMetadataOutputObje
     }
     
     @IBAction func convidar(_ sender: Any) {
-        let items = ["Olá nosso aplicativos para baixar \(URL(string: "https://apps.apple.com/br/app/township/id781424368?mt=12")!)"]
+        let items = ["Olá, nosso aplicativos para baixar \(URL(string: "https://apps.apple.com/br/app/township/id781424368?mt=12")!)"]
         let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
         present(ac, animated: true)
     }

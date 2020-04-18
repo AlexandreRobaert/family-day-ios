@@ -21,11 +21,11 @@ class CadastroUsuarioViewController: UIViewController {
     @IBOutlet weak var generoTextField: UITextField!
     @IBOutlet weak var senhaTextField: UITextField!
     @IBOutlet weak var repetirSenhaTextField: UITextField!
-    
     @IBOutlet weak var mensagemLabel: UILabel!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var cadastrarButton: UIButton!
     @IBOutlet weak var imageHeader: UIImageView!
+    @IBOutlet weak var viewCentral: UIView!
     
     var delegate: FazerLoginDelegate?
     let generos: [String] = ["Masculino", "Feminino", "Outros"]
@@ -47,6 +47,27 @@ class CadastroUsuarioViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(false, animated: false)
+        
+        configUI()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    override func becomeFirstResponder() -> Bool {
+        view.resignFirstResponder()
+    }
+    
+    func configUI(){
+        
+        viewCentral.layer.cornerRadius = 10
+        viewCentral.layer.shadowColor = UIColor.black.cgColor
+        viewCentral.layer.shadowOpacity = 0.8
+        viewCentral.layer.shadowOffset = .zero
+        viewCentral.layer.shadowRadius = 5
         
         let toolbarGenero = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 44))
         toolbarGenero.tintColor = UIColor(named: "Roxo")
@@ -87,12 +108,6 @@ class CadastroUsuarioViewController: UIViewController {
             }
             generoTextField.text = genero
         }
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     @objc func cancel(){

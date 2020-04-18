@@ -20,7 +20,7 @@ class Tela2ViewController: UIViewController {
         super.viewDidLoad()
         
         if let grupo = nomeGrupo {
-            labelDescricao.text = "Nome do grupo \(grupo) passado por parâmetro"
+            labelDescricao.text = "Sua família agora se chamará \(grupo), se for isso mesmo vamos em frente..."
         }
         indicator.isHidden = true
     }
@@ -33,6 +33,7 @@ class Tela2ViewController: UIViewController {
                 self.indicator.isHidden = true
                 let vc = CadastroMetaViewController()
                 vc.metaInicial = true
+                self.navigationController?.popToRootViewController(animated: false)
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }
