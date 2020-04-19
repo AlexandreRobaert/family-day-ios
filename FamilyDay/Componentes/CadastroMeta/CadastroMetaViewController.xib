@@ -10,12 +10,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CadastroMetaViewController" customModule="Family_Day" customModuleProvider="target">
             <connections>
-                <outlet property="cadastrarButton" destination="Ntk-FX-UAz" id="lFR-rd-0tj"/>
-                <outlet property="descricaoTextField" destination="Vz7-K4-vLU" id="LUC-Hd-Z5b"/>
-                <outlet property="image" destination="WNv-8e-RC9" id="d5c-k0-jRB"/>
-                <outlet property="pontosTextField" destination="HNb-l8-YYB" id="COF-py-jR8"/>
-                <outlet property="tituloDaTelaLabel" destination="tWm-5O-TGX" id="fab-7u-EeX"/>
-                <outlet property="tituloTextField" destination="k6w-vp-WIY" id="I40-ff-4wR"/>
+                <outlet property="cadastrarButton" destination="h9H-cI-iMa" id="IjZ-ui-uSW"/>
+                <outlet property="contentView" destination="zL0-d5-LqA" id="12Z-0F-Q7f"/>
+                <outlet property="descricaoTextField" destination="pfN-tH-K3M" id="iYL-ga-KGC"/>
+                <outlet property="pontosTextField" destination="a4w-xU-Pdp" id="8WK-2S-bLt"/>
+                <outlet property="tituloDaTelaLabel" destination="4uB-ty-Mtt" id="oQ5-nJ-qgH"/>
+                <outlet property="tituloTextField" destination="wtk-83-Y8z" id="XQd-cO-1aD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,97 +24,110 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TPN-Oi-axh">
-                    <rect key="frame" x="20" y="44" width="374" height="745"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BsZ-4g-9v7" userLabel="Header View">
+                    <rect key="frame" x="0.0" y="44" width="414" height="269"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="750" image="tortoise.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="WNv-8e-RC9">
-                            <rect key="frame" x="0.0" y="3.5" width="374" height="145"/>
-                            <color key="tintColor" name="Roxo"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="eE9-bp-IXV">
+                            <rect key="frame" x="145" y="52.5" width="124" height="64"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="eE9-bp-IXV" secondAttribute="height" multiplier="31:16" id="yHK-Ty-BAm"/>
+                            </constraints>
                         </imageView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gA7-Oa-cyJ">
-                            <rect key="frame" x="0.0" y="159" width="374" height="74.5"/>
+                    </subviews>
+                    <color key="backgroundColor" name="Roxo"/>
+                    <constraints>
+                        <constraint firstItem="eE9-bp-IXV" firstAttribute="centerX" secondItem="BsZ-4g-9v7" secondAttribute="centerX" id="GHZ-qW-l91"/>
+                        <constraint firstItem="eE9-bp-IXV" firstAttribute="width" secondItem="BsZ-4g-9v7" secondAttribute="width" multiplier="0.3" id="HzM-s2-jnA"/>
+                        <constraint firstItem="eE9-bp-IXV" firstAttribute="centerY" secondItem="BsZ-4g-9v7" secondAttribute="centerY" constant="-50" id="qE2-NO-Aqg"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zL0-d5-LqA" userLabel="Content View">
+                    <rect key="frame" x="20" y="213" width="374" height="358"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="WBR-rx-PPv">
+                            <rect key="frame" x="10" y="15" width="354" height="210"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastre sua Meta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWm-5O-TGX">
-                                    <rect key="frame" x="80.5" y="22.5" width="213" height="30"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastre sua Meta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uB-ty-Mtt">
+                                    <rect key="frame" x="0.0" y="0.0" width="354" height="30"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" name="Laranja"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Título da meta" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="wtk-83-Y8z">
+                                    <rect key="frame" x="0.0" y="45" width="354" height="45"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="45" id="xk6-oV-wxo"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                </textField>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Descrição da sua meta" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="pfN-tH-K3M">
+                                    <rect key="frame" x="0.0" y="105" width="354" height="45"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="45" id="T4j-PE-oXe"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                </textField>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pontos a serem alcançados" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="a4w-xU-Pdp">
+                                    <rect key="frame" x="0.0" y="165" width="354" height="45"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="45" id="Yul-3n-yE5"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                                </textField>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            <constraints>
-                                <constraint firstItem="tWm-5O-TGX" firstAttribute="centerX" secondItem="gA7-Oa-cyJ" secondAttribute="centerX" id="6in-Ic-86d"/>
-                                <constraint firstItem="tWm-5O-TGX" firstAttribute="centerY" secondItem="gA7-Oa-cyJ" secondAttribute="centerY" id="RPk-Pp-Kdh"/>
-                            </constraints>
-                        </view>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Título da meta" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="k6w-vp-WIY">
-                            <rect key="frame" x="0.0" y="243.5" width="374" height="45"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="45" id="FRK-s7-8zh"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                        </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Descrição da sua meta" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Vz7-K4-vLU">
-                            <rect key="frame" x="0.0" y="298.5" width="374" height="45"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="45" id="h01-Po-RjZ"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                        </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pontos a serem alcançados" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="HNb-l8-YYB">
-                            <rect key="frame" x="0.0" y="353.5" width="374" height="45"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="45" id="1Kb-aS-u6O"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
-                        </textField>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nZk-Jt-ZFK">
-                            <rect key="frame" x="0.0" y="408.5" width="374" height="281.5"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        </view>
-                        <button opaque="NO" tag="111" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ntk-FX-UAz">
-                            <rect key="frame" x="0.0" y="700" width="374" height="45"/>
-                            <color key="backgroundColor" name="Laranja"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="45" id="oZ1-fu-FSC"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                            <size key="titleShadowOffset" width="5" height="5"/>
-                            <state key="normal" title="Cadastrar">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="22"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="cadastrarMeta:" destination="-1" eventType="touchUpInside" id="WRS-6f-goR"/>
-                            </connections>
-                        </button>
+                        </stackView>
                     </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="gA7-Oa-cyJ" firstAttribute="height" secondItem="TPN-Oi-axh" secondAttribute="height" multiplier="0.1" id="S45-JO-cpx"/>
-                        <constraint firstItem="WNv-8e-RC9" firstAttribute="height" secondItem="TPN-Oi-axh" secondAttribute="height" multiplier="0.2" id="b4a-Vp-EbB"/>
+                        <constraint firstItem="WBR-rx-PPv" firstAttribute="top" secondItem="zL0-d5-LqA" secondAttribute="top" constant="15" id="kQo-dT-XgM"/>
+                        <constraint firstAttribute="trailing" secondItem="WBR-rx-PPv" secondAttribute="trailing" constant="10" id="o4B-Fd-KKK"/>
+                        <constraint firstItem="WBR-rx-PPv" firstAttribute="leading" secondItem="zL0-d5-LqA" secondAttribute="leading" constant="10" id="oHD-kh-lrm"/>
                     </constraints>
-                </stackView>
+                </view>
+                <button opaque="NO" tag="111" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9H-cI-iMa">
+                    <rect key="frame" x="40" y="546" width="334" height="50"/>
+                    <color key="backgroundColor" name="Laranja"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="hzo-fx-Koj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <size key="titleShadowOffset" width="5" height="5"/>
+                    <state key="normal" title="Cadastrar">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="22"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="cadastrarMeta:" destination="-1" eventType="touchUpInside" id="gik-pd-uth"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="TPN-Oi-axh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="9je-Yp-oF4"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="TPN-Oi-axh" secondAttribute="bottom" constant="73" id="Vpa-EA-cZ4"/>
-                <constraint firstItem="TPN-Oi-axh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="bLm-C7-kFA"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TPN-Oi-axh" secondAttribute="trailing" constant="20" id="iIV-4V-0vw"/>
+                <constraint firstItem="zL0-d5-LqA" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.4" id="20I-6z-9OB"/>
+                <constraint firstItem="zL0-d5-LqA" firstAttribute="top" secondItem="BsZ-4g-9v7" secondAttribute="bottom" constant="-100" id="7Rk-lM-I9f"/>
+                <constraint firstItem="BsZ-4g-9v7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="9pH-Zo-3bx"/>
+                <constraint firstItem="h9H-cI-iMa" firstAttribute="bottom" secondItem="zL0-d5-LqA" secondAttribute="bottom" constant="25" id="AjP-bH-Gc5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zL0-d5-LqA" secondAttribute="trailing" constant="20" id="DFc-tN-17q"/>
+                <constraint firstItem="BsZ-4g-9v7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Iz7-bs-vmy"/>
+                <constraint firstItem="zL0-d5-LqA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="LO2-Gm-Poc"/>
+                <constraint firstItem="BsZ-4g-9v7" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="NPU-FZ-krP"/>
+                <constraint firstItem="zL0-d5-LqA" firstAttribute="trailing" secondItem="h9H-cI-iMa" secondAttribute="trailing" constant="20" id="PbO-az-Dx6"/>
+                <constraint firstItem="h9H-cI-iMa" firstAttribute="leading" secondItem="zL0-d5-LqA" secondAttribute="leading" constant="20" id="e7r-8j-K1w"/>
+                <constraint firstItem="BsZ-4g-9v7" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.3" id="ibv-xf-Bpo"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
         </view>
     </objects>
     <resources>
-        <image name="tortoise.fill" catalog="system" width="128" height="66"/>
+        <image name="icon" width="69.5" height="43"/>
         <namedColor name="Laranja">
             <color red="1" green="0.56862745098039214" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

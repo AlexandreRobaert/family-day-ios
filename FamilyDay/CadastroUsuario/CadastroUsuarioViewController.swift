@@ -144,14 +144,10 @@ class CadastroUsuarioViewController: UIViewController {
     
     func irParaTutorial(idUsuario: String){
         
-        navigationController?.dismiss(animated: false, completion: nil)
         let vc = Tela1ViewController()
         vc.idUsuario = idUsuario
-        let navigation = UINavigationController(rootViewController: vc)
-        navigation.modalPresentationStyle = .fullScreen
-        
-        present(navigation, animated: true, completion: nil)
-        
+        navigationController?.viewControllers = [vc]
+        navigationController?.popToRootViewController(animated: true)
     }
     
     func salvarUsuario(){
@@ -220,6 +216,7 @@ class CadastroUsuarioViewController: UIViewController {
     }
     
     @IBAction func cadastrarUsuario(_ sender: UIButton) {
+        
         if idade > 18 || idade == 0 || usuario != nil{
             salvarUsuario()
         }else{

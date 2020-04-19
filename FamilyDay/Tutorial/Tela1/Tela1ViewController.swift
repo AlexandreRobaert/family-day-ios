@@ -18,6 +18,7 @@ class Tela1ViewController: UIViewController {
         super.viewDidLoad()
 
         nomeGrupoTextField.delegate = self
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     

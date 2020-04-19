@@ -115,23 +115,23 @@ class UsuarioDao {
     class func enviarEmailRecuperarSenha(emailNick: String, completion: @escaping (String?, String?)-> Void){
         
         let params = ["emailOuNick": emailNick]
+        AF.request("\(Configuration.URL_API)/login/recuperar-senha", method: .post, parameters: params).responseJSON { (data) in
         
-        AF.request("\(Configuration.URL_API)/login/recuperar-senha", method: .post, parameters: params).validate().responseJSON { (data) in
-            print(data.result)
-            switch (data.result) {
+            switch data.result {
             case .success(let value):
-                let json = JSON(value)
-                if let retorno = json["retorno"].dictionaryObject as? [String: String] {
-                    let email = retorno["email"] as! String
-                    completion(email, nil)
+               if let json = value as? Dictionary<String, Any> {
+                if data.response?.statusCode == 200 {
+                    let retorno = json["retorno"] as! Dictionary<String, String>
+                    completion(retorno["email"]!, nil)
                 }else{
-                    let mensagem = json["mensagem"].stringValue
+                    let mensagem = json["mensagem"] as! String
                     completion(nil, mensagem)
                 }
-            case .failure(_):
-                completion(nil, "Falha ao se conectar")
+                }
+            case .failure(let error):
+                print(error.errorDescription!)
+                completion(nil, "Falha")
             }
-            
         }
     }
     

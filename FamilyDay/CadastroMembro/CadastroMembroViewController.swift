@@ -54,6 +54,7 @@ class CadastroMembroViewController: UIViewController {
     
     func configUI(){
         
+        viewCentral.layer.cornerRadius = 10
         viewCentral.layer.shadowColor = UIColor.black.cgColor
         viewCentral.layer.shadowOpacity = 0.8
         viewCentral.layer.shadowOffset = .zero

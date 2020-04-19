@@ -1055,7 +1055,7 @@
         <scene sceneID="uP3-TV-OTT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i6I-yZ-xrw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" selectedImage="gear" catalog="system" id="cHt-uw-9cr"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="cHt-uw-9cr"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="dAF-vk-NKY">
                         <rect key="frame" x="0.0" y="44" width="375" height="96"/>
@@ -1075,7 +1075,6 @@
         <image name="Time" width="42.666667938232422" height="42.666667938232422"/>
         <image name="avatar" width="42.666667938232422" height="42.666667938232422"/>
         <image name="cube.box" width="128" height="124"/>
-        <image name="gear" catalog="system" width="128" height="119"/>
         <image name="house" catalog="system" width="128" height="110"/>
         <image name="icon" width="69.333335876464844" height="43"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
