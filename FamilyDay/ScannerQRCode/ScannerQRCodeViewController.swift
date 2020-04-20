@@ -97,6 +97,7 @@ class ScannerQRCodeViewController: UIViewController, AVCaptureMetadataOutputObje
         
         Configuration.shared.token = code
         UsuarioDao.getUserfor(token: code) { (usuario) in
+           
             let vc = CadastroUsuarioViewController()
             vc.delegate = self.delegate
             vc.usuario = usuario!

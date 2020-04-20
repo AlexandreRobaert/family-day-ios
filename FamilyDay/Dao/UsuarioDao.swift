@@ -251,7 +251,7 @@ class UsuarioDao {
         
         let header: HTTPHeaders = ["x-access-token": Configuration.shared.token!]
         
-        let parametros = ["nome": usuario.nome, "dataNascimento": stringData, "tipo": usuario.tipo, "genero": usuario.genero, "email": usuario.email, "familia": idFamilia]
+        let parametros = ["nome": usuario.nome, "dataNascimento": stringData, "tipo": usuario.tipo, "genero": usuario.genero, "email": usuario.email, "familia": idFamilia, "telefone": " "]
         
         AF.request("\(Configuration.URL_API)/usuarios/cadastrar-membro-familia", method: .post, parameters: parametros, headers: header).responseJSON { (retorno) in
             switch retorno.result {

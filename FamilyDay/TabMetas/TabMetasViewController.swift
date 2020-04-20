@@ -11,16 +11,17 @@ import UIKit
 class TabMetasViewController: UIViewController {
     
     var metas: [Meta] = []
+    var responsavel: Bool {
+        guard let responsavel = Configuration.shared.usuarioResponsavel else { return false}
+        return responsavel
+    }
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let responsavel = Configuration.shared.usuarioResponsavel else { return }
-        
         if responsavel {
-            print(responsavel)
             navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showCadastrarMeta)), animated: true)
         }
     }
@@ -54,6 +55,10 @@ extension TabMetasViewController: UITableViewDelegate, UITableViewDataSource {
         cell.configuraCelula(meta)
         cell.progressoMeta.progress = Float(meta.pontosAlvo) / Float(30000)
         
+        if !responsavel {
+            cell.isSelected = false
+        }
+        
         return cell
     }
     
@@ -64,9 +69,11 @@ extension TabMetasViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let telaMeta = CadastroMetaViewController()
-        telaMeta.meta = metas[indexPath.row]
-        navigationController?.pushViewController(telaMeta, animated: true)
+        if responsavel {
+            let telaMeta = CadastroMetaViewController()
+            telaMeta.meta = metas[indexPath.row]
+            navigationController?.pushViewController(telaMeta, animated: true)
+        }
     }
     
 }

@@ -81,6 +81,10 @@ class ConclusaoTarefaViewController: UIViewController {
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     func tirarFoto() {
         if UIImagePickerController.isSourceTypeAvailable(.camera){
             fotoController = UIImagePickerController()
@@ -149,15 +153,17 @@ class ConclusaoTarefaViewController: UIViewController {
     }
     
     @IBAction func concluirTarefa(_ sender: Any) {
-        
         if imagens.count == 3 {
+            fazerUploadDasImagensEConcluirTarefa()
             concluirTarefaButton.isEnabled = false
             indicator.isHidden = false
-            fazerUploadDasImagensEConcluirTarefa()
         }else{
-            print("Não tem 3 fotos")
+            concluirTarefaButton.isEnabled = true
+            indicator.isHidden = true
+            let actionController = UIAlertController(title: "Faltam as fotos", message: "Você precisa tirar 3 fotos da tarefa concluida", preferredStyle: .alert)
+            actionController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            present(actionController, animated: true)
         }
-        
     }
 }
 

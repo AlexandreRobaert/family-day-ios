@@ -91,6 +91,10 @@ class CadastroMembroViewController: UIViewController {
         super.viewWillAppear(animated)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     @objc func cancel(){
         generoTextField.resignFirstResponder()
         dataNascimentoTextField.resignFirstResponder()
