@@ -326,10 +326,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="203"/>
                                 <color key="backgroundColor" name="Roxo"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tLP-eB-DsI">
-                                <rect key="frame" x="149.66666666666666" y="55.666666666666664" width="75.666666666666657" height="73.333333333333314"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" image="person.crop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tLP-eB-DsI">
+                                <rect key="frame" x="149.66666666666666" y="55.000000000000007" width="75.666666666666657" height="74.666666666666671"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="Laranja"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="tLP-eB-DsI" secondAttribute="height" id="qhK-Rq-1qy"/>
                                 </constraints>
@@ -1077,8 +1077,8 @@
         <image name="house" catalog="system" width="128" height="110"/>
         <image name="icon" width="69.333335876464844" height="43"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
-        <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.2" catalog="system" width="128" height="81"/>
+        <image name="person.crop.circle" catalog="system" width="128" height="121"/>
         <image name="qrcode.viewfinder" catalog="system" width="128" height="114"/>
         <image name="tortoise" catalog="system" width="128" height="68"/>
         <namedColor name="Laranja">
