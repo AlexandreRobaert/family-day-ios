@@ -17,7 +17,7 @@ class MetaDao {
                     if let retorno = value["retorno"] as? [String: String] {
                         let idMeta = retorno["metaId"]
                         completion(idMeta)
-                    }else{
+                    } else {
                         completion(nil)
                     }
                 case .success(_):
@@ -68,9 +68,10 @@ class MetaDao {
         let parametros = ["titulo": meta.titulo, "descricao": meta.descricao, "pontosAlvo": String(meta.pontosAlvo)]
         
         AF.request("\(Configuration.URL_API)/metas/\(meta.id!)", method: .put, parameters: parametros, headers: header).responseJSON { (response) in
+            
+            print(response.result)
             switch response.response?.statusCode {
-            case 200:
-                print("Atualizou")
+            case 201:
                 completion(true)
             case .none:
                 completion(false)

@@ -16,6 +16,7 @@ protocol FazerLoginDelegate {
 class CadastroUsuarioViewController: UIViewController {
     
     @IBOutlet weak var nomeTextField: UITextField!
+    @IBOutlet weak var apelidoTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var dataNascimentoTextField: UITextField!
     @IBOutlet weak var generoTextField: UITextField!
@@ -58,7 +59,7 @@ class CadastroUsuarioViewController: UIViewController {
     }
     
     override func becomeFirstResponder() -> Bool {
-        view.resignFirstResponder()
+        view.endEditing(true)
     }
     
     func configUI(){
@@ -94,6 +95,7 @@ class CadastroUsuarioViewController: UIViewController {
             cadastrarButton.setTitle("Ativar Membro", for: .normal)
             imageHeader.image = UIImage(systemName: "person.crop.circle.badge.checkmark")
             nomeTextField.text = usuario.nome
+            apelidoTextField.text = usuario.apelido ?? ""
             dataNascimentoTextField.text = formatData.string(from: usuario.dataNascimento!)
             emailTextField.text = usuario.email
             
@@ -159,7 +161,7 @@ class CadastroUsuarioViewController: UIViewController {
         cadastrarButton.isEnabled = false
         if !Utils.temTextFieldVazia(view: view){
             indicator.isHidden = false
-            if let nome = nomeTextField.text, let email = emailTextField.text,
+            if let nome = nomeTextField.text, let email = emailTextField.text, let nick = apelidoTextField.text,
                let senha = senhaTextField.text, let genero = generoTextField.text,
                 let senhaRepetida = repetirSenhaTextField.text {
                 
@@ -189,6 +191,7 @@ class CadastroUsuarioViewController: UIViewController {
                     }else{
                         if var usuario = usuario {
                             usuario.nome = nome
+                            usuario.apelido = nick
                             usuario.email = email
                             usuario.senha = senha
                             usuario.ativo = true

@@ -10,6 +10,7 @@ import Foundation
 struct Usuario: Codable, Equatable {
     var id: String?
     var nome: String
+    var apelido: String?
     var dataNascimento: Date?
     let tipo: String?
     var email: String
@@ -21,6 +22,7 @@ struct Usuario: Codable, Equatable {
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case nome = "nome"
+        case apelido = "nickName"
         case dataNascimento = "dataNascimento"
         case telefone = "telefone"
         case tipo = "tipo"
@@ -31,9 +33,10 @@ struct Usuario: Codable, Equatable {
         case ativo = "ativo"
     }
     
-    init(id: String, nome: String, dataNascimento: Date, tipo: String, email: String, genero: String, senha: String, idFamilia: String, ativo: Bool) {
+    init(id: String, nome: String, apelido: String = "", dataNascimento: Date, tipo: String, email: String, genero: String, senha: String, idFamilia: String, ativo: Bool) {
         self.id = id
         self.nome = nome
+        self.apelido = apelido
         self.dataNascimento = dataNascimento
         self.tipo = tipo
         self.email = email
@@ -48,6 +51,11 @@ struct Usuario: Codable, Equatable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(String.self, forKey: .id)
         nome = try container.decode(String.self, forKey: .nome)
+        do {
+            apelido = try container.decode(String.self, forKey: .apelido)
+        }catch{
+            apelido = ""
+        }
         
         let dataString = try container.decode(String.self, forKey: .dataNascimento)
         let fullISO8610Formatter = DateFormatter()
@@ -65,6 +73,7 @@ struct Usuario: Codable, Equatable {
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(nome, forKey: .nome)
+        try container.encode(apelido, forKey: .apelido)
         
         let codificador = JSONEncoder()
         codificador.dateEncodingStrategy = .iso8601

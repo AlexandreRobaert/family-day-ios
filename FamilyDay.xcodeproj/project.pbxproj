@@ -42,9 +42,11 @@
 		AC58EE26241622DB00CEB18B /* MetaDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC58EE25241622DB00CEB18B /* MetaDao.swift */; };
 		AC58EE282416234500CEB18B /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC58EE272416234500CEB18B /* Meta.swift */; };
 		AC6123A923F25D2F00C4DEA1 /* TarefaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6123A823F25D2F00C4DEA1 /* TarefaTableViewCell.swift */; };
-		AC654E0624365D0100043169 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC654E0524365D0100043169 /* CardCollectionViewCell.swift */; };
+		AC654E0624365D0100043169 /* CardGrandeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC654E0524365D0100043169 /* CardGrandeCollectionViewCell.swift */; };
 		AC654E082436719700043169 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC654E072436719700043169 /* DateUtil.swift */; };
-		AC6F18D6240AA9E8003DC31D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = AC6F18D5240AA9E8003DC31D /* SwiftPackageProductDependency */; };
+		AC6CA572244E89EB00561693 /* RecuperarSenhaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6CA570244E89EB00561693 /* RecuperarSenhaViewController.swift */; };
+		AC6CA573244E89EB00561693 /* RecuperarSenhaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC6CA571244E89EB00561693 /* RecuperarSenhaViewController.xib */; };
+		AC6F18D6240AA9E8003DC31D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AC6F18D5240AA9E8003DC31D /* Alamofire */; };
 		AC702FC923FC4DD500F86049 /* ConviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC702FC723FC4DD500F86049 /* ConviteViewController.swift */; };
 		AC702FCA23FC4DD500F86049 /* ConviteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC702FC823FC4DD500F86049 /* ConviteViewController.xib */; };
 		AC702FCC23FCC6C700F86049 /* Mensagem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC702FCB23FCC6C700F86049 /* Mensagem.swift */; };
@@ -57,7 +59,7 @@
 		AC852B7224271F22001D86E4 /* TarefaDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC852B7124271F22001D86E4 /* TarefaDao.swift */; };
 		AC85E1CC24198020009D4310 /* MembrosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC85E1CB24198020009D4310 /* MembrosViewController.swift */; };
 		AC8B01A323FCCB8100F4B79E /* MenuOpcoesEnvio.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8B01A223FCCB8100F4B79E /* MenuOpcoesEnvio.swift */; };
-		AC8BAA32241D392A00DEA8A6 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = AC8BAA31241D392A00DEA8A6 /* SwiftPackageProductDependency */; };
+		AC8BAA32241D392A00DEA8A6 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = AC8BAA31241D392A00DEA8A6 /* SwiftyJSON */; };
 		AC8BAA35241D46D100DEA8A6 /* CadastrarTarefaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8BAA33241D46D100DEA8A6 /* CadastrarTarefaViewController.swift */; };
 		AC8E4C3024345190008B595D /* FotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8E4C2E24345190008B595D /* FotoCollectionViewCell.swift */; };
 		AC8E4C3124345190008B595D /* FotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC8E4C2F24345190008B595D /* FotoCollectionViewCell.xib */; };
@@ -114,8 +116,10 @@
 		AC58EE25241622DB00CEB18B /* MetaDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaDao.swift; sourceTree = "<group>"; };
 		AC58EE272416234500CEB18B /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
 		AC6123A823F25D2F00C4DEA1 /* TarefaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarefaTableViewCell.swift; sourceTree = "<group>"; };
-		AC654E0524365D0100043169 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		AC654E0524365D0100043169 /* CardGrandeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGrandeCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC654E072436719700043169 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		AC6CA570244E89EB00561693 /* RecuperarSenhaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecuperarSenhaViewController.swift; sourceTree = "<group>"; };
+		AC6CA571244E89EB00561693 /* RecuperarSenhaViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecuperarSenhaViewController.xib; sourceTree = "<group>"; };
 		AC702FC723FC4DD500F86049 /* ConviteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConviteViewController.swift; sourceTree = "<group>"; };
 		AC702FC823FC4DD500F86049 /* ConviteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConviteViewController.xib; sourceTree = "<group>"; };
 		AC702FCB23FCC6C700F86049 /* Mensagem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mensagem.swift; sourceTree = "<group>"; };
@@ -159,8 +163,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC8BAA32241D392A00DEA8A6 /* BuildFile in Frameworks */,
-				AC6F18D6240AA9E8003DC31D /* BuildFile in Frameworks */,
+				AC8BAA32241D392A00DEA8A6 /* SwiftyJSON in Frameworks */,
+				AC6F18D6240AA9E8003DC31D /* Alamofire in Frameworks */,
 				34F57450C737B882C7773D93 /* Pods_FamilyDay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,7 +233,7 @@
 				AC3C2F7E24305895002E0564 /* TarefasDashViewController.swift */,
 				AC2BCD952434489F000CEFD6 /* ConclusaoTarefaViewController.swift */,
 				AC8E4C2E24345190008B595D /* FotoCollectionViewCell.swift */,
-				AC654E0524365D0100043169 /* CardCollectionViewCell.swift */,
+				AC654E0524365D0100043169 /* CardGrandeCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -332,6 +336,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		AC6CA56F244E81FD00561693 /* RecuperarSenha */ = {
+			isa = PBXGroup;
+			children = (
+				AC6CA570244E89EB00561693 /* RecuperarSenhaViewController.swift */,
+				AC6CA571244E89EB00561693 /* RecuperarSenhaViewController.xib */,
+			);
+			path = RecuperarSenha;
+			sourceTree = "<group>";
+		};
 		AC702FC423FC4B2D00F86049 /* Convite */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +439,7 @@
 				AC702FCD23FCC6F700F86049 /* Model */,
 				AC4D949E240C2F52002CF0DB /* Dao */,
 				ACB7C5B823EB40530010D603 /* Login */,
+				AC6CA56F244E81FD00561693 /* RecuperarSenha */,
 				AC1BB46223EDD8DC00AA88F5 /* TabHome */,
 				AC1BB46623EDD99C00AA88F5 /* TabTarefas */,
 				ACF264CB2416E36F00BC621E /* TabMetas */,
@@ -491,8 +505,8 @@
 			);
 			name = FamilyDay;
 			packageProductDependencies = (
-				AC6F18D5240AA9E8003DC31D /* SwiftPackageProductDependency */,
-				AC8BAA31241D392A00DEA8A6 /* SwiftPackageProductDependency */,
+				AC6F18D5240AA9E8003DC31D /* Alamofire */,
+				AC8BAA31241D392A00DEA8A6 /* SwiftyJSON */,
 			);
 			productName = FamilyDay;
 			productReference = ACB7C59F23EB35D60010D603 /* Family Day.app */;
@@ -523,8 +537,8 @@
 			);
 			mainGroup = ACB7C59623EB35D60010D603;
 			packageReferences = (
-				AC6F18D4240AA9E8003DC31D /* RemoteSwiftPackageReference */,
-				AC8BAA30241D392A00DEA8A6 /* RemoteSwiftPackageReference */,
+				AC6F18D4240AA9E8003DC31D /* XCRemoteSwiftPackageReference "Alamofire" */,
+				AC8BAA30241D392A00DEA8A6 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = ACB7C5A023EB35D60010D603 /* Products */;
 			projectDirPath = "";
@@ -549,6 +563,7 @@
 				AC36367E2423E7E3001D90DF /* DiasDaSemanaTableViewController.xib in Resources */,
 				AC5109E62417686E00113FB1 /* CadastroUsuarioViewController.xib in Resources */,
 				AC2BCD982434489F000CEFD6 /* ConclusaoTarefaViewController.xib in Resources */,
+				AC6CA573244E89EB00561693 /* RecuperarSenhaViewController.xib in Resources */,
 				AC1A0DAC23F470970037AAB7 /* DetalhesTarefaViewController.xib in Resources */,
 				AC7927D32424601C0082DAAC /* ListaMembrosTableViewController.xib in Resources */,
 				AC702FCA23FC4DD500F86049 /* ConviteViewController.xib in Resources */,
@@ -620,6 +635,7 @@
 				AC702FCF23FCC74500F86049 /* Usuario.swift in Sources */,
 				AC702FCC23FCC6C700F86049 /* Mensagem.swift in Sources */,
 				AC654E082436719700043169 /* DateUtil.swift in Sources */,
+				AC6CA572244E89EB00561693 /* RecuperarSenhaViewController.swift in Sources */,
 				AC7927CD2424566C0082DAAC /* MembroTableViewCell.swift in Sources */,
 				AC852B7224271F22001D86E4 /* TarefaDao.swift in Sources */,
 				ACB4504C2411E56800B4FF5F /* FamiliaDao.swift in Sources */,
@@ -650,7 +666,7 @@
 				ACF264CA2416E36A00BC621E /* TabMetasViewController.swift in Sources */,
 				AC1A0DAB23F470970037AAB7 /* DetalhesTarefaViewController.swift in Sources */,
 				ACB7C5A523EB35D60010D603 /* SceneDelegate.swift in Sources */,
-				AC654E0624365D0100043169 /* CardCollectionViewCell.swift in Sources */,
+				AC654E0624365D0100043169 /* CardGrandeCollectionViewCell.swift in Sources */,
 				AC58EE23241616DE00CEB18B /* CadastroMetaViewController.swift in Sources */,
 				AC7927CF24245A0C0082DAAC /* Tarefa.swift in Sources */,
 				AC4D94A0240C2F72002CF0DB /* UsuarioDao.swift in Sources */,
@@ -867,7 +883,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		AC6F18D4240AA9E8003DC31D /* RemoteSwiftPackageReference */ = {
+		AC6F18D4240AA9E8003DC31D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -875,7 +891,7 @@
 				minimumVersion = 5.0.2;
 			};
 		};
-		AC8BAA30241D392A00DEA8A6 /* RemoteSwiftPackageReference */ = {
+		AC8BAA30241D392A00DEA8A6 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
 			requirement = {
@@ -886,14 +902,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		AC6F18D5240AA9E8003DC31D /* SwiftPackageProductDependency */ = {
+		AC6F18D5240AA9E8003DC31D /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AC6F18D4240AA9E8003DC31D /* RemoteSwiftPackageReference */;
+			package = AC6F18D4240AA9E8003DC31D /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		AC8BAA31241D392A00DEA8A6 /* SwiftPackageProductDependency */ = {
+		AC8BAA31241D392A00DEA8A6 /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AC8BAA30241D392A00DEA8A6 /* RemoteSwiftPackageReference */;
+			package = AC8BAA30241D392A00DEA8A6 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */

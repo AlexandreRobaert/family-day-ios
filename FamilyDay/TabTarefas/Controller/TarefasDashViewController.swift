@@ -9,10 +9,10 @@ enum PeriodoBusca {
 
 class TarefasDashViewController: UIViewController {
     
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var segmenteControl: UISegmentedControl!
     var quantidadesDeTarefas: [String:Int] = [:]
     var periodo: PeriodoBusca = .dia
     var dataInicio: Date = Date()
@@ -24,7 +24,7 @@ class TarefasDashViewController: UIViewController {
         carregarCards()
         collectionView.delegate = self
         collectionView.dataSource = self
-        
+        collectionView.layer.cornerRadius = 20
         navigationController?.setNavigationBarHidden(false, animated: false)
         let responsavel = Configuration.shared.usuarioResponsavel!
         if responsavel {
@@ -81,7 +81,7 @@ class TarefasDashViewController: UIViewController {
     }
     
     
-    @IBAction func showCadastroTarefa(_ sender: Any) {
+    @objc func showCadastroTarefa(_ sender: Any) {
         navigationController?.pushViewController(CadastrarTarefaViewController(), animated: true)
     }
     
@@ -101,9 +101,22 @@ extension TarefasDashViewController: UICollectionViewDelegate, UICollectionViewD
         return quantidadesDeTarefas.count - 1
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+           switch kind {
+           case UICollectionView.elementKindSectionHeader:
+               let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath)
+               segmenteControl = headerView.subviews.first as? UISegmentedControl
+               segmenteControl.addTarget(self, action: #selector(mudouPeriodo(_:)), for: .valueChanged)
+            return headerView
+           default:
+               print("default")
+               assert(false, "Unexpected element kind")
+           }
+       }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let cell = collectionView.cellForItem(at: indexPath) as! CardCollectionViewCell
+        let cell = collectionView.cellForItem(at: indexPath) as! CardGrandeCollectionViewCell
         guard let quantidade = Int(cell.quantidadeLabel.text!) else {return}
         
         if quantidade > 0 {
@@ -134,7 +147,7 @@ extension TarefasDashViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellCard", for: indexPath) as! CardCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellCard", for: indexPath) as! CardGrandeCollectionViewCell
         cell.layer.borderWidth = 0.8
         cell.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         cell.layer.cornerRadius = 15

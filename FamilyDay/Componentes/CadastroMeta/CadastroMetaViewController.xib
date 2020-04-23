@@ -104,7 +104,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="cadastrarMeta:" destination="-1" eventType="touchUpInside" id="gik-pd-uth"/>
+                        <action selector="cadastrarAtualizarMeta:" destination="-1" eventType="touchUpInside" id="gik-pd-uth"/>
                     </connections>
                 </button>
             </subviews>

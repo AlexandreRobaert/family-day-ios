@@ -8,11 +8,11 @@ class UsuarioDao {
     
     class func getTokeApp(){
         InstanceID.instanceID().instanceID { (result, error) in
-          if let error = error {
-            print("Erro no TokenID do App: \(error)")
-          } else if let result = result {
-            Configuration.shared.deviceId = result.token
-          }
+            if let error = error {
+                print("Erro no TokenID do App: \(error)")
+            } else if let result = result {
+                Configuration.shared.deviceId = result.token
+            }
         }
     }
     
@@ -20,6 +20,7 @@ class UsuarioDao {
         let headers: HTTPHeaders = ["x-access-token": token]
         
         AF.request("\(Configuration.URL_API)/usuarios/me", headers: headers).validate().responseDecodable(of: Usuario.self) {(response) in
+            print(response.result)
             switch response.result {
             case .success(let usuario):
                 Configuration.shared.idFamilia = usuario.idFamilia
@@ -92,7 +93,6 @@ class UsuarioDao {
         let parametros = ["os": "IOS", "deviceId": Configuration.shared.deviceId]
 
         AF.request("\(Configuration.URL_API)/login", method: .post, parameters: parametros, headers: headers).responseJSON { (response) in
-            print(response.result)
             switch response.result {
             case .success(let value as [String: Any]):
                 if let token = value["token"] as? String {
@@ -213,7 +213,7 @@ class UsuarioDao {
         fullISO8610Formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         let stringData = fullISO8610Formatter.string(from: usuario.dataNascimento!)
         
-        let parametros: [String: Any] = ["nome": usuario.nome, "dataNascimento": stringData, "tipo": usuario.tipo! as Any, "genero": usuario.genero, "email": usuario.email, "senha": usuario.senha, "os": "IOS", "deviceId": deviceID, "ativo": usuario.ativo]
+        let parametros: [String: Any] = ["nome": usuario.nome, "nickName": usuario.apelido!, "dataNascimento": stringData, "tipo": usuario.tipo! as Any, "genero": usuario.genero, "email": usuario.email, "senha": usuario.senha, "os": "IOS", "deviceId": deviceID, "ativo": usuario.ativo]
         
         let header: HTTPHeaders = ["x-access-token": Configuration.shared.token!]
         
@@ -239,6 +239,27 @@ class UsuarioDao {
             case .failure(let error):
                 completion(nil, nil)
                 print(error)
+            }
+        }
+    }
+    
+    class func atualizarSenha(emailOuNick: String, codigo: String, senha: String, completion: @escaping (Bool) -> Void){
+        
+        let parametros: [String: String] = ["emailOuNick": emailOuNick, "codigo": codigo, "senha": senha]
+        
+        AF.request("\(Configuration.URL_API)/login/alterar-senha", method: .put, parameters: parametros).responseJSON { (data) in
+            switch data.result {
+            case .success(_):
+                switch data.response?.statusCode {
+                case 200:
+                    completion(true)
+                case 203:
+                    completion(false)
+                default:
+                    completion(false)
+                }
+            case .failure(_):
+                completion(false)
             }
         }
     }

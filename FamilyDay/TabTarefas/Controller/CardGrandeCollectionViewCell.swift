@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CardCollectionViewCell: UICollectionViewCell {
+class CardGrandeCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var tituloLabel: UILabel!
     @IBOutlet weak var quantidadeLabel: UILabel!

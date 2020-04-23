@@ -9,7 +9,6 @@
 import UIKit
 import Alamofire
 import Firebase
-import SCLAlertView
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
@@ -32,6 +31,7 @@ class LoginViewController: UIViewController {
         viewCentral.layer.shadowRadius = 5
         
         if let token = Configuration.shared.token {
+            print(token)
             getUser(for: token)
             entrarButton.isEnabled = false
             indicator.isHidden = false
@@ -51,29 +51,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func esqueciMinhaSenha(_ sender: UIButton) {
         
-        let alert = SCLAlertView()
-        let textEmail = alert.addTextField("Seu Email ou NickName")
-        textEmail.keyboardType = .emailAddress
-        alert.addButton("Enviar") {
-            UsuarioDao.enviarEmailRecuperarSenha(emailNick: textEmail.text!) { (email, error) in
-                if let email = email {
-                    let alert = SCLAlertView()
-                    let textView = alert.addTextField("Código verificação")
-                    alert.addButton("Verificar") {
-                        print(textView.text!)
-                    }
-                    let ico = UIImage(systemName: "envelope.badge")
-                    alert.iconTintColor = .white
-                    alert.showCustom("Email enviado", subTitle: "Foi enviado um email com o código de verificação para \(email)", color: UIColor(named: "Laranja")!, icon: ico! , closeButtonTitle: "Fechar", timeout: .none, colorStyle: .max, colorTextButton: .max, circleIconImage: .strokedCheckmark, animationStyle: .bottomToTop)
-                }else{
-                    alert.title = "Email inválido"
-                }
-            }
-        }
-
-        let ico = UIImage(systemName: "lock.shield")
-        alert.iconTintColor = .white
-        alert.showCustom("Recuperar senha", subTitle: "", color: UIColor(named: "Laranja")!, icon: ico! , closeButtonTitle: "Fechar", timeout: .none, colorStyle: .max, colorTextButton: .max, circleIconImage: .strokedCheckmark, animationStyle: .bottomToTop)
+        navigationController?.pushViewController(RecuperarSenhaViewController(), animated: true)
     }
     
     func irParaHome(usuario: Usuario) {

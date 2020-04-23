@@ -14,7 +14,6 @@ protocol TabelaMetasDelegate {
 
 class CadastroMetaViewController: UIViewController {
 
-    
     @IBOutlet weak var tituloDaTelaLabel: UILabel!
     @IBOutlet weak var tituloTextField: UITextField!
     @IBOutlet weak var descricaoTextField: UITextField!
@@ -66,6 +65,7 @@ class CadastroMetaViewController: UIViewController {
             if let user = usuario {
                 vcHome.user = user
 
+                self.navigationController?.viewControllers = []
                 self.navigationController?.popToRootViewController(animated: false)
                 self.navigationController?.dismiss(animated: true, completion: nil)
                 self.present(tab, animated: true, completion: nil)
@@ -73,16 +73,16 @@ class CadastroMetaViewController: UIViewController {
         }
     }
 
-    @IBAction func cadastrarMeta(_ sender: Any) {
+    @IBAction func cadastrarAtualizarMeta(_ sender: Any) {
         
         for textField in Utils.getTextfield(view: view) {
             textField.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         }
 
         if !Utils.temTextFieldVazia(view: view){
-
-            self.meta = Meta(id: nil, titulo: tituloTextField.text!, descricao: descricaoTextField.text!, pontosAlvo: (pontosTextField.text! as NSString).integerValue)
-
+             
+            self.meta = Meta(id: meta?.id!, titulo: tituloTextField.text!, descricao: descricaoTextField.text!, pontosAlvo: (pontosTextField.text! as NSString).integerValue)
+            
             if cadastrarButton.tag == 111 {
                 MetaDao.cadastrarMeta(meta: meta!) { (idMeta) in
                     if let id = idMeta {
@@ -95,7 +95,7 @@ class CadastroMetaViewController: UIViewController {
                         }
                     }
                 }
-            }else{
+            } else {
                 MetaDao.atualizarMeta(meta: meta!) { (sucesso) in
                     if sucesso {
                         self.navigationController?.popViewController(animated: true)
