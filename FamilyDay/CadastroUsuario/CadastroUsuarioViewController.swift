@@ -58,7 +58,7 @@ class CadastroUsuarioViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    override func becomeFirstResponder() -> Bool {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
     
@@ -257,9 +257,9 @@ extension CadastroUsuarioViewController: UITextFieldDelegate {
         case generoTextField:
             senhaTextField.becomeFirstResponder()
         case senhaTextField:
-            repetirSenhaTextField.becomeFirstResponder()
-        case repetirSenhaTextField:
             repetirSenhaTextField.resignFirstResponder()
+        case repetirSenhaTextField:
+            view.endEditing(true)
         default:
             print()
         }

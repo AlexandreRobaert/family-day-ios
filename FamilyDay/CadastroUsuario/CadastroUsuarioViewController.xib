@@ -48,7 +48,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="31X-Sn-uvp" userLabel="Center View">
-                    <rect key="frame" x="20" y="144" width="335" height="467"/>
+                    <rect key="frame" x="20" y="124" width="335" height="467"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zGs-mA-Ql7">
                             <rect key="frame" x="15" y="10" width="305" height="447"/>
@@ -146,7 +146,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwc-FM-mpt">
-                    <rect key="frame" x="40" y="586" width="295" height="50"/>
+                    <rect key="frame" x="40" y="566" width="295" height="50"/>
                     <color key="backgroundColor" red="0.91372549020000005" green="0.56862745100000001" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="Lbh-cc-wNO"/>
@@ -172,7 +172,7 @@
                 <constraint firstItem="zjr-k4-n2p" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="HuX-2b-2HJ"/>
                 <constraint firstItem="fwc-FM-mpt" firstAttribute="leading" secondItem="31X-Sn-uvp" secondAttribute="leading" constant="20" id="Igr-cI-Juo"/>
                 <constraint firstItem="31X-Sn-uvp" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.7" id="OLb-fj-Z9J"/>
-                <constraint firstItem="31X-Sn-uvp" firstAttribute="top" secondItem="zjr-k4-n2p" secondAttribute="bottom" constant="-100" id="PZM-1Z-p2o"/>
+                <constraint firstItem="31X-Sn-uvp" firstAttribute="top" secondItem="zjr-k4-n2p" secondAttribute="bottom" constant="-120" id="PZM-1Z-p2o"/>
                 <constraint firstItem="zjr-k4-n2p" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="d7K-E9-dV0"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="31X-Sn-uvp" secondAttribute="trailing" constant="20" id="dYF-Nk-cfb"/>
                 <constraint firstItem="fwc-FM-mpt" firstAttribute="trailing" secondItem="31X-Sn-uvp" secondAttribute="trailing" constant="-20" id="gR3-f4-6yf"/>

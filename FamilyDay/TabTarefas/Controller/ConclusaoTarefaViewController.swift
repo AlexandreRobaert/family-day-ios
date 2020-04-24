@@ -26,6 +26,7 @@ class ConclusaoTarefaViewController: UIViewController {
     var historicoSelecionado: Historico!
     var fotoController: UIImagePickerController!
     var imagens: [UIImage] = []
+    var indexFotoSelecionada = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,6 +100,7 @@ class ConclusaoTarefaViewController: UIViewController {
     }
     
     func carregarFotos(){
+        self.imagens.removeAll()
         indicator.isHidden = false
         for url in historicoSelecionado.fotos {
             FirebaseDao.downloadImagen(forUrl: url) { (image) in
@@ -180,7 +182,7 @@ extension ConclusaoTarefaViewController: UICollectionViewDataSource, UICollectio
         if !imagens.isEmpty && imagens.count > indexPath.row {
             cell.foto.image = imagens[indexPath.row]
         }else{
-            cell.foto.image = #imageLiteral(resourceName: "avatar")
+            cell.foto.image = UIImage(systemName: "camera.fill")
         }
         if !responsavel && (historicoSelecionado.status == StatusTarefa.pendente.rawValue.uppercased() || historicoSelecionado.status == StatusTarefa.refazer.rawValue.uppercased()) {
             cell.botaoCamera.isHidden = false
@@ -190,6 +192,7 @@ extension ConclusaoTarefaViewController: UICollectionViewDataSource, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if !responsavel {
+            indexFotoSelecionada = indexPath.row
             tirarFoto()
         }
     }
@@ -211,7 +214,11 @@ extension ConclusaoTarefaViewController: UIImagePickerControllerDelegate, UINavi
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.originalImage] as? UIImage else { return }
         let imageResize = Utils.resizedImage(at: image, for: CGSize(width: 300.0, height: 300.0))
-        imagens.append(imageResize)
+        if imagens.count > indexFotoSelecionada {
+            imagens[indexFotoSelecionada] = imageResize
+        }else{
+            imagens.append(imageResize)
+        }
         collectionView.reloadData()
         fotoController.dismiss(animated: true, completion: nil)
     }

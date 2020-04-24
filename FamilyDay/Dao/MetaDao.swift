@@ -28,7 +28,22 @@ class MetaDao {
         }
     }
     
+    
     static func getMeta(for id: String, completion: @escaping(Meta?) -> Void){
+        let header: HTTPHeaders = ["x-access-token": Configuration.shared.token!]
+        AF.request("\(Configuration.URL_API)/metas/\(id)", headers: header).validate().responseData { (data) in
+            do {
+                let json = try JSON(data: data.data!)
+                let meta = Meta(id: id, titulo: json["titulo"].stringValue, descricao: json["descricao"].stringValue, pontosAlvo: json["pontosAlvo"].intValue)
+                completion(meta)
+            }catch {
+                completion(nil)
+                print(error)
+            }
+        }
+    }
+    
+    static func getMetaComPontos(for id: String, completion: @escaping(Meta?) -> Void){
         let header: HTTPHeaders = ["x-access-token": Configuration.shared.token!]
         AF.request("\(Configuration.URL_API)/metas/\(id)", headers: header).validate().responseData { (data) in
             do {
