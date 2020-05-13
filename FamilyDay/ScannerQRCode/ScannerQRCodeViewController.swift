@@ -106,7 +106,6 @@ class ScannerQRCodeViewController: UIViewController, AVCaptureMetadataOutputObje
                 print("Sair")
             }
         }
-        
     }
 
     override var prefersStatusBarHidden: Bool {

@@ -8,15 +8,22 @@
 
 import UIKit
 import Firebase
+import FacebookCore
+import FacebookLogin
+import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-    
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+        
     let gcmMessageIDKey = "gcm.message_id"
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
+        GIDSignIn.sharedInstance()?.delegate = self
+        
+        ApplicationDelegate.shared.application( application, didFinishLaunchingWithOptions: launchOptions )
         
         // [START set_messaging_delegate]
         Messaging.messaging().delegate = self
@@ -105,6 +112,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
+    func application( _ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:] ) -> Bool {
+        
+        ApplicationDelegate.shared.application( app, open: url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplication.OpenURLOptionsKey.annotation] )
+        
+        return GIDSignIn.sharedInstance().handle(url)
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
+                print("O usuário não fez login antes, ou desconectou")
+            }else{
+                print(error.localizedDescription)
+            }
+            
+            NotificationCenter.default.post(
+            name: Notification.Name(rawValue: "ToggleAuthUINotification"), object: nil, userInfo: nil)
+            return
+        }
+        
+        let userID = user.userID // Somente para uso no App, lado do cliente
+        let idToken = user.authentication.idToken //Este token pode enviar para o servidor
+        let fullName = user.profile.name
+        let givenName = user.profile.givenName
+        let familyName = user.profile.familyName
+        let email = user.profile.email
+        
+        NotificationCenter.default.post(
+        name: Notification.Name(rawValue: "ToggleAuthUINotification"),
+        object: nil,
+        userInfo: ["idToken": idToken!])
+        
+    }
 }
 
 // [START ios_10_message_handling]
@@ -161,4 +202,3 @@ extension AppDelegate : MessagingDelegate {
     }
     // [END refresh_token]
 }
-

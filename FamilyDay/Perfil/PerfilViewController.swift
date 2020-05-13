@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FacebookLogin
+import FirebaseAuth
 
 class PerfilViewController: UIViewController {
 

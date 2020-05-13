@@ -11,5 +11,7 @@ target 'FamilyDay' do
   pod "Firebase/Auth"
   pod "Firebase/Messaging"
   pod "SCLAlertView"
+  pod 'FirebaseUI/Google'
+  pod 'FirebaseUI/Facebook'
 
 end

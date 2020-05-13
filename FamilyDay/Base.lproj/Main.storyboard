@@ -37,13 +37,24 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="HFQ-0C-OJH">
                                         <rect key="frame" x="75" y="80" width="225" height="107"/>
                                     </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Tyi-cD-Fh3" userLabel="Stack Redes Sociais">
+                                        <rect key="frame" x="20" y="50" width="335" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="mjP-ZC-9dU"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" name="Roxo"/>
                                 <constraints>
                                     <constraint firstItem="HFQ-0C-OJH" firstAttribute="height" secondItem="7FE-By-Dxq" secondAttribute="height" multiplier="0.4" id="I5f-sS-ZRS"/>
+                                    <constraint firstItem="Tyi-cD-Fh3" firstAttribute="leading" secondItem="7FE-By-Dxq" secondAttribute="leading" constant="20" id="J98-u5-aIE"/>
+                                    <constraint firstItem="Tyi-cD-Fh3" firstAttribute="leading" secondItem="7FE-By-Dxq" secondAttribute="leading" constant="20" id="LUZ-vd-6Xq"/>
                                     <constraint firstItem="HFQ-0C-OJH" firstAttribute="centerX" secondItem="7FE-By-Dxq" secondAttribute="centerX" id="VZy-hr-eW0"/>
                                     <constraint firstItem="HFQ-0C-OJH" firstAttribute="width" secondItem="7FE-By-Dxq" secondAttribute="width" multiplier="0.6" id="WQQ-Ks-7TZ"/>
                                     <constraint firstItem="HFQ-0C-OJH" firstAttribute="centerY" secondItem="7FE-By-Dxq" secondAttribute="centerY" id="asr-1V-hOW"/>
+                                    <constraint firstAttribute="trailing" secondItem="Tyi-cD-Fh3" secondAttribute="trailing" constant="20" id="kXc-vW-ymD"/>
+                                    <constraint firstItem="Tyi-cD-Fh3" firstAttribute="top" secondItem="7FE-By-Dxq" secondAttribute="top" constant="50" id="tcV-3w-ojm"/>
+                                    <constraint firstAttribute="trailing" secondItem="Tyi-cD-Fh3" secondAttribute="trailing" constant="20" id="wVc-zg-TUS"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q4l-yO-EMT" userLabel="Center View">
@@ -70,7 +81,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="KAa-Km-bL3">
-                                        <rect key="frame" x="8" y="122.5" width="321.5" height="45"/>
+                                        <rect key="frame" x="8" y="112.5" width="321.5" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="T3l-Ww-Peh"/>
                                         </constraints>
@@ -78,33 +89,25 @@
                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email ou Apelido" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="uCt-Lh-uOg">
-                                        <rect key="frame" x="8" y="47.5" width="321.5" height="45"/>
+                                        <rect key="frame" x="8" y="37.5" width="321.5" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="vyK-b7-ZWz"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entre com seu Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nm9-KB-hP0">
-                                        <rect key="frame" x="67.5" y="20" width="202" height="26"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
-                                        <color key="textColor" red="0.64557164909999998" green="0.12988209719999999" blue="0.40393567089999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Nm9-KB-hP0" firstAttribute="centerX" secondItem="Q4l-yO-EMT" secondAttribute="centerX" id="0Go-IJ-rMe"/>
                                     <constraint firstItem="uCt-Lh-uOg" firstAttribute="centerX" secondItem="Q4l-yO-EMT" secondAttribute="centerX" id="76e-jb-dnf"/>
                                     <constraint firstAttribute="trailing" secondItem="KAa-Km-bL3" secondAttribute="trailing" constant="8" id="GzW-jN-biC"/>
                                     <constraint firstItem="KCw-Xc-3N7" firstAttribute="leading" secondItem="Q4l-yO-EMT" secondAttribute="leading" constant="20" id="HV0-q7-pWD"/>
-                                    <constraint firstItem="Nm9-KB-hP0" firstAttribute="top" secondItem="Q4l-yO-EMT" secondAttribute="top" constant="20" id="MaN-cO-HLZ"/>
                                     <constraint firstItem="uCt-Lh-uOg" firstAttribute="leading" secondItem="Q4l-yO-EMT" secondAttribute="leading" constant="8" id="Sjz-YL-k6b"/>
                                     <constraint firstAttribute="trailing" secondItem="KCw-Xc-3N7" secondAttribute="trailing" constant="20" id="VGW-mr-5QB"/>
                                     <constraint firstAttribute="bottom" secondItem="KCw-Xc-3N7" secondAttribute="bottom" constant="-25" id="a2q-ZI-P8x"/>
                                     <constraint firstAttribute="trailing" secondItem="uCt-Lh-uOg" secondAttribute="trailing" constant="8" id="csC-kl-flT"/>
                                     <constraint firstItem="KAa-Km-bL3" firstAttribute="top" secondItem="uCt-Lh-uOg" secondAttribute="bottom" constant="30" id="ez5-Qy-on9"/>
-                                    <constraint firstItem="uCt-Lh-uOg" firstAttribute="centerY" secondItem="Q4l-yO-EMT" secondAttribute="centerY" constant="-30" id="hXw-q5-RUE"/>
+                                    <constraint firstItem="uCt-Lh-uOg" firstAttribute="centerY" secondItem="Q4l-yO-EMT" secondAttribute="centerY" constant="-40" id="hXw-q5-RUE"/>
                                     <constraint firstItem="KAa-Km-bL3" firstAttribute="leading" secondItem="Q4l-yO-EMT" secondAttribute="leading" constant="8" id="icA-Iq-INm"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -114,7 +117,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="XfI-h8-4bv">
-                                <rect key="frame" x="169" y="581" width="37" height="37"/>
+                                <rect key="frame" x="169" y="610" width="37" height="37"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KdQ-b2-GRK">
                                 <rect key="frame" x="109" y="524" width="157" height="32"/>
@@ -173,10 +176,10 @@
                             <constraint firstItem="Q4l-yO-EMT" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="fk5-cR-f9A"/>
                             <constraint firstItem="XfI-h8-4bv" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hZs-qL-tIj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v48-XI-2ZG" secondAttribute="trailing" constant="30" id="i6w-i7-OPg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XfI-h8-4bv" secondAttribute="bottom" constant="20" id="jbU-Jl-FTc"/>
                             <constraint firstItem="7FE-By-Dxq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kJG-Py-DZu"/>
                             <constraint firstItem="qzA-fk-X8s" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="t9S-GH-t2H"/>
                             <constraint firstItem="TPr-tL-Tyh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wR7-Fi-H8H"/>
-                            <constraint firstItem="XfI-h8-4bv" firstAttribute="top" secondItem="KdQ-b2-GRK" secondAttribute="bottom" constant="25" id="wYL-pG-EFP"/>
                             <constraint firstItem="7FE-By-Dxq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zXW-wb-MKs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -189,13 +192,14 @@
                         <outlet property="indicator" destination="XfI-h8-4bv" id="lcS-X5-DKh"/>
                         <outlet property="loginTextField" destination="uCt-Lh-uOg" id="Bbd-c6-e1o"/>
                         <outlet property="mensagemLoginLabel" destination="TPr-tL-Tyh" id="NB2-6R-0Dz"/>
+                        <outlet property="redesSociaisStackView" destination="Tyi-cD-Fh3" id="gct-5k-PhB"/>
                         <outlet property="senhaTextField" destination="KAa-Km-bL3" id="Ge8-hh-4qu"/>
                         <outlet property="viewCentral" destination="Q4l-yO-EMT" id="1Ud-I4-G7q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2610.4000000000001" y="305.9113300492611"/>
+            <point key="canvasLocation" x="-2610.4000000000001" y="305.39730134932535"/>
         </scene>
         <!--Tipo Perfil-->
         <scene sceneID="jkU-G1-UiU">
@@ -372,7 +376,7 @@
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Time" translatesAutoresizingMaskIntoConstraints="NO" id="FDR-sH-H6K">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trofeu" translatesAutoresizingMaskIntoConstraints="NO" id="FDR-sH-H6K">
                                                     <rect key="frame" x="20" y="5" width="110" height="60"/>
                                                     <color key="tintColor" name="Roxo"/>
                                                 </imageView>
@@ -422,7 +426,7 @@
                                                     <color key="textColor" red="1" green="0.2784313725" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Time" translatesAutoresizingMaskIntoConstraints="NO" id="7AD-R8-lRF">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trofeu" translatesAutoresizingMaskIntoConstraints="NO" id="7AD-R8-lRF">
                                                     <rect key="frame" x="95" y="5" width="50" height="50"/>
                                                     <color key="tintColor" name="Roxo"/>
                                                     <constraints>
@@ -479,7 +483,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="c6o-bn-1pU" firstAttribute="centerX" secondItem="tLP-eB-DsI" secondAttribute="centerX" id="4Bn-Zl-ohN"/>
                             <constraint firstItem="Sif-YD-cmD" firstAttribute="leading" secondItem="K62-vz-tFL" secondAttribute="leading" constant="20" id="5Wi-pZ-5SI"/>
@@ -711,7 +715,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Time" translatesAutoresizingMaskIntoConstraints="NO" id="cQj-7N-eoM">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="item" translatesAutoresizingMaskIntoConstraints="NO" id="cQj-7N-eoM">
                                             <rect key="frame" x="0.0" y="0.0" width="108" height="100"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -762,8 +766,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="329" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tortoise" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1Tk-Dn-dLt">
-                                                    <rect key="frame" x="0.0" y="3" width="120" height="116.5"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trofeu" translatesAutoresizingMaskIntoConstraints="NO" id="1Tk-Dn-dLt">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                                     <color key="tintColor" name="Roxo"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="1Tk-Dn-dLt" secondAttribute="height" id="oQr-dU-8Wk"/>
@@ -869,7 +873,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="UOD-eo-RR8">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menino" translatesAutoresizingMaskIntoConstraints="NO" id="UOD-eo-RR8">
                                                     <rect key="frame" x="5" y="0.0" width="126.5" height="100"/>
                                                     <color key="tintColor" name="Roxo"/>
                                                     <constraints>
@@ -1090,15 +1094,16 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Time" width="42.5" height="42.5"/>
-        <image name="avatar" width="42.5" height="42.5"/>
         <image name="house" catalog="system" width="128" height="110"/>
         <image name="icon" width="69.5" height="43"/>
+        <image name="item" width="512" height="512"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
+        <image name="menino" width="512" height="512"/>
         <image name="person.2" catalog="system" width="128" height="81"/>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
         <image name="qrcode.viewfinder" catalog="system" width="128" height="114"/>
         <image name="tortoise" catalog="system" width="128" height="68"/>
+        <image name="trofeu" width="512" height="512"/>
         <namedColor name="Laranja">
             <color red="1" green="0.56862745098039214" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -4,6 +4,12 @@ import Alamofire
 import SwiftyJSON
 import Firebase
 
+enum RedesSociais {
+    case Facebook
+    case Google
+    case Apple
+}
+
 class UsuarioDao {
     
     class func getTokeApp(){
@@ -96,6 +102,31 @@ class UsuarioDao {
             switch response.result {
             case .success(let value as [String: Any]):
                 if let token = value["token"] as? String {
+                    Configuration.shared.token = token
+                    completion(token)
+                }else{
+                    completion(nil)
+                }
+                break
+            case .success(_):
+                print("Sucesso sem usuário")
+                completion(nil)
+            case .failure(_):
+                print("Falha!")
+                completion(nil)
+            }
+        }
+    }
+    
+    class func getToken(tokenSocial: String, completion: @escaping (String?) -> Void) {
+        
+        
+        let parametros = ["idToken": tokenSocial]
+
+        AF.request("\(Configuration.URL_API)/login/login-google", method: .post, parameters: parametros).responseJSON { (response) in
+            switch response.result {
+            case .success(let value as [String: String]):
+                if let token = value["token"] {
                     Configuration.shared.token = token
                     completion(token)
                 }else{

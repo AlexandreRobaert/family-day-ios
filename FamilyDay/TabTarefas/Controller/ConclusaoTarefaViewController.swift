@@ -92,14 +92,14 @@ class ConclusaoTarefaViewController: UIViewController {
             fotoController.sourceType = .camera
             fotoController.delegate = self
             present(fotoController, animated: true, completion: nil)
-        }else{
+        } else {
             let actionController = UIAlertController(title: "Câmera indisponível", message: "Não encontramos a câmera do seu telefone", preferredStyle: .alert)
             actionController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             present(actionController, animated: true)
         }
     }
     
-    func carregarFotos(){
+    func carregarFotos() {
         self.imagens.removeAll()
         indicator.isHidden = false
         for url in historicoSelecionado.fotos {
@@ -130,6 +130,7 @@ class ConclusaoTarefaViewController: UIViewController {
     }
     
     func fazerUploadDasImagensEConcluirTarefa(){
+        self.historicoSelecionado.fotos.removeAll()
         FirebaseDao.uploadImagens(idTarefa: tarefa.id, numeroDaFoto: 1, imagem: imagens[0]) { (urlDownload) in
             if let url = urlDownload {
                 self.historicoSelecionado.fotos.append(url)
@@ -214,6 +215,7 @@ extension ConclusaoTarefaViewController: UIImagePickerControllerDelegate, UINavi
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.originalImage] as? UIImage else { return }
         let imageResize = Utils.resizedImage(at: image, for: CGSize(width: 300.0, height: 300.0))
+        
         if imagens.count > indexFotoSelecionada {
             imagens[indexFotoSelecionada] = imageResize
         }else{

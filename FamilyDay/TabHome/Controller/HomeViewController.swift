@@ -36,7 +36,7 @@ class HomeViewController: UIViewController {
         collectionMetas.delegate = self
         
         nomePerfilLabel.text = user.nome
-        tipoPerfilLabel.text = user.tipo
+        tipoPerfilLabel.text = user.tipo?.lowercased()
     }
 }
 
